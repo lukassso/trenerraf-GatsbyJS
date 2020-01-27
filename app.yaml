@@ -14,3 +14,9 @@
 # [START runtime]
 runtime: nodejs10
 # [END runtime]
+handlers:
+- url: /
+  static_files: public/index.html
+  upload: public/index.html
+- url: /
+  static_dir: public
