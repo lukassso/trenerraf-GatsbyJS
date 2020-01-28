@@ -23,7 +23,7 @@ const Button = styled.button`
 
   &:hover {
     color: #fff;
-    background-color: #444;
+    background-color: #4f4f4f;
   }
 
   ${props =>

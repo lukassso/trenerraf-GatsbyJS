@@ -170,6 +170,10 @@ const Item = styled.div`
   `}
 `;
 
+
+// calMe() (
+//   openURL(`tel.608 472 294`)
+// )
 export default props => {
   // handleClick = () => {
   //   console.log('this ma wartość:');
@@ -188,16 +192,20 @@ export default props => {
       <Button
         // onClick={{handleClick}}
         //  href="mailto:anubias19@op.pl"
-        href="tel:+48608472294"
+        // onClick={callMe()}
         style={{
           position: "absolute",
           left: "50%",
           transform: "translate(-50%,-50%)",
           bottom: 60,
-          fontWeight: "400"
+          fontWeight: "600",
+          fontSize: 20,
         }}
       >
-        Zadzwoń
+      <a 
+      style={{color: '#444'}}
+      href="/">Zadzwoń</a>
+        
       </Button>
       <SocialIcons
         style={{

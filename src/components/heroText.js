@@ -29,7 +29,7 @@ const StyledTypist = styled(Typist)`
     width: 90%;
     transform: translate(10%, 10%);
     letter-spacing: 12px;
-    font-size: 32px;
+    font-size: 25px;
     line-height: 40px;
 `}
 `
