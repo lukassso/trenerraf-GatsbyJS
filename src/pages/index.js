@@ -1,19 +1,19 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { Flex, Box } from 'grid-styled'
-import styled, { css } from 'styled-components'
-import Img from 'gatsby-image'
-import FlickrHero from 'react-flickr-hero'
+import React from "react";
+import { graphql } from "gatsby";
+import { Flex, Box } from "grid-styled";
+import styled, { css } from "styled-components";
+import Img from "gatsby-image";
+import FlickrHero from "react-flickr-hero";
 
-import { media } from '../utils/style'
+import { media } from "../utils/style";
 
-import Layout from '../components/layout'
-import NavBar from '../components/navbar'
-import HeroText from '../components/heroText'
-import SocialIcons from '../components/socialIcons'
-import Portfolio from '../components/portfolio'
-import Showcase from '../components/showcase'
-import Button from '../components/button'
+import Layout from "../components/layout";
+import NavBar from "../components/navbar";
+import HeroText from "../components/heroText";
+import SocialIcons from "../components/socialIcons";
+import Portfolio from "../components/portfolio";
+import Showcase from "../components/showcase";
+import Button from "../components/button";
 
 const Content = styled.div`
   & > a {
@@ -24,10 +24,10 @@ const Content = styled.div`
   & > h1 {
     text-align: center;
   }
-`
+`;
 
 const Title = styled.h1`
-  font-family: 'Raleway';
+  font-family: "Raleway";
   text-transform: uppercase;
   letter-spacing: 6px;
   margin-bottom: 40px;
@@ -45,7 +45,7 @@ const Title = styled.h1`
       font-weight: 700;
       line-height: 24px;
     `}
-`
+`;
 
 const Section = styled.div`
   text-align: center;
@@ -53,7 +53,7 @@ const Section = styled.div`
   padding-bottom: 40px;
 
   a {
-    font-family: 'Lato';
+    font-family: "Lato";
   }
 
   p {
@@ -68,7 +68,7 @@ const Section = styled.div`
   h4,
   h5,
   h6 {
-    font-family: 'Raleway';
+    font-family: "Raleway";
     text-transform: uppercase;
     color: #292929;
   }
@@ -138,7 +138,7 @@ const Section = styled.div`
         border-bottom: 1px solid #333 !important;
       }
     `}
-`
+`;
 
 const Item = styled.div`
   width: 40%;
@@ -168,16 +168,13 @@ const Item = styled.div`
   ${media.xs`
     width: 90%;
   `}
-`
- 
-  
- 
-export default props => {
+`;
 
+export default props => {
   // handleClick = () => {
   //   console.log('this ma wartość:');
   // }
- 
+
   const content = (
     <Content>
       <FlickrHero
@@ -187,40 +184,43 @@ export default props => {
         fillPage
       />
       <HeroText />
-      
+
       <Button
-      // onClick={{handleClick}}
-      //  href="mailto:anubias19@op.pl"
-      href="+48608472294"
-      style={{
-        position: 'absolute',
-          left: '50%',
-          transform: 'translate(-50%,-50%)',
+        // onClick={{handleClick}}
+        //  href="mailto:anubias19@op.pl"
+        href="tel:+48608472294"
+        style={{
+          position: "absolute",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
           bottom: 60,
-      
-      }}
-      >Zadzwoń</Button>
+          fontWeight: "400"
+        }}
+      >
+        Zadzwoń
+      </Button>
       <SocialIcons
         style={{
-          position: 'absolute',
-          margin: '0 auto',
+          position: "absolute",
+          margin: "0 auto",
           left: 0,
           right: 0,
-          bottom: 16,
+          bottom: 16
         }}
         icons={[
           {
-            name: 'facebook',
-            href: '/',
+            name: "facebook",
+            href: "https://www.facebook.com/trenerrafalkiszlo/"
           },
           {
-            name: 'instagram',
-            href: '/',
+            name: "instagram",
+            href: "https://www.instagram.com/trener_rafal_kiszlo/?hl=pl"
           },
           {
-            name: 'twitter',
-            href: '/',
-          },
+            name: "linkedin",
+            href:
+              "https://www.linkedin.com/in/rafa%C5%82-kisz%C5%82o-7ab799153/"
+          }
         ]}
       />
       {/* <a id="about-me">About Me</a> */}
@@ -324,14 +324,14 @@ export default props => {
         </Item>
       </Section> */}
     </Content>
-  )
+  );
   return (
     <Layout location={props.location}>
       <NavBar main children={content.props.children} />
       {content}
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -356,7 +356,7 @@ export const pageQuery = graphql`
                     shadow: "#111111"
                     opacity: 65
                   }
-                  ) {
+                ) {
                   ...GatsbyImageSharpSizes
                 }
               }
@@ -389,4 +389,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

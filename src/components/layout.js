@@ -36,7 +36,7 @@ const PageBase = ({ location, children }) => {
     <Body>
       <GlobalStyle />
       <Helmet
-        title="Rafał Kiszło"
+        title="Rafał Kiszło - Trener personalny Mokotów"
         meta={[
           { name: 'description', content: 'portfolio' },
           { name: 'keywords', content: 'Rafał Kiszło, strona www' },

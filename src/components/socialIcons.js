@@ -11,10 +11,10 @@ const Icon = ({ name, href }) => (
 const Base = styled.div`
   margin: 20px 0;
   text-align: center;
-  font-size: 30;
+  font-size: 30px;
   & a {
     display: inline-block;
-    margin 5px;
+    margin: 0 25px;
     color: #fff;
   }
   & a span {

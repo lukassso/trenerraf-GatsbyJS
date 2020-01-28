@@ -1,13 +1,15 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
+import React from "react";
+import styled, { css } from "styled-components";
 
 const Base = styled.a`
-  font-size: 20pt;
+  font-size: 25pt;
   font-family: 'Pacifico', cursive;
   color: #fff;
-  margin: 20px 0;
+  display: flex;
+  margin: 20px auto;
   width: fit-content;
   white-space: nowrap;
+  height: 50px;
   transition-property: transform;
   transition-duration: 0.8s;
 
@@ -43,16 +45,26 @@ const Base = styled.a`
     css`
       font-size: 2em;
     `}
-`
+`;
+const Base2 = styled.p`
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  bottom: 43px;
+  padding-left: 58px;
+  font-weight: 200;
+`;
 
 class Name extends React.Component {
   render() {
     return (
-      <Base {...this.props} href="/">
-        Rafał Kiszło
-      </Base>
-    )
+      <>
+        <Base {...this.props}>Rafał Kiszło</Base>
+        <Base2>Trener personalny</Base2>
+      </>
+    );
   }
 }
 
-export default Name
+export default Name;

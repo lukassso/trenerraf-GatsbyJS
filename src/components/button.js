@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 const Button = styled.button`
-  border: 2px solid #47b475;
+  border: 2px solid #444;
   background-color: #fff;
   padding: 0 35px;
   height: 60px;
@@ -11,19 +11,19 @@ const Button = styled.button`
   font-weight: 700;
   // text-transform: uppercase;
   letter-spacing: 1px;
-  border-radius: 15px;
-  color: #47b475;
+  border-radius: 10px;
+  color: #444;
   text-align: center;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
+  transition: all 1.2s ease;
+  -webkit-transition: all 1.3s ease;
+  -moz-transition: all 1.3s ease;
   margin-right: 8px;
   margin-bottom: 24px;
   cursor: pointer;
 
   &:hover {
     color: #fff;
-    background-color: #47b475;
+    background-color: #444;
   }
 
   ${props =>
