@@ -170,7 +170,6 @@ const Item = styled.div`
   `}
 `;
 
-
 // calMe() (
 //   openURL(`tel.608 472 294`)
 // )
@@ -199,13 +198,12 @@ export default props => {
           transform: "translate(-50%,-50%)",
           bottom: 60,
           fontWeight: "600",
-          fontSize: 20,
+          fontSize: 20
         }}
       >
-      <a 
-      style={{color: '#444'}}
-      href="/">Zadzwoń</a>
-        
+        <a style={{ color: "#444" }} href="tel.608 472 294">
+          Zadzwoń
+        </a>
       </Button>
       <SocialIcons
         style={{

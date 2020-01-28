@@ -23,7 +23,7 @@ const StyledTypist = styled(Typist)`
   ${media.xs`
       position: absolute;
     
-    top: 35%;
+    top: 25%;
     left: 0;
     right: 0;
     width: 90%;
@@ -69,7 +69,7 @@ class HeroText extends React.Component {
         <span> zjawiskowo</span>
         
         <Typist.Backspace count={29} delay={4000} />
-        <strong>Skontaktuj się ze mną</strong> Jak najszybciej! 😀
+        <strong>Skontaktuj się ze mną</strong> W tej chwili 😀
       </StyledTypist>
     )
   }
