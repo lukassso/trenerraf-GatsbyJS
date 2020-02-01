@@ -15,6 +15,8 @@ import Portfolio from "../components/portfolio";
 import Showcase from "../components/showcase";
 import Button from "../components/button";
 
+
+
 const Content = styled.div`
   & > a {
     visibility: hidden;
@@ -170,13 +172,7 @@ const Item = styled.div`
   `}
 `;
 
-// calMe() (
-//   openURL(`tel.608 472 294`)
-// )
 export default props => {
-  // handleClick = () => {
-  //   console.log('this ma wartość:');
-  // }
 
   const content = (
     <Content>
@@ -189,21 +185,22 @@ export default props => {
       <HeroText />
 
       <Button
-        // onClick={{handleClick}}
         //  href="mailto:anubias19@op.pl"
-        // onClick={callMe()}
         style={{
           position: "absolute",
           left: "50%",
           transform: "translate(-50%,-50%)",
           bottom: 60,
           fontWeight: "600",
-          fontSize: 20
+          fontSize: 60
         }}
+         icons={[
+          {
+            name: "phone",
+            href: "tel:+48608472294"
+          }
+         ]}
       >
-        <a style={{ color: "#444" }} href="tel.608 472 294">
-          Zadzwoń
-        </a>
       </Button>
       <SocialIcons
         style={{

@@ -66,7 +66,7 @@ class HeroText extends React.Component {
         <Typist.Backspace count={13} delay={1300} />
         <span> wyglądają</span>
         <Typist.Backspace count={9} delay={900} />
-        <span> zjawiskowo</span>
+        <strong> zjawiskowo</strong>
         
         <Typist.Backspace count={29} delay={4000} />
         <strong>Skontaktuj się ze mną</strong> W tej chwili 😀
