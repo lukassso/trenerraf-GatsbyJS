@@ -1,15 +1,23 @@
 import React from 'react'
+// import { graphql } from "gatsby";
 
 import styled, { css } from 'styled-components'
 import FontAwesome from 'react-fontawesome'
 
-const Icon = ({ name, href }) => (
+const Iconn = ({ name, href }) => (
   <a href={href}>
     <FontAwesome name={name} />
   </a>
 )
 
 const Base = styled.div`
+ position: absolute;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          bottom: 60px;
+          fontWeight: 600;
+          fontSize: 60;
+
   margin: 20px 0;
   text-align: center;
   font-size: 30px;
@@ -18,11 +26,21 @@ const Base = styled.div`
   border: 2px solid #fff; 
   border-radius: 50%;
   transition: color .2s ease-in;
-
+  &:before fa-phone {
+    color: red;
+  }
   & a {
-    display: inline-block;
-    margin: 0 25px;
+    display: flex;
+    width: 100px;
+    justify-content: center;
+    /* margin: 0 auto; */
+    margin-top: 15px;
     color: #fff;
+    align-items: center;
+    flex-direction: column;
+  }
+  & a .fa-spin {
+    animation: fa-spin 10s infinite linear;
   }
   & a span {
     transition: color .2s ease-in;
@@ -34,20 +52,35 @@ const Base = styled.div`
   & a:hover span.fa-phone {
     color: #fff;
   }
-  & a:hover span.fa-instagram {
-    color: #3cf;
+  & a:hover span.fa-spin {
+    animation: fa-spin 5s infinite linear;
   }
-  & a:hover span.fa-twitter {
-    color: #fc6d26;
-  }
+ 
 `
 
 class Button extends React.Component {
   render() {
-    const icons = this.props.icons.map(function(icon) {
-      return <Icon key={icon.name} name={icon.name} href={icon.href} />
-    })
-    return <Base {...this.props}>{icons}</Base>
+    // const buttons = this.props.buttons.map(({key, name, href}) => (
+    //   <Iconn key={name} name={name} href={href} />
+    // ))
+    // return (<Base {...this.props}>{buttons}</Base>)
+    //  const buttons = this.props.buttons.map(({name, href}) => (
+    //   <Iconn name={name} href={href} />
+    // ))
+    return (<Base >
+      <a href="tel:+48608472294">
+      <FontAwesome
+        className="super-crazy-colors"
+        name="phone"
+        size="2x"
+        spin
+        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+      />
+    </a>
+    </Base>)
+    // return (
+    //   <div>dupa</div>
+    // )
   }
 }
 
@@ -116,4 +149,4 @@ class Button extends React.Component {
 //     `}
 // `
 
-export default Button
+export default Button;

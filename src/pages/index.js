@@ -15,8 +15,6 @@ import Portfolio from "../components/portfolio";
 import Showcase from "../components/showcase";
 import Button from "../components/button";
 
-
-
 const Content = styled.div`
   & > a {
     visibility: hidden;
@@ -186,20 +184,15 @@ export default props => {
 
       <Button
         //  href="mailto:anubias19@op.pl"
-        style={{
-          position: "absolute",
-          left: "50%",
-          transform: "translate(-50%,-50%)",
-          bottom: 60,
-          fontWeight: "600",
-          fontSize: 60
-        }}
-         icons={[
-          {
-            name: "phone",
-            href: "tel:+48608472294"
-          }
-         ]}
+        // style={{
+        //   position: "absolute",
+        //   left: "50%",
+        //   transform: "translate(-50%,-50%)",
+        //   bottom: 60,
+        //   fontWeight: "600",
+        //   fontSize: 60
+        // }}
+        
       >
       </Button>
       <SocialIcons
