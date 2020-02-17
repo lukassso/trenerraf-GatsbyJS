@@ -27,7 +27,7 @@ const Content = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: "Raleway";
+  font-family: "Montserrat";
   text-transform: uppercase;
   letter-spacing: 6px;
   margin-bottom: 40px;
@@ -53,7 +53,7 @@ const Section = styled.div`
   padding-bottom: 40px;
 
   a {
-    font-family: "Lato";
+    font-family: "Montserrat";
   }
 
   p {
@@ -68,7 +68,7 @@ const Section = styled.div`
   h4,
   h5,
   h6 {
-    font-family: "Raleway";
+    font-family: "Pacifico";
     text-transform: uppercase;
     color: #292929;
   }
@@ -220,7 +220,7 @@ export default props => {
         ]}
       />
       {/* <a id="about-me">About Me</a> */}
-      {/* <Section>
+      <Section>
         <Title>About Me</Title>
         <Flex alignItems="center" flexDirection="column">
           <Box px={2} width={[1, 1 / 2]}>
@@ -318,7 +318,7 @@ export default props => {
           <h6>ACCESS ACCENTURE ACHIEVEMENT AWARD</h6>
           <p>Accenture</p>
         </Item>
-      </Section> */}
+      </Section>
     </Content>
   );
   return (

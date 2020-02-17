@@ -12,7 +12,7 @@ const StyledTypist = styled(Typist)`
   line-height: 66px;
   font-weight: 200;
   text-transform: uppercase;
-  font-family: 'Raleway';
+  font-family: 'Montserrat';
   position: absolute;
   top: 50%;
   left: 50%;

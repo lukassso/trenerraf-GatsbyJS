@@ -33,7 +33,7 @@ const Base = styled.div`
     transition: opacity .3s ease;
   }
   & ul > li a {
-    font-family: 'Raleway';
+    font-family: 'Montserrat';
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;

@@ -46,7 +46,7 @@ const TileContent = styled.a`
     top: 6vw;
     left: 5%;
     right: 5%;
-    font-family: 'Raleway';
+    font-family: 'Montserrat';
     border: none;
   }
   p {

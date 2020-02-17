@@ -6,7 +6,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`pacifico:400`, `raleway:100,400,600,700`, "lato: 300,400,500"]
+        fonts: [`pacifico:400`, `montserrat:200,400,600,700`, "lato: 300,400,500"]
       }
     },
     {
@@ -68,7 +68,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Rafał Kiszło - trener personalny Mokotów",
-        short_name: "Darren Britton",
+        short_name: "Rafał Kiszło",
         start_url: "/",
         background_color: "#292929",
         theme_color: "#405375",

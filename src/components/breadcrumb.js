@@ -8,7 +8,7 @@ const Base = styled.ol`
   margin: 0;
   & li a,
   & li {
-    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 12px;
     line-height: 24px;
     font-weight: 400;
