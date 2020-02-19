@@ -19,7 +19,6 @@ const Content = styled.div`
   & > a {
     visibility: hidden;
     display: block;
-    height: 0;
   }
   & > h1 {
     text-align: center;
@@ -140,6 +139,10 @@ const Section = styled.div`
     `}
 `;
 
+const HeroSection = styled.div`
+height: 100vh;
+`
+
 const Item = styled.div`
   width: 40%;
   margin: 0 auto;
@@ -174,27 +177,18 @@ export default props => {
 
   const content = (
     <Content>
-      <FlickrHero
+      {/* <FlickrHero
         api_key="1b4e5b0203fab0d5731afe68f0a543e1"
         user_id="132343752@N06"
         album_id="72157694825254121"
         fillPage
-      />
-      <HeroText />
+      /> */}
+      <HeroSection />
 
-      <Button
-        //  href="mailto:anubias19@op.pl"
-        // style={{
-        //   position: "absolute",
-        //   left: "50%",
-        //   transform: "translate(-50%,-50%)",
-        //   bottom: 60,
-        //   fontWeight: "600",
-        //   fontSize: 60
-        // }}
-        
-      >
-      </Button>
+      {/* <HeroText /> */}
+
+      <Button />
+       
       <SocialIcons
         style={{
           position: "absolute",
@@ -219,35 +213,30 @@ export default props => {
           }
         ]}
       />
-      {/* <a id="about-me">About Me</a> */}
+      <a id="experience">Doświadczenie</a>
       <Section>
-        <Title>About Me</Title>
+        <Title>Doświadczenie</Title>
         <Flex alignItems="center" flexDirection="column">
           <Box px={2} width={[1, 1 / 2]}>
             <p>
-              Currently working as a software engineer at{' '}
-              <a href="https://shutterstock.com">Shutterstock</a> focusing on
-              the editorial content platform. As far as my work goes I've
-              probably worn every hat on the rack, most notable being Web
-              Developer, Software Engineer and Photographer. Don’t let my clean
-              lines and weakness for Swiss type fool you; My work has been
-              pretty diverse and enjoyable. For more information about me follow
-              one of my social media links above or at the bottom of the page.
+              Zwycięzca w konkursie "Motywatory Fitness"              
             </p>
           </Box>
           <Box px={2} width={180}>
-            <Img
+            {/* <Img
               sizes={
                 props.data.allFile
                   ? props.data.allFile.edges[0].node.childImageSharp.sizes
                   : {}
               }
-            />
+            /> */}
           </Box>
         </Flex>
       </Section>
-      <Title small>Portfolio</Title>
-      <a id="portfolio">Portfolio</a>
+      <a id="testimondial">Opinie</a>
+
+      <Title small>Opinie Klientów</Title>
+      {/* <a id="portfolio">Portfolio</a>
       <Portfolio items={props.data.allMarkdownRemark.edges} />
       <a id="experience">Experience</a>
       <Section center dark>
@@ -283,10 +272,12 @@ export default props => {
             props.data.allImageSharp ? props.data.allImageSharp.edges : []
           }
         />
-      </Section>
-      <a id="education">Education</a>
+      </Section> */}
+      <a id="success-story">Metamorfozy</a>
       <Section dark center>
-        <h4>EDUCATION</h4>
+
+        fsdfsdf
+        {/* <h4>EDUCATION</h4>
         <span>Education I've recieved.</span>
         <Item>
           <span>2012 - 2016</span>
@@ -297,10 +288,13 @@ export default props => {
           <span>2006 - 2012</span>
           <h6>SECONDARY EDUCATION</h6>
           <p>Saint Declan's College</p>
-        </Item>
+        </Item> */}
       </Section>
-      <a id="honoursAndAwards">Honours & Awards</a>
+      <a id="kontakt">Kontakt</a>
       <Section center>
+        Kontakt
+      </Section>
+      {/* <Section center>
         <h4>HONORS & AWARDS</h4>
         <span>A list of honors and awards I have recieved for my work.</span>
         <Item>
@@ -318,7 +312,7 @@ export default props => {
           <h6>ACCESS ACCENTURE ACHIEVEMENT AWARD</h6>
           <p>Accenture</p>
         </Item>
-      </Section>
+      </Section> */}
     </Content>
   );
   return (

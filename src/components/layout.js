@@ -28,7 +28,6 @@ const Body = styled.div`
 `
 
 const Content = styled.div`
-  flex: 1;
 `
 
 const PageBase = ({ location, children }) => {

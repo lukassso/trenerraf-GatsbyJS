@@ -23,7 +23,7 @@ const Base = styled.div`
   font-size: 30px;
   width: 100px;
   height: 100px;
-  border: 2px solid #fff; 
+  border: 2px solid; 
   border-radius: 50%;
   transition: color .2s ease-in;
   &:before fa-phone {
@@ -35,7 +35,6 @@ const Base = styled.div`
     justify-content: center;
     /* margin: 0 auto; */
     margin-top: 15px;
-    color: #fff;
     align-items: center;
     flex-direction: column;
   }
@@ -50,11 +49,8 @@ const Base = styled.div`
     text-shadow: 1px 1px 10px #4d4d4d;
   }
   & a:hover span.fa-phone {
-    color: #fff;
   }
-  & a:hover span.fa-spin {
-    animation: fa-spin 5s infinite linear;
-  }
+ 
  
 `
 

@@ -15,7 +15,6 @@ const Base = styled.div`
   & a {
     display: inline-block;
     margin: 0 25px;
-    color: #fff;
   }
   & a span {
     transition: color .2s ease-in;

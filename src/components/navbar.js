@@ -27,7 +27,6 @@ const Base = styled.div`
     font-size: 11px;
     float: right;
     position: relative;
-    color: #fff;
     text-decoration: none;
     cursor: pointer;
     transition: opacity .3s ease;

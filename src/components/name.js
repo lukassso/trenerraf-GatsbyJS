@@ -4,7 +4,6 @@ import styled, { css } from "styled-components";
 const Base = styled.a`
   font-size: 25pt;
   font-family: 'Pacifico', cursive;
-  color: #fff;
   display: flex;
   margin: 20px auto;
   width: fit-content;
@@ -49,7 +48,6 @@ const Base = styled.a`
 const Base2 = styled.p`
   display: flex;
   justify-content: center;
-  color: #fff;
   position: relative;
   bottom: 43px;
   padding-left: 58px;
