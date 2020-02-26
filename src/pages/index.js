@@ -14,6 +14,7 @@ import SocialIcons from "../components/socialIcons";
 import Portfolio from "../components/portfolio";
 import Showcase from "../components/showcase";
 import Button from "../components/button";
+import ComponentsDemo from '../pages/components'
 
 const Content = styled.div`
   & > a {
@@ -140,8 +141,8 @@ const Section = styled.div`
 `;
 
 const HeroSection = styled.div`
-height: 100vh;
-`
+  height: 100vh;
+`;
 
 const Item = styled.div`
   width: 40%;
@@ -174,7 +175,6 @@ const Item = styled.div`
 `;
 
 export default props => {
-
   const content = (
     <Content>
       {/* <FlickrHero
@@ -183,12 +183,12 @@ export default props => {
         album_id="72157694825254121"
         fillPage
       /> */}
-      <HeroSection />
+      <HeroSection >
 
       {/* <HeroText /> */}
 
       <Button />
-       
+
       <SocialIcons
         style={{
           position: "absolute",
@@ -213,14 +213,13 @@ export default props => {
           }
         ]}
       />
+      </HeroSection>
       <a id="experience">Doświadczenie</a>
       <Section>
         <Title>Doświadczenie</Title>
         <Flex alignItems="center" flexDirection="column">
           <Box px={2} width={[1, 1 / 2]}>
-            <p>
-              Zwycięzca w konkursie "Motywatory Fitness"              
-            </p>
+            <p>Zwycięzca w konkursie "Motywatory Fitness"</p>
           </Box>
           <Box px={2} width={180}>
             {/* <Img
@@ -275,7 +274,6 @@ export default props => {
       </Section> */}
       <a id="success-story">Metamorfozy</a>
       <Section dark center>
-
         fsdfsdf
         {/* <h4>EDUCATION</h4>
         <span>Education I've recieved.</span>
@@ -291,9 +289,7 @@ export default props => {
         </Item> */}
       </Section>
       <a id="kontakt">Kontakt</a>
-      <Section center>
-        Kontakt
-      </Section>
+      <Section center>Kontakt</Section>
       {/* <Section center>
         <h4>HONORS & AWARDS</h4>
         <span>A list of honors and awards I have recieved for my work.</span>
@@ -313,6 +309,8 @@ export default props => {
           <p>Accenture</p>
         </Item>
       </Section> */}
+    {/* <ComponentsDemo /> */}
+
     </Content>
   );
   return (

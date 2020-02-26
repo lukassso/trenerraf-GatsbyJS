@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import { Helmet } from 'react-helmet'
 import styled, { createGlobalStyle } from 'styled-components'
 import { Flex, Box } from 'grid-styled'
-
+import ComponentsDemo from '../pages/components'
 import Footer from './footer'
 
 const GlobalStyle = createGlobalStyle`
