@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Flex, Box } from "grid-styled";
+// import { Flex, Box } from "grid-styled";
 import styled, { css } from "styled-components";
 import Img from "gatsby-image";
 import FlickrHero from "react-flickr-hero";
@@ -14,7 +14,7 @@ import SocialIcons from "../components/socialIcons";
 import Portfolio from "../components/portfolio";
 import Showcase from "../components/showcase";
 import Button from "../components/button";
-import ComponentsDemo from '../pages/components'
+import ComponentsDemo from "../pages/components";
 
 const Content = styled.div`
   & > a {
@@ -28,7 +28,7 @@ const Content = styled.div`
 
 const Title = styled.h1`
   font-family: "Montserrat";
-  text-transform: uppercase;
+  // text-transform: uppercase;
   letter-spacing: 6px;
   margin-bottom: 40px;
   font-weight: 400;
@@ -36,7 +36,6 @@ const Title = styled.h1`
   line-height: 40px;
   border: none;
   color: #292929;
-
   ${props =>
     props.small &&
     css`
@@ -45,13 +44,20 @@ const Title = styled.h1`
       font-weight: 700;
       line-height: 24px;
     `}
+  ${props =>
+    props.dark &&
+    css`
+      color: #fff !important;
+    `}
+  
 `;
 
 const Section = styled.div`
   text-align: center;
   padding-top: 45px;
   padding-bottom: 40px;
-
+  height: 50vh;
+  position: relative;
   a {
     font-family: "Montserrat";
   }
@@ -68,8 +74,8 @@ const Section = styled.div`
   h4,
   h5,
   h6 {
-    font-family: "Pacifico";
-    text-transform: uppercase;
+    font-family: "Montserrat";
+    // text-transform: uppercase;
     color: #292929;
   }
 
@@ -101,20 +107,20 @@ const Section = styled.div`
       h4 {
         margin-left: 20vw;
       }
-
       ${media.xs`
         & > div {
           margin-left: 3vw !important;
         }
-    `}
+      `}
     `}
 
   ${props =>
     props.dark &&
     css`
       background: #292929;
+      color: #fff;
       * {
-        color: #eee;
+        color: #fff;
       }
       span {
         text-align: left;
@@ -177,64 +183,21 @@ const Item = styled.div`
 export default props => {
   const content = (
     <Content>
-      {/* <FlickrHero
-        api_key="1b4e5b0203fab0d5731afe68f0a543e1"
-        user_id="132343752@N06"
-        album_id="72157694825254121"
-        fillPage
-      /> */}
-      <HeroSection >
-
-      {/* <HeroText /> */}
-
-      <Button />
-
-      <SocialIcons
-        style={{
-          position: "absolute",
-          margin: "0 auto",
-          left: 0,
-          right: 0,
-          bottom: 16
-        }}
-        icons={[
-          {
-            name: "facebook",
-            href: "https://www.facebook.com/trenerrafalkiszlo/"
-          },
-          {
-            name: "instagram",
-            href: "https://www.instagram.com/trener_rafal_kiszlo/?hl=pl"
-          },
-          {
-            name: "linkedin",
-            href:
-              "https://www.linkedin.com/in/rafa%C5%82-kisz%C5%82o-7ab799153/"
-          }
-        ]}
-      />
+      <HeroSection>
+        <Button />
       </HeroSection>
       <a id="experience">Doświadczenie</a>
       <Section>
-        <Title>Doświadczenie</Title>
-        <Flex alignItems="center" flexDirection="column">
-          <Box px={2} width={[1, 1 / 2]}>
-            <p>Zwycięzca w konkursie "Motywatory Fitness"</p>
-          </Box>
-          <Box px={2} width={180}>
-            {/* <Img
-              sizes={
-                props.data.allFile
-                  ? props.data.allFile.edges[0].node.childImageSharp.sizes
-                  : {}
-              }
-            /> */}
-          </Box>
-        </Flex>
+        <Title>Przebyte kursy i szkolenia</Title>
+        <p>Zwycięzca w konkursie "Motywatory Fitness"</p>
+        <Title>Nagrody i wyróżnienia</Title>
+        <Title>Partnerzy</Title>
       </Section>
       <a id="testimondial">Opinie</a>
-
-      <Title small>Opinie Klientów</Title>
+      <Section dark>
+        <Title dark>O mnie</Title>
+      </Section>
+      <Title>Opinie Klientów</Title>
       {/* <a id="portfolio">Portfolio</a>
       <Portfolio items={props.data.allMarkdownRemark.edges} />
       <a id="experience">Experience</a>
@@ -272,9 +235,8 @@ export default props => {
           }
         />
       </Section> */}
-      <a id="success-story">Metamorfozy</a>
-      <Section dark center>
-        fsdfsdf
+      <Section dark>
+        <Title dark>Zapytaj siebie</Title>
         {/* <h4>EDUCATION</h4>
         <span>Education I've recieved.</span>
         <Item>
@@ -288,29 +250,38 @@ export default props => {
           <p>Saint Declan's College</p>
         </Item> */}
       </Section>
+      <a id="success-story">Metamorfozy</a>
+      <Section>
+        <Title>Metamorfozy</Title>
+      </Section>
       <a id="kontakt">Kontakt</a>
-      <Section center>Kontakt</Section>
-      {/* <Section center>
-        <h4>HONORS & AWARDS</h4>
-        <span>A list of honors and awards I have recieved for my work.</span>
-        <Item>
-          <span>2016</span>
-          <h6>BEST PROJECT (IN THE DIT PROJECT FAIR)</h6>
-          <p>SAP</p>
-        </Item>
-        <Item>
-          <span>2014</span>
-          <h6>GAMES STUDIO IRELAND CHALLENGE: BEST IN ORIGINAL STORY</h6>
-          <p>Games Fleadh</p>
-        </Item>
-        <Item>
-          <span>2010</span>
-          <h6>ACCESS ACCENTURE ACHIEVEMENT AWARD</h6>
-          <p>Accenture</p>
-        </Item>
-      </Section> */}
-    {/* <ComponentsDemo /> */}
-
+      <Section dark>
+        <Title dark>Kontakt</Title>
+        <SocialIcons
+          // style={{
+          //   position: "absolute",
+          //   margin: "0 auto",
+          //   left: 0,
+          //   right: 0,
+          //   bottom: 16
+          // }}
+          icons={[
+            {
+              name: "facebook",
+              href: "https://www.facebook.com/trenerrafalkiszlo/"
+            },
+            {
+              name: "instagram",
+              href: "https://www.instagram.com/trener_rafal_kiszlo/?hl=pl"
+            },
+            {
+              name: "linkedin",
+              href:
+                "https://www.linkedin.com/in/rafa%C5%82-kisz%C5%82o-7ab799153/"
+            }
+          ]}
+        />
+      </Section>
     </Content>
   );
   return (

@@ -9,16 +9,16 @@ const Base = styled.a`
   width: fit-content;
   white-space: nowrap;
   height: 50px;
-  transition-property: transform;
-  transition-duration: 0.8s;
+  // transition-property: transform;
+  // transition-duration: 0.8s;
 
   &:hover {
     cursor: pointer;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-image: url(https://media.giphy.com/media/l41YcGT5ShJa0nCM0/giphy.gif);
+    // -webkit-text-fill-color: transparent;
+    // -webkit-background-clip: text;
+    // background-image: url(https://media.giphy.com/media/l41YcGT5ShJa0nCM0/giphy.gif);
     text-decoration: none;
-    -webkit-transform:rotate(354deg);
+    // -webkit-transform:rotate(354deg);
   }
 
   ${props =>
@@ -59,7 +59,7 @@ class Name extends React.Component {
     return (
       <>
         <Base {...this.props}>Rafał Kiszło</Base>
-        <Base2>Trener personalny</Base2>
+        {/* <Base2>Trener personalny</Base2> */}
       </>
     );
   }
