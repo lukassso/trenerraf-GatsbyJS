@@ -1,101 +1,99 @@
 import React from "react";
 import { graphql } from "gatsby";
-// import { Flex, Box } from "grid-styled";
+import { Flex, Box } from "grid-styled";
 import styled, { css } from "styled-components";
-import Img from "gatsby-image";
-import FlickrHero from "react-flickr-hero";
+// import Img from "gatsby-image";
+// import Img from "gatsby-image/withIEPolyfill"
+// import FlickrHero from "react-flickr-hero";
 
-import { media } from "../utils/style";
+// import { media } from "../utils/media";
 
 import Layout from "../components/layout";
 import NavBar from "../components/navbar";
-import HeroText from "../components/heroText";
 import SocialIcons from "../components/socialIcons";
-import Portfolio from "../components/portfolio";
-import Showcase from "../components/showcase";
 import Button from "../components/button";
-import ComponentsDemo from "../pages/components";
 
 const Content = styled.div`
-  & > a {
-    visibility: hidden;
-    display: block;
-  }
-  & > h1 {
-    text-align: center;
-  }
+  position: relative;
+  display: block;
+  // & > a {
+  //   visibility: hidden;
+  display: block;
+  //   color: #0B0B0B;
+  // }
+  // & > h1 {
+  //   text-align: center;
+  // }
 `;
 
 const Title = styled.h1`
-  font-family: "Montserrat";
+  // font-family: "Montserrat";
   // text-transform: uppercase;
-  letter-spacing: 6px;
-  margin-bottom: 40px;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 40px;
-  border: none;
-  color: #292929;
+  // letter-spacing: 6px;
+  // margin-bottom: 40px;
+  // font-weight: 400;
+  // font-size: 32px;
+  // line-height: 40px;
+  // border: none;
+  // color: #292929;
   ${props =>
     props.small &&
     css`
-      font-size: 12px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      line-height: 24px;
+      // font-size: 12px;
+      // letter-spacing: 2px;
+      // font-weight: 700;
+      // line-height: 24px;
     `}
   ${props =>
     props.dark &&
     css`
       color: #fff !important;
     `}
-  
 `;
 
 const Section = styled.div`
-  text-align: center;
-  padding-top: 45px;
-  padding-bottom: 40px;
-  height: 50vh;
-  position: relative;
-  a {
-    font-family: "Montserrat";
-  }
+  color: ${({theme}) => theme.color.secondary};
+  
 
-  p {
-    margin-bottom: 64px;
-    font-size: large;
-    color: #666;
-  }
+  // a {
+  //   font-family: "Montserrat";
+  //   // color: #0B0B0B;
+  // }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat";
-    // text-transform: uppercase;
-    color: #292929;
-  }
+  // p {
+  //   margin-bottom: 64px;
+  //   font-size: large;
+  //   color: #666;
+  // }
 
-  h4 {
-    letter-spacing: 3px;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 32px;
-    color: #292929;
-  }
+  // h1,
+  // h2,
+  // h3,
+  // h4,
+  // h5,
+  // h6 {
+  //   font-family: "Montserrat";
+  //   // text-transform: uppercase;
+  //   color: #292929;
+  // }
 
-  span {
-    color: #666;
-    opacity: 0.5;
-    display: block;
-  }
+  // h4 {
+  //   letter-spacing: 3px;
+  //   font-weight: 400;
+  //   font-size: 24px;
+  //   line-height: 32px;
+  //   color: #292929;
+  // }
 
-  & > div:last-child {
-    border-bottom: none !important;
-  }
+  // span {
+  //   color: #666;
+  //   opacity: 0.5;
+  //   display: block;
+  // }
+
+  // & > div:last-child {
+  //   border-bottom: none !important;
+  // }
 
   ${props =>
     props.center &&
@@ -148,6 +146,10 @@ const Section = styled.div`
 
 const HeroSection = styled.div`
   height: 100vh;
+  // display: flex;
+  a {
+    // color: #0B0B0B;
+  }
 `;
 
 const Item = styled.div`
@@ -179,12 +181,25 @@ const Item = styled.div`
     width: 90%;
   `}
 `;
+const HeaderLeft = styled.div`
+  width: 100px;
+  border: 1px solid red;
+  height: 80px;
+`;
 
-export default props => {
+export default (props, data) => {
   const content = (
     <Content>
-      <HeroSection>
-        <Button />
+      <HeroSection css={{ margin: "0 50px;" }}>
+        <Flex mx="auto" justifyContent="center">
+          <Box width={(0, 1 / 4, 2 / 6)}>
+            <HeaderLeft>Stań się lepszą wersją siebie!</HeaderLeft>
+            <Button />
+          </Box>
+          <Box width={[1, 3 / 4, 4 / 6]}>
+            
+          </Box>
+        </Flex>
       </HeroSection>
       <a id="experience">Doświadczenie</a>
       <Section>
@@ -255,7 +270,7 @@ export default props => {
         <Title>Metamorfozy</Title>
       </Section>
       <a id="kontakt">Kontakt</a>
-      <Section dark>
+      <Section dark> 
         <Title dark>Kontakt</Title>
         <SocialIcons
           // style={{
@@ -292,60 +307,71 @@ export default props => {
   );
 };
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          timeToRead
-          excerpt(pruneLength: 120)
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            tags
-            image {
-              childImageSharp {
-                sizes(
-                  maxWidth: 500
-                  duotone: {
-                    highlight: "#333333"
-                    shadow: "#111111"
-                    opacity: 65
-                  }
-                ) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    allImageSharp: allFile(filter: { relativePath: { regex: "/logos/" } }) {
-      edges {
-        node {
-          id
-          childImageSharp {
-            sizes(maxWidth: 300, grayscale: true) {
-              ...GatsbyImageSharpSizes_tracedSVG
-            }
-          }
-        }
-      }
-    }
-    allFile(filter: { name: { regex: "/signature/" } }) {
-      edges {
-        node {
-          childImageSharp {
-            sizes(maxWidth: 200, grayscale: true) {
-              ...GatsbyImageSharpSizes_tracedSVG
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query indexQuery {
+//     file(relativePath: { "./yellowPlum.svg" }) {
+//       childImageSharp {
+//         fixed(width: 125, height: 125) {
+//           ...GatsbyImageSharpFixed
+//         }
+//       }
+//     }
+//   }
+// `;
+// export const pageQuery = graphql`
+//   query IndexQuery {
+//     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+//       edges {
+//         node {
+//           timeToRead
+//           excerpt(pruneLength: 120)
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             date(formatString: "MMMM DD, YYYY")
+//             title
+//             tags
+//             image {
+//               childImageSharp {
+//                 sizes(
+//                   maxWidth: 500
+//                   duotone: {
+//                     highlight: "#333333"
+//                     shadow: "#111111"
+//                     opacity: 65
+//                   }
+//                 ) {
+//                   ...GatsbyImageSharpSizes
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//     allImageSharp: allFile(filter: { relativePath: { regex: "/logos/" } }) {
+//       edges {
+//         node {
+//           id
+//           childImageSharp {
+//             sizes(maxWidth: 300, grayscale: true) {
+//               ...GatsbyImageSharpSizes_tracedSVG
+//             }
+//           }
+//         }
+//       }
+//     }
+//     allFile(filter: { name: { regex: "/signature/" } }) {
+//       edges {
+//         node {
+//           childImageSharp {
+//             sizes(maxWidth: 200, grayscale: true) {
+//               ...GatsbyImageSharpSizes_tracedSVG
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

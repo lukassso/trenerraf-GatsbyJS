@@ -1,10 +1,14 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import logo from '../pages/images/logo-trenerrafal.svg';
+
 
 const Base = styled.a`
   font-size: 25pt;
   font-family: 'Pacifico', cursive;
   display: flex;
+    color: #0B0B0B;
+
   margin: 20px auto;
   width: fit-content;
   white-space: nowrap;
@@ -58,7 +62,9 @@ class Name extends React.Component {
   render() {
     return (
       <>
-        <Base {...this.props}>Rafał Kiszło</Base>
+        <Base>
+            <a href="/" rel="noopener noreferrer" target="_blank"><img className="footer__logo" src={logo} alt="Mozilla Logo" /></a>
+        </Base>
         {/* <Base2>Trener personalny</Base2> */}
       </>
     );

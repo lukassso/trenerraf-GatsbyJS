@@ -2,50 +2,55 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { Helmet } from 'react-helmet'
-import styled, { createGlobalStyle } from 'styled-components'
-import { Flex, Box } from 'grid-styled'
-import ComponentsDemo from '../pages/components'
-import Footer from './footer'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+import Footer from './footer';
+import {theme} from '../utils/theme';
 
 const GlobalStyle = createGlobalStyle`
+
   @import "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
-
-  html {
-    max-width: 100vw;
-    overflow-x: hidden;
+  body {
+    font-family: "Montserrat";
+    padding: 0;
+    margin: 0;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
 `
 
-const Body = styled.div`
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  width: 100vw;
-
-  img {
-    margin-bottom: 0;
-  }
-`
+// const Body = styled.div`
+//   display: flex;
+//   min-height: 100vh;
+//   flex-direction: column;
+//   width: 100vw;
+//   img {
+//     margin-bottom: 0;
+//   }
+// `
 
 const Content = styled.div`
 `
 
-const PageBase = ({ location, children }) => {
+const Layout = ({ location, children }) => {
   return (
-    <Body>
-      <GlobalStyle />
+    <ThemeProvider theme={theme} >
+      <>
+      <GlobalStyle/>
       <Helmet
         title="Rafał Kiszło - Trener personalny Mokotów"
-        meta={[
-          { name: 'description', content: 'portfolio' },
+        meta={[ 
+          { name: 'description', content: 'Zapraszam na wspólne treningi na Mokotowie - Trener personalny Rafał Kiszło' },
           { name: 'keywords', content: 'Rafał Kiszło, strona www' },
           { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         ]}
       />
       <Content>{children}</Content>
       {location && location.pathname != '/404'}
-    </Body>
+      <Footer/>
+      </>
+    </ThemeProvider>
   )
 }
 
-export default PageBase
+export default Layout

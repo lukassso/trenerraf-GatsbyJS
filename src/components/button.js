@@ -11,9 +11,7 @@ const Iconn = ({ name, href }) => (
 )
 
 const Base = styled.div`
- position: absolute;
-          left: 50%;
-          transform: translate(-50%,-50%);
+
           bottom: 60px;
           fontWeight: 600;
           fontSize: 60;
