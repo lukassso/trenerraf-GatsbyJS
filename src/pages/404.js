@@ -3,7 +3,7 @@ import { navigate } from 'gatsby'
 import FlickrHero from 'react-flickr-hero'
 import styled from 'styled-components'
 
-import Layout from '../components/layout'
+import Layout from '../layout/layout'
 import Button from '../components/button'
 import HeroText from '../components/heroText'
 

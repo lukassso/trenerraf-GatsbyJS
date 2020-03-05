@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { Helmet } from 'react-helmet'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-import Footer from './footer';
+import Footer from '../components/footer';
 import {theme} from '../utils/theme';
 
 const GlobalStyle = createGlobalStyle`
@@ -18,17 +18,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 `
-
-// const Body = styled.div`
-//   display: flex;
-//   min-height: 100vh;
-//   flex-direction: column;
-//   width: 100vw;
-//   img {
-//     margin-bottom: 0;
-//   }
-// `
-
 const Content = styled.div`
 `
 

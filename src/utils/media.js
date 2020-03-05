@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 
-export const media = {
+const media = {
   ws: (...args) => css`
     @media (max-width: 280px) {
       ${css(...args)}
@@ -27,3 +27,5 @@ export const media = {
     }
   `,
 }
+
+export default media;

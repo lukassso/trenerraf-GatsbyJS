@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Flex, Box } from "grid-styled";
+// import { Flex, Box } from "grid-styled";
 import styled, { css } from "styled-components";
 // import Img from "gatsby-image";
 // import Img from "gatsby-image/withIEPolyfill"
@@ -8,7 +8,7 @@ import styled, { css } from "styled-components";
 
 // import { media } from "../utils/media";
 
-import Layout from "../components/layout";
+import Layout from "../layout/layout";
 import NavBar from "../components/navbar";
 import SocialIcons from "../components/socialIcons";
 import Button from "../components/button";
@@ -53,8 +53,6 @@ const Title = styled.h1`
 
 const Section = styled.div`
   color: ${({theme}) => theme.color.secondary};
-  
-
   // a {
   //   font-family: "Montserrat";
   //   // color: #0B0B0B;
@@ -105,42 +103,42 @@ const Section = styled.div`
       h4 {
         margin-left: 20vw;
       }
-      ${media.xs`
-        & > div {
-          margin-left: 3vw !important;
-        }
-      `}
+      // ${media.xs`
+      //   & > div {
+      //     margin-left: 3vw !important;
+      //   }
+      // `}
     `}
 
   ${props =>
     props.dark &&
     css`
-      background: #292929;
-      color: #fff;
-      * {
-        color: #fff;
-      }
-      span {
-        text-align: left;
-        font-size: 16px;
-        line-height: 28px;
-        font-weight: 400;
-        opacity: 0.5;
-      }
-      span,
-      p {
-        color: #fefefe !important;
-      }
-      h6 {
-        color: #fff;
-        font-weight: 700;
-      }
-      h4 {
-        color: #fff;
-      }
-      div {
-        border-bottom: 1px solid #333 !important;
-      }
+      background: ${({theme}) => theme.color.dark};
+      color: ${({theme}) => theme.color.white};
+      // * {
+      //   color: #fff;
+      // }
+      // span {
+      //   text-align: left;
+      //   font-size: 16px;
+      //   line-height: 28px;
+      //   font-weight: 400;
+      //   opacity: 0.5;
+      // }
+      // span,
+      // p {
+      //   color: #fefefe !important;
+      // }
+      // h6 {
+      //   color: #fff;
+      //   font-weight: 700;
+      // }
+      // h4 {
+      //   color: #fff;
+      // }
+      // div {
+      //   border-bottom: 1px solid #333 !important;
+      // }
     `}
 `;
 
@@ -177,9 +175,9 @@ const Item = styled.div`
     margin-bottom: 24px;
     opacity: 0.5;
   }
-  ${media.xs`
-    width: 90%;
-  `}
+  // ${media.xs`
+  //   width: 90%;
+  // `}
 `;
 const HeaderLeft = styled.div`
   width: 100px;
@@ -191,15 +189,15 @@ export default (props, data) => {
   const content = (
     <Content>
       <HeroSection css={{ margin: "0 50px;" }}>
-        <Flex mx="auto" justifyContent="center">
-          <Box width={(0, 1 / 4, 2 / 6)}>
+        <div mx="auto" justifyContent="center">
+          <div width={(0, 1 / 4, 2 / 6)}>
             <HeaderLeft>Stań się lepszą wersją siebie!</HeaderLeft>
             <Button />
-          </Box>
-          <Box width={[1, 3 / 4, 4 / 6]}>
+          </div>
+          <div width={[1, 3 / 4, 4 / 6]}>
             
-          </Box>
-        </Flex>
+          </div>
+        </div>
       </HeroSection>
       <a id="experience">Doświadczenie</a>
       <Section>

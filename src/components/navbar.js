@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Flex, Box } from 'grid-styled'
+// import { Flex, Box } from 'grid-styled'
 import scrollToElement from 'scroll-to-element'
 
 import Name from './name'
@@ -68,11 +68,11 @@ const Base = styled.div`
       z-index: 100;
     `}
 
-  ${media.xs`
-    & ul {
-      display: none;
-    }
-  `}
+  // ${media.xs`
+  //   & ul {
+  //     display: none;
+  //   }
+  // `}
 `
 
 class NavBar extends React.Component {
@@ -99,14 +99,14 @@ class NavBar extends React.Component {
     })
     return (
       <Base {...this.props}>
-        <Flex>
-          <Box px={2} width={[1, 1/3, 2/6]}>
+        <div>
+          <div px={2} width={[1, 1/3, 2/6]}>
             <Name />
-          </Box>
-          <Box px={2} width={[0, 2/3, 4/6]}>
+          </div>
+          <div px={2} width={[0, 2/3, 4/6]}>
             <ul>{links}</ul>
-          </Box>
-        </Flex>
+          </div>
+        </div>
       </Base>
     )
   }
