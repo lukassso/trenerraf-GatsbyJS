@@ -9,5 +9,4 @@ const Bar = styled.hr`
   height: 0;
   box-sizing: content-box;
 `
-
 export default Bar

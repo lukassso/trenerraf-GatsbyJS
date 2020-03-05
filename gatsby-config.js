@@ -6,7 +6,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`pacifico:400`, `raleway:100,400,600,700`, "lato: 300,400,500"]
+        fonts: [`pacifico:400`, `montserrat:200,400,600,700`, "lato: 300,400,500"]
       }
     },
     {
@@ -18,12 +18,7 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`
-      }
-    },
+   
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -68,18 +63,18 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Rafał Kiszło - trener personalny Mokotów",
-        short_name: "Darren Britton",
+        short_name: "Rafał Kiszło",
         start_url: "/",
         background_color: "#292929",
         theme_color: "#405375",
         display: "minimal-ui"
       }
     },
-    {
-      resolve: "gatsby-plugin-sentry",
-      options: {
-        dsn: "https://23d8e0b792d442d29d0b4344a79ef87d@sentry.io/170806"
-      }
-    }
+    // {
+    //   resolve: "gatsby-plugin-sentry",
+    //   options: {
+    //     dsn: "https://23d8e0b792d442d29d0b4344a79ef87d@sentry.io/170806"
+    //   }
+    // }
   ]
 };

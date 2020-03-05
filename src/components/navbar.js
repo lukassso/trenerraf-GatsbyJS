@@ -1,16 +1,16 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Flex, Box } from 'grid-styled'
+// import { Flex, Box } from 'grid-styled'
 import scrollToElement from 'scroll-to-element'
 
 import Name from './name'
 
-import { media } from '../utils/style'
+import { media } from '../utils/media'
 
 const Base = styled.div`
   padding: 0;
   margin: 0;
-  max-height: 62px;
+  // max-height: 62px;
   line-height: 62px;
   width: 100vw;
   & ul {
@@ -27,15 +27,16 @@ const Base = styled.div`
     font-size: 11px;
     float: right;
     position: relative;
-    color: #fff;
     text-decoration: none;
     cursor: pointer;
     transition: opacity .3s ease;
   }
   & ul > li a {
-    font-family: 'Raleway';
+    font-family: 'Montserrat';
     text-transform: uppercase;
     font-weight: 600;
+    color: #0B0B0B;
+
     letter-spacing: 1px;
     margin-right: 32px;
   }
@@ -67,11 +68,11 @@ const Base = styled.div`
       z-index: 100;
     `}
 
-  ${media.xs`
-    & ul {
-      display: none;
-    }
-  `}
+  // ${media.xs`
+  //   & ul {
+  //     display: none;
+  //   }
+  // `}
 `
 
 class NavBar extends React.Component {
@@ -98,14 +99,14 @@ class NavBar extends React.Component {
     })
     return (
       <Base {...this.props}>
-        <Flex>
-          <Box px={2} width={[1, 1 / 3, 2 / 6]}>
+        <div>
+          <div px={2} width={[1, 1/3, 2/6]}>
             <Name />
-          </Box>
-          <Box px={2} width={[0, 2 / 3, 4 / 6]}>
+          </div>
+          <div px={2} width={[0, 2/3, 4/6]}>
             <ul>{links}</ul>
-          </Box>
-        </Flex>
+          </div>
+        </div>
       </Base>
     )
   }

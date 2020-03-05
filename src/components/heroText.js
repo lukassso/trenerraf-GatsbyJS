@@ -2,36 +2,35 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Typist from 'react-typist'
 
-import { media } from '../utils/style'
+import { media } from '../utils/media'
 
 const StyledTypist = styled(Typist)`
-  color: #fff;
   letter-spacing: 10px;
   max-width: 95%;
   font-size: 62px;
   line-height: 66px;
   font-weight: 200;
   text-transform: uppercase;
-  font-family: 'Raleway';
+  font-family: 'Montserrat';
   position: absolute;
   top: 50%;
   left: 50%;
-  ${media.md`
-  left: 25%;
-  top: 40%;
-`}
-  ${media.xs`
-      position: absolute;
+//   ${media.md`
+//   left: 25%;
+//   top: 40%;
+// `}
+//   ${media.xs`
+//       position: absolute;
     
-    top: 25%;
-    left: 0;
-    right: 0;
-    width: 90%;
-    transform: translate(10%, 10%);
-    letter-spacing: 12px;
-    font-size: 25px;
-    line-height: 40px;
-`}
+//     top: 25%;
+//     left: 0;
+//     right: 0;
+//     width: 90%;
+//     transform: translate(10%, 10%);
+//     letter-spacing: 12px;
+//     font-size: 25px;
+//     line-height: 40px;
+// `}
 `
 
 class HeroText extends React.Component {

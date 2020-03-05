@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Flex, Box } from 'grid-styled'
+// import { Flex, Box } from 'grid-styled'
 import Img from 'gatsby-image'
 import { media } from '../utils/style'
 
@@ -20,13 +20,13 @@ const Base = styled.div`
 class Showcase extends React.Component {
   render() {
     const images = this.props.images.reverse().map(image => (
-      <Box key={image.node.id} px={2} width={[1 / 2, 1 / 3]}>
+      <div key={image.node.id} px={2} width={[1 / 2, 1 / 3]}>
         <Img sizes={image.node.childImageSharp.sizes} />
-      </Box>
+      </div>
     ))
     return (
       <Base>
-        <Flex flexWrap="wrap">{images}</Flex>
+        <div flexWrap="wrap">{images}</div>
       </Base>
     )
   }
