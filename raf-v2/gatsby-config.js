@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Trener Personalny Rafał Kiszło`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Trener Personalny Mokotów`,
+    description: `Zapraszam na wspólne treningi na Mokotowie - Trener personalny Rafał Kiszło`,
     author: `Lukasz Zatyka`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-     {
+    {  
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`pacifico:400`, `montserrat:200,400,600,700`, "lato: 300,400,500"]
@@ -30,7 +30,7 @@ module.exports = {
         short_name: "Rafał Kiszło",
         start_url: "/",
         background_color: "#292929",
-        theme_color: "#405375",
+        theme_color: "#405333",
         display: "minimal-ui",
         icon: `src/images/logo-trenerrafal.svg`, // This path is relative to the root of the site.
       },
