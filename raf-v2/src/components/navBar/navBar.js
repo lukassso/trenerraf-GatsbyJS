@@ -1,10 +1,9 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import scrollToElement from 'scroll-to-element'
-
-import Name from './name'
-
-import { media } from '../utils/media'
+import React from "react";
+import PropTypes from "prop-types";
+import styled, { css } from 'styled-components';
+import scrollToElement from 'scroll-to-element';
+import { Link } from "gatsby";
+import Logo from './logo';
 
 const Base = styled.div`
   padding: 0;
@@ -40,41 +39,11 @@ const Base = styled.div`
     margin-right: 32px;
   }
 
-  ${props =>
-    props.dark &&
-    css`
-      background: #fff;
-      & ul > li a,
-      & ul > li {
-        color: #242424;
-        opacity: 0.6;
-      }
-      & ul > li a:hover {
-        opacity: 1;
-      }
-      a {
-        color: #000;
-      }
-    `}
 
-  ${props =>
-    props.main &&
-    css`
-      background: transparent;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 100;
-    `}
-
-  // ${media.xs`
-  //   & ul {
-  //     display: none;
-  //   }
-  // `}
 `
 
 class NavBar extends React.Component {
+
   render() {
     const linkMap = this.props.children
       .map(el => {
@@ -96,13 +65,14 @@ class NavBar extends React.Component {
         </li>
       )
     })
+    debugger
     return (
       <Base {...this.props}>
         <div>
-          <div px={2} width={[1, 1/3, 2/6]}>
-            <Name />
+          <div>
+            <Logo />
           </div>
-          <div px={2} width={[0, 2/3, 4/6]}>
+          <div >
             <ul>{links}</ul>
           </div>
         </div>
@@ -112,3 +82,46 @@ class NavBar extends React.Component {
 }
 
 export default NavBar
+
+
+// const Header = ({ siteTitle }) => (
+//   <header
+//     style={{
+//       marginBottom: `1.45rem`,
+//     }}
+//   >
+
+//     <Logo />
+   
+//     <div
+//       style={{
+//         margin: `0 auto`,
+//         maxWidth: 960,
+//         padding: `1.45rem 1.0875rem`,
+//       }}
+//     >
+//       <h1 style={{ margin: 0 }}>
+//         <Link
+//           to="/"
+//           style={{
+//             textDecoration: `none`,
+//           }}
+//         >
+//           {siteTitle}
+//         </Link>
+//       </h1>
+//        <Head>test</Head>
+//     </div>
+//        {/* <TestImg/> */}
+//   </header>
+// )
+
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
+
+// Header.defaultProps = {
+//   siteTitle: ``,
+// }
+
+// export default Header
