@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Box } from 'grid-styled'
+// import { Flex, Box } from 'grid-styled'
 import Img from 'gatsby-image'
 
 import { media } from '../utils/style'
@@ -46,7 +46,7 @@ const TileContent = styled.a`
     top: 6vw;
     left: 5%;
     right: 5%;
-    font-family: 'Raleway';
+    font-family: 'Montserrat';
     border: none;
   }
   p {
@@ -147,7 +147,7 @@ class Portfolio extends React.Component {
 
   render() {
     const items = this.props.items.map(item => (
-      <Box key={item.node.fields.slug} px={2} width={[1, 1 / 2, 1 / 3, 1 / 4]}>
+      <div key={item.node.fields.slug} px={2} width={[1, 1 / 2, 1 / 3, 1 / 4]}>
         <Item
           key={item.node.fields.slug}
           excerpt={item.node.excerpt}
@@ -155,20 +155,20 @@ class Portfolio extends React.Component {
           timeToRead={item.node.timeToRead}
           {...item.node.frontmatter}
         />
-      </Box>
+      </div>
     ))
     if (!this.state.viewAll) {
       items.splice(4)
     }
     return (
-      <Flex justifyContent="center" px={1} flexWrap="wrap">
+      <div justifyContent="center" px={1} flexWrap="wrap">
         {items}
-        <Box m="auto">
+        <div m="auto">
           <Button center onClick={() => this.toggleShow()}>
             {this.state.viewAll ? 'View Less' : 'View More'}
           </Button>
-        </Box>
-      </Flex>
+        </div>
+      </div>
     )
   }
 }

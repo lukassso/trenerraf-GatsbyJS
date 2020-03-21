@@ -2,31 +2,35 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Typist from 'react-typist'
 
-import { media } from '../utils/style'
+import { media } from '../utils/media'
 
 const StyledTypist = styled(Typist)`
-  color: #fff;
   letter-spacing: 10px;
-  max-width: 100%;
+  max-width: 95%;
   font-size: 62px;
   line-height: 66px;
-  font-weight: 100;
+  font-weight: 200;
   text-transform: uppercase;
-  font-family: 'Raleway';
+  font-family: 'Montserrat';
   position: absolute;
   top: 50%;
   left: 50%;
-  ${media.md`
-  left: 25%;
-  top: 40%;
-`}
-  ${media.xs`
-  left: 13%;
-  top: 35%;
-  letter-spacing: 12px;
-  font-size: 32px;
-  line-height: 30px;
-`}
+//   ${media.md`
+//   left: 25%;
+//   top: 40%;
+// `}
+//   ${media.xs`
+//       position: absolute;
+    
+//     top: 25%;
+//     left: 0;
+//     right: 0;
+//     width: 90%;
+//     transform: translate(10%, 10%);
+//     letter-spacing: 12px;
+//     font-size: 25px;
+//     line-height: 40px;
+// `}
 `
 
 class HeroText extends React.Component {
@@ -61,10 +65,10 @@ class HeroText extends React.Component {
         <Typist.Backspace count={13} delay={1300} />
         <span> wyglądają</span>
         <Typist.Backspace count={9} delay={900} />
-        <span> zjawiskowo</span>
+        <strong> zjawiskowo</strong>
         
         <Typist.Backspace count={29} delay={4000} />
-        <strong>Skontaktuj się ze mną</strong> Jak najszybciej! 😀
+        <strong>Skontaktuj się ze mną</strong> W tej chwili 😀
       </StyledTypist>
     )
   }

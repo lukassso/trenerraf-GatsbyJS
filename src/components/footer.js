@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import Link from 'gatsby-link'
-import { Flex, Box } from 'grid-styled'
+// import { Flex, Box } from 'grid-styled'
 import scrollToElement from 'scroll-to-element'
 import FlickrLightbox from 'react-flickr-lightbox'
 
@@ -29,7 +29,7 @@ const SocialIconsStyled = styled(SocialIcons)`
   text-align: left;
 `
 
-const CenteredButtonBox = styled(Box)`
+const CenteredButtonBox = styled.div`
   margin: 2em auto;
 `
 
@@ -45,42 +45,42 @@ class Footer extends React.Component {
   render() {
     return (
       <Base {...this.props}>
-        <Flex flexWrap="wrap" justifyContent="space-around">
-          <Box px={2} width={[1, 1 / 2, 1 / 3, 1 / 6]}>
-            <Flex flexDirection="column">
-              <Box>
+        <div flexWrap="wrap" justifyContent="space-around">
+          <div px={2} width={[1, 1 / 2, 1 / 3, 1 / 6]}>
+            <div flexDirection="column">
+              <div>
                 <Name block />
-              </Box>
-              <Box>
+              </div>
+              <div>
                 <SocialIconsStyled
                   icons={[
                     {
-                      name: 'twitter',
-                      href: 'https://twitter.com/darren_britton',
+                      name: 'facebook',
+                      href: 'https://www.facebook.com/trenerrafalkiszlo/',
                     },
                     {
-                      name: 'github-alt',
-                      href: 'https://github.com/darrenbritton',
+                      name: 'instagram',
+                      href: 'https://www.instagram.com/trener_rafal_kiszlo/?hl=pl',
                     },
                     {
                       name: 'linkedin',
-                      href: 'https://ie.linkedin.com/in/darrenbritton',
+                      href: 'https://www.linkedin.com/in/rafa%C5%82-kisz%C5%82o-7ab799153/',
                     },
                   ]}
                 />
-              </Box>
-            </Flex>
-          </Box>
-          <Box width={[1, 1 / 2, 1 / 3, 1 / 6]}>
-            <Flex justifyContent="center" flexDirection="column">
-              <Box>
+              </div>
+            </div>
+          </div>
+          <div width={[1, 1 / 2, 1 / 3, 1 / 6]}>
+            <div justifyContent="center" flexDirection="column">
+              <div>
                 <FooterText>
                   <h4>
                     Made with ❤️ using{' '}
                     <a href="https://www.gatsbyjs.org/">GatsbyJS</a>
                   </h4>
                 </FooterText>
-              </Box>
+              </div>
               <CenteredButtonBox>
                 <Button
                   onClick={() => {
@@ -93,10 +93,10 @@ class Footer extends React.Component {
                   Top
                 </Button>
               </CenteredButtonBox>
-            </Flex>
-          </Box>
-          <Box width={[4 / 5, 1 / 2, 1 / 3, 1 / 6]} pt={2}>
-            <Flex alignItems="center" justifyContent="center">
+            </div>
+          </div>
+          <div width={[4 / 5, 1 / 2, 1 / 3, 1 / 6]} pt={2}>
+            <div alignItems="center" justifyContent="center">
               <GalleryContainer>
                 <FlickrLightbox
                   api_key="1b4e5b0203fab0d5731afe68f0a543e1"
@@ -104,9 +104,9 @@ class Footer extends React.Component {
                   limit={8}
                 />
               </GalleryContainer>
-            </Flex>
-          </Box>
-        </Flex>
+            </div>
+          </div>
+        </div>
       </Base>
     )
   }

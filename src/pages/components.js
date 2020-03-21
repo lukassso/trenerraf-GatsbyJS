@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { Flex, Box } from 'grid-styled'
+// import { Flex, Box } from 'grid-styled'
 
-import Layout from '../components/layout'
+import Layout from '../layout/layout'
 import Button from '../components/button'
 import Bar from '../components/bar'
 import Breadcrumb from '../components/breadcrumb'
@@ -45,9 +45,9 @@ class ComponentsDemo extends React.Component {
     return (
       <Layout>
         <NavBar dark children={content.props.children} />
-        <Flex alignItems="center" justifyContent="center">
-          <Box width={[9 / 10, 2 / 3, 3 / 4]}>{content}</Box>
-        </Flex>
+        <div alignItems="center" justifyContent="center">
+          <div width={[9 / 10, 2 / 3, 3 / 4]}>{content}</div>
+        </div>
       </Layout>
     )
   }
