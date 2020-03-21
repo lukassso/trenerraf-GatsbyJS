@@ -1,10 +1,10 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import scrollToElement from 'scroll-to-element'
+import React from 'react';
+import styled, { css } from 'styled-components';
+import scrollToElement from 'scroll-to-element';
 
-import Name from './name'
+import Name from './name';
 
-import { media } from '../utils/media'
+import { media } from '../utils/media';
 
 const Base = styled.div`
   padding: 0;
@@ -76,12 +76,11 @@ const Base = styled.div`
 
 class NavBar extends React.Component {
   render() {
-    const linkMap = this.props.children
-      .map(el => {
-        if (el.props.id)
-          return { name: el.props.children, href: `#${el.props.id}` }
+    const linkMap = this.props.children.map(el => {
+        if (el.props.id){
+          return { name: el.props.children, href: `#${el.props.id}`} }
       })
-      .filter(n => n != undefined)
+      .filter(n => n !== undefined)
       .reverse()
     const links = linkMap.map(function(link) {
       return (
@@ -96,6 +95,7 @@ class NavBar extends React.Component {
         </li>
       )
     })
+    // debugger
     return (
       <Base {...this.props}>
         <div>

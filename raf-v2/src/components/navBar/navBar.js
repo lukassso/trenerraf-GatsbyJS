@@ -43,14 +43,14 @@ const Base = styled.div`
 `
 
 class NavBar extends React.Component {
-
+ 
   render() {
-    const linkMap = this.props.children
+    const linkMap = this.props.childrenn
       .map(el => {
         if (el.props.id)
           return { name: el.props.children, href: `#${el.props.id}` }
       })
-      .filter(n => n != undefined)
+      .filter(n => n !== undefined)
       .reverse()
     const links = linkMap.map(function(link) {
       return (
@@ -65,7 +65,8 @@ class NavBar extends React.Component {
         </li>
       )
     })
-    debugger
+    // debugger
+    
     return (
       <Base {...this.props}>
         <div>

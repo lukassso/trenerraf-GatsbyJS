@@ -68,7 +68,7 @@ export default (props) => {
   );
   return (
     <Layout location={props.location}>
-      <NavBar main children={content.props.children} />
+      <NavBar main childrenn={content.props.children} />
       {content}
     </Layout>
   );

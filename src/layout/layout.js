@@ -35,7 +35,7 @@ const Layout = ({ location, children }) => {
         ]}
       />
       <Content>{children}</Content>
-      {location && location.pathname != '/404'}
+      {/* {location && location.pathname != '/404'} */}
       <Footer/>
       </>
     </ThemeProvider>

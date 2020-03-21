@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import {theme} from '../../utils/theme';
-
+import IndexPage from '../../pages/index';
 import Header from "../navBar";
 import Footer from '../footer';
 
@@ -42,9 +42,9 @@ const Layout = ({ location, children }) => {
 
     <>
     <GlobalStyle/>
-     
-        <main>{children}</main>
-      {location && location.pathname != '/404'}
+     <IndexPage />
+        {/* <div>{children}</div> */}
+      {location && location.pathname !== '/404'}
 
         <Footer />
      
