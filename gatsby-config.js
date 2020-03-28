@@ -3,12 +3,7 @@ module.exports = {
     title: `Trener Personalny Rafał Kiszło`
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`pacifico:400`, `montserrat:200,400,600,700`, "lato: 300,400,500"]
-      }
-    },
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
