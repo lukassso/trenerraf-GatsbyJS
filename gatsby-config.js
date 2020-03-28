@@ -65,11 +65,6 @@ module.exports = {
         display: "minimal-ui"
       }
     },
-    // {
-    //   resolve: "gatsby-plugin-sentry",
-    //   options: {
-    //     dsn: "https://23d8e0b792d442d29d0b4344a79ef87d@sentry.io/170806"
-    //   }
-    // }
+   
   ]
 };

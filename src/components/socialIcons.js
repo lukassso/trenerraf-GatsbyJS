@@ -1,10 +1,9 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import FontAwesome from 'react-fontawesome'
+// import FontAwesome from 'react-fontawesome'
 
 const Icon = ({ name, href }) => (
   <a href={href}>
-    <FontAwesome name={name} />
   </a>
 )
 

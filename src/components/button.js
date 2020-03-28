@@ -2,11 +2,11 @@ import React from 'react'
 // import { graphql } from "gatsby";
 
 import styled, { css } from 'styled-components'
-import FontAwesome from 'react-fontawesome'
+// import FontAwesome from 'react-fontawesome'
 
 const Iconn = ({ name, href }) => (
   <a href={href}>
-    <FontAwesome name={name} />
+    
   </a>
 )
 
@@ -63,13 +63,7 @@ class Button extends React.Component {
     // ))
     return (<Base >
       <a href="tel:+48608472294">
-      <FontAwesome
-        className="super-crazy-colors"
-        name="phone"
-        size="2x"
-        spin
-        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-      />
+      
     </a>
     </Base>)
     // return (

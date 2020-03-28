@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import TimeAgo from 'react-timeago'
+// import TimeAgo from 'react-timeago'
 // import { Flex, Box } from 'grid-styled'
 
 import Breadcrumb from '../components/breadcrumb'
@@ -98,7 +98,7 @@ export default ({ data, location }) => {
         <Bar />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <Timestamp>
-          Posted: <TimeAgo date={post.frontmatter.date} />
+          Posted: 
         </Timestamp>
       </Content>
     </div>
