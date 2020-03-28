@@ -1,6 +1,5 @@
 import React from 'react'
 import { navigate } from 'gatsby'
-import FlickrHero from 'react-flickr-hero'
 import styled from 'styled-components'
 
 import Layout from '../layout/layout'

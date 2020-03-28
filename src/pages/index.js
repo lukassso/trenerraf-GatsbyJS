@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import styled, { css } from "styled-components";
 // import Img from "gatsby-image";
 // import Img from "gatsby-image/withIEPolyfill"
-// import FlickrHero from "react-flickr-hero";
 
 // import { media } from "../utils/media";
 
@@ -305,71 +304,3 @@ export default (props, data) => {
   );
 };
 
-// export const query = graphql`
-//   query indexQuery {
-//     file(relativePath: { "./yellowPlum.svg" }) {
-//       childImageSharp {
-//         fixed(width: 125, height: 125) {
-//           ...GatsbyImageSharpFixed
-//         }
-//       }
-//     }
-//   }
-// `;
-// export const pageQuery = graphql`
-//   query IndexQuery {
-//     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-//       edges {
-//         node {
-//           timeToRead
-//           excerpt(pruneLength: 120)
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             date(formatString: "MMMM DD, YYYY")
-//             title
-//             tags
-//             image {
-//               childImageSharp {
-//                 sizes(
-//                   maxWidth: 500
-//                   duotone: {
-//                     highlight: "#333333"
-//                     shadow: "#111111"
-//                     opacity: 65
-//                   }
-//                 ) {
-//                   ...GatsbyImageSharpSizes
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//     allImageSharp: allFile(filter: { relativePath: { regex: "/logos/" } }) {
-//       edges {
-//         node {
-//           id
-//           childImageSharp {
-//             sizes(maxWidth: 300, grayscale: true) {
-//               ...GatsbyImageSharpSizes_tracedSVG
-//             }
-//           }
-//         }
-//       }
-//     }
-//     allFile(filter: { name: { regex: "/signature/" } }) {
-//       edges {
-//         node {
-//           childImageSharp {
-//             sizes(maxWidth: 200, grayscale: true) {
-//               ...GatsbyImageSharpSizes_tracedSVG
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
