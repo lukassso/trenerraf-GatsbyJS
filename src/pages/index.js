@@ -1,96 +1,95 @@
-import React from "react";
-import { graphql } from "gatsby";
-// import { Flex, Box } from "grid-styled";
-import styled, { css } from "styled-components";
-// import Img from "gatsby-image";
-// import Img from "gatsby-image/withIEPolyfill"
+import React from 'react'
+import { graphql } from 'gatsby'
+import { Flex, Box } from 'grid-styled'
+import styled, { css } from 'styled-components'
+import Img from 'gatsby-image'
+import FlickrHero from 'react-flickr-hero'
 
-// import { media } from "../utils/media";
+import { media } from '../utils/style'
 
-import Layout from "../layout/layout";
-import NavBar from "../components/navbar";
-import SocialIcons from "../components/socialIcons";
-import Button from "../components/button";
+import Layout from '../components/layout'
+import NavBar from '../components/navbar'
+import HeroText from '../components/heroText'
+import SocialIcons from '../components/socialIcons'
+import Portfolio from '../components/portfolio'
+import Showcase from '../components/showcase'
+import Button from '../components/button'
 
 const Content = styled.div`
-  position: relative;
-  display: block;
-  // & > a {
-  //   visibility: hidden;
-  display: block;
-  //   color: #0B0B0B;
-  // }
-  // & > h1 {
-  //   text-align: center;
-  // }
-`;
+  & > a {
+    visibility: hidden;
+    display: block;
+    height: 0;
+  }
+  & > h1 {
+    text-align: center;
+  }
+`
 
 const Title = styled.h1`
-  // font-family: "Montserrat";
-  // text-transform: uppercase;
-  // letter-spacing: 6px;
-  // margin-bottom: 40px;
-  // font-weight: 400;
-  // font-size: 32px;
-  // line-height: 40px;
-  // border: none;
-  // color: #292929;
+  font-family: 'Raleway';
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  border: none;
+  color: #292929;
+
   ${props =>
     props.small &&
     css`
-      // font-size: 12px;
-      // letter-spacing: 2px;
-      // font-weight: 700;
-      // line-height: 24px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      line-height: 24px;
     `}
-  ${props =>
-    props.dark &&
-    css`
-      color: #fff !important;
-    `}
-`;
+`
 
 const Section = styled.div`
-  color: ${({theme}) => theme.color.secondary};
-  // a {
-  //   font-family: "Montserrat";
-  //   // color: #0B0B0B;
-  // }
+  text-align: center;
+  padding-top: 45px;
+  padding-bottom: 40px;
 
-  // p {
-  //   margin-bottom: 64px;
-  //   font-size: large;
-  //   color: #666;
-  // }
+  a {
+    font-family: 'Lato';
+  }
 
-  // h1,
-  // h2,
-  // h3,
-  // h4,
-  // h5,
-  // h6 {
-  //   font-family: "Montserrat";
-  //   // text-transform: uppercase;
-  //   color: #292929;
-  // }
+  p {
+    margin-bottom: 64px;
+    font-size: large;
+    color: #666;
+  }
 
-  // h4 {
-  //   letter-spacing: 3px;
-  //   font-weight: 400;
-  //   font-size: 24px;
-  //   line-height: 32px;
-  //   color: #292929;
-  // }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Raleway';
+    text-transform: uppercase;
+    color: #292929;
+  }
 
-  // span {
-  //   color: #666;
-  //   opacity: 0.5;
-  //   display: block;
-  // }
+  h4 {
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #292929;
+  }
 
-  // & > div:last-child {
-  //   border-bottom: none !important;
-  // }
+  span {
+    color: #666;
+    opacity: 0.5;
+    display: block;
+  }
+
+  & > div:last-child {
+    border-bottom: none !important;
+  }
 
   ${props =>
     props.center &&
@@ -102,52 +101,44 @@ const Section = styled.div`
       h4 {
         margin-left: 20vw;
       }
-      // ${media.xs`
-      //   & > div {
-      //     margin-left: 3vw !important;
-      //   }
-      // `}
+
+      ${media.xs`
+        & > div {
+          margin-left: 3vw !important;
+        }
+    `}
     `}
 
   ${props =>
     props.dark &&
     css`
-      background: ${({theme}) => theme.color.dark};
-      color: ${({theme}) => theme.color.white};
-      // * {
-      //   color: #fff;
-      // }
-      // span {
-      //   text-align: left;
-      //   font-size: 16px;
-      //   line-height: 28px;
-      //   font-weight: 400;
-      //   opacity: 0.5;
-      // }
-      // span,
-      // p {
-      //   color: #fefefe !important;
-      // }
-      // h6 {
-      //   color: #fff;
-      //   font-weight: 700;
-      // }
-      // h4 {
-      //   color: #fff;
-      // }
-      // div {
-      //   border-bottom: 1px solid #333 !important;
-      // }
+      background: #292929;
+      * {
+        color: #eee;
+      }
+      span {
+        text-align: left;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+        opacity: 0.5;
+      }
+      span,
+      p {
+        color: #fefefe !important;
+      }
+      h6 {
+        color: #fff;
+        font-weight: 700;
+      }
+      h4 {
+        color: #fff;
+      }
+      div {
+        border-bottom: 1px solid #333 !important;
+      }
     `}
-`;
-
-const HeroSection = styled.div`
-  height: 100vh;
-  // display: flex;
-  a {
-    // color: #0B0B0B;
-  }
-`;
+`
 
 const Item = styled.div`
   width: 40%;
@@ -174,43 +165,93 @@ const Item = styled.div`
     margin-bottom: 24px;
     opacity: 0.5;
   }
-  // ${media.xs`
-  //   width: 90%;
-  // `}
-`;
-const HeaderLeft = styled.div`
-  width: 100px;
-  border: 1px solid red;
-  height: 80px;
-`;
+  ${media.xs`
+    width: 90%;
+  `}
+`
+ 
+  
+ 
+export default props => {
 
-export default (props, data) => {
+  // handleClick = () => {
+  //   console.log('this ma wartość:');
+  // }
+ 
   const content = (
     <Content>
-      <HeroSection css={{ margin: "0 50px;" }}>
-        <div mx="auto" justifyContent="center">
-          <div width={(0, 1 / 4, 2 / 6)}>
-            <HeaderLeft>Stań się lepszą wersją siebie!</HeaderLeft>
-            <Button />
-          </div>
-          <div width={[1, 3 / 4, 4 / 6]}>
-            
-          </div>
-        </div>
-      </HeroSection>
-      <a id="experience">Doświadczenie</a>
-      <Section>
-        <Title>Przebyte kursy i szkolenia</Title>
-        <p>Zwycięzca w konkursie "Motywatory Fitness"</p>
-        <Title>Nagrody i wyróżnienia</Title>
-        <Title>Partnerzy</Title>
+      <FlickrHero
+        api_key="1b4e5b0203fab0d5731afe68f0a543e1"
+        user_id="132343752@N06"
+        album_id="72157694825254121"
+        fillPage
+      />
+      <HeroText />
+      
+      <Button
+      // onClick={{handleClick}}
+      //  href="mailto:anubias19@op.pl"
+      href="+48608472294"
+      style={{
+        position: 'absolute',
+          left: '50%',
+          transform: 'translate(-50%,-50%)',
+          bottom: 60,
+      
+      }}
+      >Zadzwoń</Button>
+      <SocialIcons
+        style={{
+          position: 'absolute',
+          margin: '0 auto',
+          left: 0,
+          right: 0,
+          bottom: 16,
+        }}
+        icons={[
+          {
+            name: 'facebook',
+            href: '/',
+          },
+          {
+            name: 'instagram',
+            href: '/',
+          },
+          {
+            name: 'twitter',
+            href: '/',
+          },
+        ]}
+      />
+      {/* <a id="about-me">About Me</a> */}
+      {/* <Section>
+        <Title>About Me</Title>
+        <Flex alignItems="center" flexDirection="column">
+          <Box px={2} width={[1, 1 / 2]}>
+            <p>
+              Currently working as a software engineer at{' '}
+              <a href="https://shutterstock.com">Shutterstock</a> focusing on
+              the editorial content platform. As far as my work goes I've
+              probably worn every hat on the rack, most notable being Web
+              Developer, Software Engineer and Photographer. Don’t let my clean
+              lines and weakness for Swiss type fool you; My work has been
+              pretty diverse and enjoyable. For more information about me follow
+              one of my social media links above or at the bottom of the page.
+            </p>
+          </Box>
+          <Box px={2} width={180}>
+            <Img
+              sizes={
+                props.data.allFile
+                  ? props.data.allFile.edges[0].node.childImageSharp.sizes
+                  : {}
+              }
+            />
+          </Box>
+        </Flex>
       </Section>
-      <a id="testimondial">Opinie</a>
-      <Section dark>
-        <Title dark>O mnie</Title>
-      </Section>
-      <Title>Opinie Klientów</Title>
-      {/* <a id="portfolio">Portfolio</a>
+      <Title small>Portfolio</Title>
+      <a id="portfolio">Portfolio</a>
       <Portfolio items={props.data.allMarkdownRemark.edges} />
       <a id="experience">Experience</a>
       <Section center dark>
@@ -246,10 +287,10 @@ export default (props, data) => {
             props.data.allImageSharp ? props.data.allImageSharp.edges : []
           }
         />
-      </Section> */}
-      <Section dark>
-        <Title dark>Zapytaj siebie</Title>
-        {/* <h4>EDUCATION</h4>
+      </Section>
+      <a id="education">Education</a>
+      <Section dark center>
+        <h4>EDUCATION</h4>
         <span>Education I've recieved.</span>
         <Item>
           <span>2012 - 2016</span>
@@ -260,47 +301,92 @@ export default (props, data) => {
           <span>2006 - 2012</span>
           <h6>SECONDARY EDUCATION</h6>
           <p>Saint Declan's College</p>
-        </Item> */}
+        </Item>
       </Section>
-      <a id="success-story">Metamorfozy</a>
-      <Section>
-        <Title>Metamorfozy</Title>
-      </Section>
-      <a id="kontakt">Kontakt</a>
-      <Section dark> 
-        <Title dark>Kontakt</Title>
-        <SocialIcons
-          // style={{
-          //   position: "absolute",
-          //   margin: "0 auto",
-          //   left: 0,
-          //   right: 0,
-          //   bottom: 16
-          // }}
-          icons={[
-            {
-              name: "facebook",
-              href: "https://www.facebook.com/trenerrafalkiszlo/"
-            },
-            {
-              name: "instagram",
-              href: "https://www.instagram.com/trener_rafal_kiszlo/?hl=pl"
-            },
-            {
-              name: "linkedin",
-              href:
-                "https://www.linkedin.com/in/rafa%C5%82-kisz%C5%82o-7ab799153/"
-            }
-          ]}
-        />
-      </Section>
+      <a id="honoursAndAwards">Honours & Awards</a>
+      <Section center>
+        <h4>HONORS & AWARDS</h4>
+        <span>A list of honors and awards I have recieved for my work.</span>
+        <Item>
+          <span>2016</span>
+          <h6>BEST PROJECT (IN THE DIT PROJECT FAIR)</h6>
+          <p>SAP</p>
+        </Item>
+        <Item>
+          <span>2014</span>
+          <h6>GAMES STUDIO IRELAND CHALLENGE: BEST IN ORIGINAL STORY</h6>
+          <p>Games Fleadh</p>
+        </Item>
+        <Item>
+          <span>2010</span>
+          <h6>ACCESS ACCENTURE ACHIEVEMENT AWARD</h6>
+          <p>Accenture</p>
+        </Item>
+      </Section> */}
     </Content>
-  );
+  )
   return (
     <Layout location={props.location}>
       <NavBar main children={content.props.children} />
       {content}
     </Layout>
-  );
-};
+  )
+}
 
+export const pageQuery = graphql`
+  query IndexQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          timeToRead
+          excerpt(pruneLength: 120)
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            tags
+            image {
+              childImageSharp {
+                sizes(
+                  maxWidth: 500
+                  duotone: {
+                    highlight: "#333333"
+                    shadow: "#111111"
+                    opacity: 65
+                  }
+                  ) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    allImageSharp: allFile(filter: { relativePath: { regex: "/logos/" } }) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            sizes(maxWidth: 300, grayscale: true) {
+              ...GatsbyImageSharpSizes_tracedSVG
+            }
+          }
+        }
+      }
+    }
+    allFile(filter: { name: { regex: "/signature/" } }) {
+      edges {
+        node {
+          childImageSharp {
+            sizes(maxWidth: 200, grayscale: true) {
+              ...GatsbyImageSharpSizes_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }
+`

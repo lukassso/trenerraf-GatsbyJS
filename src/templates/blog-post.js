@@ -1,8 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import TimeAgo from 'react-timeago'
-// import { Flex, Box } from 'grid-styled'
 
 import Breadcrumb from '../components/breadcrumb'
 import Bar from '../components/bar'
@@ -80,17 +78,17 @@ export default ({ data, location }) => {
   return (
     <div>
       <Header>
-        <div flexWrap="wrap">
-          <div px={2} width={[1, 2 / 3, 1 / 3]}>
+        <Flex flexWrap="wrap">
+          <Box px={2} width={[1, 2 / 3, 1 / 3]}>
             <Title>{post.frontmatter.title}</Title>
-          </div>
-          <div px={2} width={[1, 2 / 3]}>
+          </Box>
+          <Box px={2} width={[1, 2 / 3]}>
             <Breadcrumb crumbs={crumbs} />
-          </div>
-          <div px={2} width={[1]}>
+          </Box>
+          <Box px={2} width={[1]}>
             <Bar />
-          </div>
-        </div>
+          </Box>
+        </Flex>
       </Header>
       <Content>
         <TimeToRead>{post.timeToRead} min read</TimeToRead>
