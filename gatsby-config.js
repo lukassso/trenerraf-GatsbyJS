@@ -3,7 +3,15 @@ module.exports = {
     title: `Trener Personalny Rafał Kiszło`
   },
   plugins: [
-    
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -12,8 +20,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-   
+
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -64,7 +71,6 @@ module.exports = {
         theme_color: "#405375",
         display: "minimal-ui"
       }
-    },
-   
+    }
   ]
 };

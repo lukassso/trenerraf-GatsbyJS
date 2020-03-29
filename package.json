@@ -1,18 +1,18 @@
 {
-  
   "name": "trenerraf",
   "description": "Gatsby",
   "version": "1.0.0",
   "author": "Lukasz Zatyka",
   "dependencies": {
     "@material-ui/core": "latest",
+    "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "latest",
     "gatsby": "latest",
-    "gatsby-plugin-material-ui": "latest",
     "gatsby-image": "latest",
     "gatsby-link": "latest",
     "gatsby-plugin-google-analytics": "latest",
     "gatsby-plugin-manifest": "latest",
+    "gatsby-plugin-material-ui": "latest",
     "gatsby-plugin-react-helmet": "latest",
     "gatsby-plugin-sharp": "latest",
     "gatsby-plugin-styled-components": "latest",
