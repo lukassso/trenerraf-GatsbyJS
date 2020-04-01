@@ -1,17 +1,19 @@
 import React from "react";
 import { graphql } from "gatsby";
-
 import Layout from "../layout";
+import { Grid, Paper, makeStyles } from '@material-ui/core';
 import NavBar from "../components/navBar";
 import { Container, Button } from "@material-ui/core";
 
-export default (props) => {
+const useStyles = makeStyles((theme) => ({
+
+}));
+
+export default function Index(props){
+  const classes = useStyles();
   const content = (
     <Container maxWidth="sm">
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
-      <div style={{ margin: 50 }}>
+        <div>
         <div>Stań się lepszą wersją siebie!</div>
       </div>
       <a id="experience">Doświadczenie</a>
@@ -34,8 +36,8 @@ export default (props) => {
     </Container>
   );
   return (
-    <Layout location={props.location}>
-      <NavBar main children={content.props.children} />
+    <Layout >
+      <NavBar />
       {content}
     </Layout>
   );

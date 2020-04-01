@@ -3,29 +3,12 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { Helmet } from 'react-helmet'
 // import styled, { createGlobalStyle } from 'styled-components'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from '@material-ui/core/styles';
 import Footer from '../components/footer';
-import theme from '../utils/theme';
-
-
-// const GlobalStyle = createGlobalStyle`
-
-//   @import "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
-//   body {
-//     font-family: "Montserrat";
-//     padding: 0;
-//     margin: 0;
-//   }
-//   *, *::before, *::after {
-//     box-sizing: border-box;
-//   }
-// `
-// const Content = styled.div`
-// `
+import theme from '../theme';
 
 const Layout = ({ location, children }) => {
   return (
-   
       <>
       {/* <GlobalStyle/> */}
       <Helmet
@@ -37,16 +20,16 @@ const Layout = ({ location, children }) => {
         ]}
       />
        <ThemeProvider theme={theme} >
-      <div>{children}</div>
-      {/* {location && location.pathname != '/404'} */}
+      {children}
+      {location && location.pathname != '/404'}
       <Footer/>
-     
     </ThemeProvider>
      </>
   )
 }
 Layout.propTypes = {
   children: PropTypes.node,
+  location: PropTypes.node
 };
 
 export default Layout
