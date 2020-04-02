@@ -1,44 +1,57 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import { Grid, Paper, makeStyles } from '@material-ui/core';
+import { Grid, Paper, withStyles } from "@material-ui/core";
 import NavBar from "../components/navBar";
 import { Container, Button } from "@material-ui/core";
+import About from "../components/about";
+import Hero from "../components/hero";
+import Experiences from "../components/experiences";
+import Testimodials from '../components/testimondials';
+import SuccessStory from '../components/successStory';
+import ContactWithMe from '../components/contactWithMe';
+import AskYourself from '../components/askYourself';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = theme => ({
+  root: {
+   display: 'flex',
+   flexDirection: 'column',
+   justifyContent: 'center'
+  },
+  wrapper: {
+    height: 300,
+    display: "block"
+  }
+});
 
-}));
-
-export default function Index(props){
-  const classes = useStyles();
+function Index(props) {
+  const { classes } = props;
   const content = (
-    <Container maxWidth="sm">
-        <div>
-        <div>Stań się lepszą wersją siebie!</div>
-      </div>
-      <a id="experience">Doświadczenie</a>
-      <div>
-        <div>Przebyte kursy i szkolenia</div>
-        <p>Zwycięzca w konkursie "Motywatory Fitness"</p>
-        <div>Nagrody i wyróżnienia</div>
-        <div>Partnerzy</div>
-      </div>
-      <a id="testimondial">Opinie</a>
-      <div dark>
-        <div dark>O mnie</div>
-      </div>
-      <div>Opinie Klientów</div>
-      <div dark>Zapytaj siebie</div>
-      <a id="success-story">Metamorfozy</a>
-      <div>Metamorfozy</div>
-      <a id="kontakt">Kontakt</a>
-      <div dark>Kontakt</div>
+    <React.Fragment>
+
+   
+    <Container className={classes.root}>
+      <Hero />
     </Container>
+      <a id="experience">Doświadczenie</a>
+      <Experiences />
+      <a id="testimondial">Opinie</a>
+
+      <About />
+     <Testimodials />
+     <AskYourself />
+      <a id="success-story">Metamorfozy</a>
+      <SuccessStory />
+      <a id="kontakt">Kontakt</a>
+      <ContactWithMe/>
+     </React.Fragment>
   );
   return (
-    <Layout >
+    <Layout>
       <NavBar />
       {content}
     </Layout>
   );
-};
+}
+
+export default withStyles(useStyles)(Index);

@@ -17,22 +17,17 @@ const useStyles = theme => ({
   }
 });
 
-function Testimondials(props) {
+function ContactWithMe(props) {
   const { classes } = props;
   return (
     <section className={classes.root}>
       <Container className={classes.container}>
         <Typography variant="h5" align="center">
-          <div>
-        <div>Przebyte kursy i szkolenia</div>
-        <p>Zwycięzca w konkursie "Motywatory Fitness"</p>
-        <div>Nagrody i wyróżnienia</div>
-        <div>Partnerzy</div>
-      </div>
+          Skontaktuj się ze mną
         </Typography>
       </Container>
     </section>
   );
 }
 
-export default withStyles(useStyles)(Testimondials);
+export default withStyles(useStyles)(ContactWithMe);

@@ -4,12 +4,12 @@ import { withStyles, Container, Typography } from "@material-ui/core";
 const useStyles = theme => ({
   root: {
     display: "flex",
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.background.default,
     overflow: "hidden"
   },
   container: {
-    marginTop: theme.spacing(10),
-    marginBottom: theme.spacing(15),
+    marginTop: theme.spacing(40),
+    marginBottom: theme.spacing(45),
     position: "relative",
     display: "flex",
     flexDirection: "column",
@@ -17,22 +17,17 @@ const useStyles = theme => ({
   }
 });
 
-function Testimondials(props) {
+function AskYourself(props) {
   const { classes } = props;
   return (
     <section className={classes.root}>
       <Container className={classes.container}>
         <Typography variant="h5" align="center">
-          <div>
-        <div>Przebyte kursy i szkolenia</div>
-        <p>Zwycięzca w konkursie "Motywatory Fitness"</p>
-        <div>Nagrody i wyróżnienia</div>
-        <div>Partnerzy</div>
-      </div>
+          dark Zapytaj siebie
         </Typography>
       </Container>
     </section>
   );
 }
 
-export default withStyles(useStyles)(Testimondials);
+export default withStyles(useStyles)(AskYourself);

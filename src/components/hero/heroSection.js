@@ -1,15 +1,33 @@
-import React from 'react';
-import Image from '../image';
+import React from "react";
+import { withStyles, Container, Typography } from "@material-ui/core";
 
-function HeroSection() {
+const useStyles = theme => ({
+  root: {
+    display: "flex",
+    backgroundColor: theme.palette.primary.light,
+    overflow: "hidden"
+  },
+  container: {
+    marginTop: theme.spacing(10),
+    marginBottom: theme.spacing(15),
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  }
+});
+
+function Hero(props) {
+  const { classes } = props;
   return (
-    <div>
-      sekcja hero
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-    </div>
+    <section className={classes.root}>
+      <Container className={classes.container}>
+        <Typography variant="h5" align="center">
+          Stań się lepszą wersją siebie!
+        </Typography>
+      </Container>
+    </section>
   );
 }
 
-export default HeroSection;
+export default withStyles(useStyles)(Hero);
