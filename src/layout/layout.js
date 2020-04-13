@@ -6,9 +6,7 @@ import { Helmet } from "react-helmet";
 import { ThemeProvider } from "@material-ui/core/styles";
 import Footer from "../components/footer";
 import theme from "../theme";
-import CssBaseline from '@material-ui/core/CssBaseline';
-
-
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 const Layout = ({ location, children }) => {
   return (
@@ -20,16 +18,19 @@ const Layout = ({ location, children }) => {
           {
             name: "description",
             content:
-              "Zapraszam na wspólne treningi na Mokotowie - Trener personalny Rafał Kiszło"
+              "Zapraszam na wspólne treningi na Mokotowie - Trener personalny Rafał Kiszło",
           },
           { name: "keywords", content: "Rafał Kiszło, strona www" },
           { name: "viewport", content: "width=device-width, initial-scale=1" },
         ]}
       >
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet"></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap"
+          rel="stylesheet"
+        ></link>
       </Helmet>
       <ThemeProvider theme={theme}>
-      <CssBaseline />
+        <CssBaseline />
         {children}
         {location && location.pathname != "/404"}
         <Footer />
@@ -39,7 +40,7 @@ const Layout = ({ location, children }) => {
 };
 Layout.propTypes = {
   children: PropTypes.node,
-  location: PropTypes.node
+  location: PropTypes.node,
 };
 
 export default Layout;

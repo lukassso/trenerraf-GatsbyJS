@@ -33,15 +33,17 @@ const theme = createMuiTheme({
     },
     primary: {
       light: "#213b87",
-      main: "#283766",
-      dark: "#122254"
+      main: "#000000",
+      dark: "#000000"
       
     },
     secondary: {
       main: "#FDC100"
     },
     background: {
-      default: "#F6F6F6"
+      default: "#ffffff",
+      dark: '#000000',
+      gray: '#f6f6f6'
     },
     warning: {
       main: "#ffd200"
@@ -72,14 +74,14 @@ const theme = createMuiTheme({
       A700: "#616161"
     },
     text: {
-      primary: "#283766",
-      secondary: "",
+      primary: "#000000",
+      secondary: "#ffffff",
       disabled: "rgba(0, 0, 0, 0.38)",
       hint: "#f6f6f6",
       disabled: "#f6f6f6"
     },
   },
-  spacing: 2,
+  spacing: 5,
   breakpoints: {
     keys: ["xs", "sm", "md", "lg", "xl"],
     up: key => `@media (min-width:${values[key]}px)`
@@ -97,7 +99,8 @@ const theme = createMuiTheme({
     },
     h3: {
       fontSize: "1.6rem",
-      lineHeight: 1.5
+      lineHeight: 1.5,
+      margin: '50px 10px 70px',
     },
     h4: {
       fontSize: "1.4rem",
@@ -109,8 +112,8 @@ const theme = createMuiTheme({
     },
     h6: {},
     button: {
-      color: "#122254",
-      bgColor: "#f2662b"
+      color: "#000000",
+      bgColor: "#FDC100"
     },
     subtitle1: {
       color: "#359cd6"
@@ -130,6 +133,13 @@ const theme = createMuiTheme({
       },
     },
   },
+  props: {
+    // withWidth component ⚛️
+    MuiWithWidth: {
+      // Initial width property
+      initialWidth: 'xs', // Breakpoint being globally set 🌎!
+    },
+  }
 });
 
 export default theme;

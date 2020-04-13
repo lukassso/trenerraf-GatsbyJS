@@ -1,38 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import { withStyles, Container, Typography } from "@material-ui/core";
 
-const useStyles = theme => ({
+const useStyles = (theme) => ({
   root: {
     display: "flex",
-    backgroundColor: theme.palette.primary.light,
-    overflow: "hidden"
+    backgroundColor: theme.palette.background.default,
   },
-  container: {
-    marginTop: theme.spacing(10),
-    marginBottom: theme.spacing(15),
-    position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  }
 });
+const data = [
+  {id: 1, testimondial: 'nnn', name: 'test test', position: 'testowe', picture: 'ddd'},
+  {id: 2, testimondial: 'nnn', name: 'test test', position: 'testowe', picture: 'ddd'}
+]
+class Testimondials extends Component {
+  render() {
+    const { classes } = this.props;
 
-function Testimondials(props) {
-  const { classes } = props;
-  return (
-    <section className={classes.root}>
-      <Container className={classes.container}>
-        <Typography variant="h5" align="center">
-          <div>
-        <div>Przebyte kursy i szkolenia</div>
-        <p>Zwycięzca w konkursie "Motywatory Fitness"</p>
-        <div>Nagrody i wyróżnienia</div>
-        <div>Partnerzy</div>
-      </div>
-        </Typography>
-      </Container>
-    </section>
-  );
+    return (
+      <section className={classes.root}>
+        <Container>
+          <Typography variant="h3" align="center">
+            Opinie Klientów
+          </Typography>
+        </Container>
+      </section>
+    );
+  }
 }
 
 export default withStyles(useStyles)(Testimondials);
