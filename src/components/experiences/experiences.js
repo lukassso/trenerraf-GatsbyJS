@@ -61,7 +61,14 @@ function Experienses(props) {
       }
     }
   `);
-
+ const experiencesList = [
+    { id: 1, name: "Trener Personalny", area: "Instruktor" },
+    { id: 2, name: "Trener Personalny", area: "Instruktor" },
+    { id: 3, name: "Trener Personalny", area: "Instruktor" },
+    { id: 4, name: "Trener Personalny", area: "Instruktor" },
+    { id: 5, name: "Trener Personalny", area: "Instruktor" },
+    { id: 7, name: "Trener Personalny", area: "Instruktor" },
+  ];
   const ExperienceMap = (props) => {
     return experiencesList.map((experience) => (
       <Grid key={experience.id} className={classes.expItem} item xs={6} sm={4}>
@@ -75,14 +82,7 @@ function Experienses(props) {
     ));
   };
  
-  const experiencesList = [
-    { id: 1, name: "Trener Personalny", area: "Instruktor" },
-    { id: 2, name: "Trener Personalny", area: "Instruktor" },
-    { id: 3, name: "Trener Personalny", area: "Instruktor" },
-    { id: 4, name: "Trener Personalny", area: "Instruktor" },
-    { id: 5, name: "Trener Personalny", area: "Instruktor" },
-    { id: 7, name: "Trener Personalny", area: "Instruktor" },
-  ];
+ 
 
   return (
     <section className={classes.root}>

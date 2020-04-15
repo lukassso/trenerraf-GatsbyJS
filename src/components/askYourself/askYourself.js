@@ -1,30 +1,75 @@
 import React from "react";
-import { withStyles, Container, Typography } from "@material-ui/core";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import {
+  withStyles,
+  Container,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+  Button,
+  Box
+} from "@material-ui/core";
 
-const useStyles = theme => ({
+const useStyles = (theme) => ({
   root: {
-    display: "flex",
-    backgroundColor: theme.palette.background.default,
-    overflow: "hidden"
+    backgroundColor: theme.palette.background.dark,
+    // overflow: "hidden",
+    color: theme.palette.text.secondary,
   },
-  container: {
-    marginTop: theme.spacing(40),
-    marginBottom: theme.spacing(45),
-    position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  }
+  pictureHeader: {
+    position: "absolute",
+    top: 50,
+  },
 });
 
 function AskYourself(props) {
   const { classes } = props;
+  const data = useStaticQuery(graphql`
+    query {
+      pic4: file(relativePath: { eq: "pages/images/trener-rafal-bcg4.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 570, maxHeight: 360) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
   return (
     <section className={classes.root}>
-      <Container className={classes.container}>
-        <Typography variant="h5" align="center">
-          dark Zapytaj siebie
+      <Container maxWidth={"sm"}>
+        <Typography variant="h3" align="center">
+          Zapytaj siebie
         </Typography>
+        <List>
+          <ListItem>
+            <ListItemText>
+              Zastanawiasz się jak zmienić proporcje swojego ciała?
+            </ListItemText>
+            <ListItemText>
+              Masz problem z nadmiarem tkanki tłuszczowej?
+            </ListItemText>
+            <ListItemText>Chcesz zbudować masę mięśniową?</ListItemText>
+          </ListItem>
+        </List>
+        <Typography variant="h5" color="initial">
+          Skontaktuj się, a pomogę Ci wyznaczyć mierzalne cele oraz w pełni je
+          zrealizować.
+        </Typography>
+        <Box textAlign="center">
+          <Button variant="contained" color="secondary">
+            Przejdź do kontaktu
+          </Button>
+        </Box>
+      </Container>
+      <Container style={{ position: "relative" }} maxWidth="sm">
+        <Img
+          className={classes.pictureHeader}
+          fluid={data.pic4.childImageSharp.fluid}
+          alt=""
+        />
       </Container>
     </section>
   );
