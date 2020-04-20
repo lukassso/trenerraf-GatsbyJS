@@ -7,6 +7,7 @@
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "latest",
+    "clsx": "^1.1.0",
     "gatsby": "latest",
     "gatsby-image": "latest",
     "gatsby-link": "latest",
@@ -23,8 +24,10 @@
     "react": "latest",
     "react-dom": "latest",
     "react-helmet": "latest",
+    "react-slick": "^0.25.2",
     "react-typist": "latest",
     "scroll-to-element": "latest",
+    "slick-carousel": "^1.8.1",
     "styled-components": "latest"
   },
   "keywords": [

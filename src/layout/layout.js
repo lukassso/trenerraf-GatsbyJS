@@ -10,7 +10,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 const Layout = ({ location, children }) => {
   return (
-    <>
+    <React.Fragment>
       {/* <GlobalStyle/> */}
       <Helmet
         title="Rafał Kiszło - Trener personalny Mokotów"
@@ -26,6 +26,8 @@ const Layout = ({ location, children }) => {
       >
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap"
+          // rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          // rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           rel="stylesheet"
         ></link>
       </Helmet>
@@ -35,7 +37,7 @@ const Layout = ({ location, children }) => {
         {location && location.pathname != "/404"}
         <Footer />
       </ThemeProvider>
-    </>
+    </React.Fragment>
   );
 };
 Layout.propTypes = {

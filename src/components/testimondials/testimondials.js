@@ -93,8 +93,7 @@ class Testimondials extends Component {
     };
 
     return (
-      <section className={classes.root}>
-        <Container maxWidth="sm">
+        <Container component="section" className={classes.root} maxWidth="lg">
           <Typography variant="h3" align="center">
             Opinie Klientów
           </Typography>
@@ -105,7 +104,6 @@ class Testimondials extends Component {
             </Button>
           </Box>
         </Container>
-      </section>
     );
   }
 }

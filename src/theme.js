@@ -100,7 +100,7 @@ const theme = createMuiTheme({
     h3: {
       fontSize: "1.6rem",
       lineHeight: 1.5,
-      margin: '50px 10px 70px',
+      padding: '50px 10px 70px',
     },
     h4: {
       fontSize: "1.4rem",

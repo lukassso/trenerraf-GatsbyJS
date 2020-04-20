@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import { Grid, Paper, withStyles } from "@material-ui/core";
 import NavBar from "../components/navBar";
 import { Container, Button } from "@material-ui/core";
 import About from "../components/about";
@@ -11,6 +10,7 @@ import Testimondials from "../components/testimondials";
 import SuccessStory from "../components/successStory";
 import ContactWithMe from "../components/contactWithMe";
 import AskYourself from "../components/askYourself";
+
 
 // const useStyles = (theme) => ({
 //   root: {
@@ -43,10 +43,12 @@ function Index(props) {
     </React.Fragment>
   );
   return (
+   
     <Layout>
       <NavBar />
       {content}
     </Layout>
+
   );
 }
 

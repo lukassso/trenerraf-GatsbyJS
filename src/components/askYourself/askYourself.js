@@ -9,7 +9,7 @@ import {
   ListItem,
   ListItemText,
   Button,
-  Box
+  Box,
 } from "@material-ui/core";
 
 const useStyles = (theme) => ({
@@ -30,7 +30,7 @@ function AskYourself(props) {
     query {
       pic4: file(relativePath: { eq: "pages/images/trener-rafal-bcg4.png" }) {
         childImageSharp {
-          fluid(maxWidth: 570, maxHeight: 360) {
+          fluid(maxWidth: 570, maxHeight: 398) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -38,7 +38,7 @@ function AskYourself(props) {
     }
   `);
   return (
-    <section className={classes.root}>
+    <Box className={classes.root} component="section">
       <Container maxWidth={"sm"}>
         <Typography variant="h3" align="center">
           Zapytaj siebie
@@ -71,7 +71,7 @@ function AskYourself(props) {
           alt=""
         />
       </Container>
-    </section>
+    </Box>
   );
 }
 
