@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import clsx from "clsx";
+import { dataStories } from "./dataStories";
 import {
   withStyles,
   Container,
@@ -80,9 +81,16 @@ function SuccessStory(props) {
   };
   const data = useStaticQuery(graphql`
     query {
-      pic5: file(relativePath: { eq: "pages/images/successStory1.png" }) {
+      pic5: file(relativePath: { eq: "components/successStory/images/1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 570, maxHeight: 398) {
+          fluid(maxWidth: 743, maxHeight: 533) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      pic6: file(relativePath: { eq: "components/successStory/images/2.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 743, maxHeight: 533) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -98,88 +106,14 @@ function SuccessStory(props) {
       />
     );
   };
-  const storyData = [
-    {
-      id: "1",
-      image: "data.pic5.childImageSharp.fluid",
-      name: "Kasia",
-      weight: "-40",
-      cardTeaser: "cardTeaser",
-      text: "text sample",
-      name: "name name",
-    },
-      {
-      id: "2",
-      image: "link or tag",
-      name: "Kasia",
-      weight: "-40",
-      cardTeaser: "cardTeaser",
-      text: "text sample",
-      name: "name name",
-    },
-     {
-      id: "3",
-      image: "link or tag",
-      name: "Kasia",
-      weight: "-40",
-      cardTeaser: "cardTeaser",
-      text: "text sample",
-      name: "name name",
-    },
-  ];
-  const StoryItems = () => (
-    // const classes = props;
-    storyData.map((story) => (
-      <div>
-      <Card className={classes.cardWrapper}>
-        {/* <CardMedia key={story.id} title={story.name} image={story.image}> */}
-          <Img
-            className={classes.pictureHeader}
-            fluid={data.pic5.childImageSharp.fluid}
-            component="img"
-            alt="Contemplative Reptile"
-          />
-        {/* </CardMedia> */}
-        <CardContent key={story.id} className={classes.cardTeaser}>
-          <Typography key={story.id} variant="h2" color="initial">
-            {story.weight}
-          </Typography>
-          <Typography key={story.name} variant="body1" color="initial">
-            {story.name}
-          </Typography>
-          {story.cardTeaser}
-        </CardContent>
-        <CardActions key={story.id} disableSpacing>
-          <IconButton key={story.id} aria-label="add to favorites">
-            <FavoriteIcon key={story.id} />
-          </IconButton>
-          <IconButton key={story.id} aria-label="share">
-            <ShareIcon />
-          </IconButton>
-          <IconButton
-            key={story.id}
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon key={story.id} />
-          </IconButton>
-        </CardActions>
-        <Collapse key={story.id} in={expanded} timeout="auto" unmountOnExit>
-          <CardContent key={story.id}>
-            <Typography key={story.id} paragraph>
-              {story.text}
-            </Typography>
-          </CardContent>
-        </Collapse>
-      </Card>
-      </div>
-    ))
-  )
- 
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+  };
   return (
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg">
@@ -190,24 +124,72 @@ function SuccessStory(props) {
           Oni odnieśli sukces
         </Typography>
 
-        <Container maxWidth='sm' className={classes.test}>
-          <Slider
-            className={classes.sliderWrapper}
-            dots={true}
-            slidesToShow={1}
-            slidesToScroll={1}
-            // autoplay={true}
-            // autoplaySpeed={3000}
-            speed={500}
-            // centerMode={true}
-            infinite={true}
-          >
-            <div>
-
-            <StoryItems />
-            </div>
+        <div className={classes.test}>
+          <Slider {...settings}>
+            {dataStories.map((story) => (
+              <Container maxWidth="xs">
+                <Card className={classes.cardWrapper}>
+                  <CardMedia
+                    key={story.id}
+                    title={story.name}
+                    // image={story.image}
+                  >
+                    <Img
+                      className={classes.pictureHeader}
+                      fluid={data.pic6.childImageSharp.fluid}
+                      component="img"
+                      alt="Contemplative Reptile"
+                    />
+                  </CardMedia>
+                  <CardContent key={story.id} className={classes.cardTeaser}>
+                    <Typography key={story.id} variant="h2" color="initial">
+                      {story.weight}
+                    </Typography>
+                    <Typography
+                      key={story.name}
+                      variant="body1"
+                      color="initial"
+                    >
+                      {story.name}
+                    </Typography>
+                    {story.cardTeaser}
+                  </CardContent>
+                  <CardActions key={story.id} disableSpacing>
+                    <IconButton key={story.id} aria-label="add to favorites">
+                      <FavoriteIcon key={story.id} />
+                    </IconButton>
+                    <IconButton key={story.id} aria-label="share">
+                      <ShareIcon />
+                    </IconButton>
+                    <IconButton
+                      key={story.id}
+                      className={clsx(classes.expand, {
+                        [classes.expandOpen]: expanded,
+                      })}
+                      onClick={handleExpandClick}
+                      aria-expanded={expanded}
+                      aria-label="show more"
+                    >
+                      <ExpandMoreIcon key={story.id} />
+                    </IconButton>
+                  </CardActions>
+                  <Collapse
+                    key={story.id}
+                    in={expanded}
+                    timeout="auto"
+                    unmountOnExit
+                  >
+                    <CardContent key={story.id}>
+                      <Typography key={story.id} paragraph>
+                        {story.text}
+                      </Typography>
+                    </CardContent>
+                  </Collapse>
+                </Card>
+              </Container>
+            ))}
           </Slider>
-        </Container>
+        </div>
       </Container>
     </Box>
   );
