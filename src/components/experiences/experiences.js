@@ -1,6 +1,6 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import {
   withStyles,
   Container,
@@ -8,41 +8,41 @@ import {
   Grid,
   Box,
   Paper,
-} from "@material-ui/core";
+} from '@material-ui/core'
 
 const useStyles = (theme) => ({
   root: {
     backgroundColor: theme.palette.background.gray,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   expHeader: {
-    textAlign: "center",
+    textAlign: 'center',
   },
 
   expPaper: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     borderColor: theme.palette.primary.main,
-    position: "relative",
-    [theme.breakpoints.down("sm")]: {
+    position: 'relative',
+    [theme.breakpoints.down('sm')]: {
       minHeight: 120,
       margin: 10,
       padding: 25,
-      "& h5": {
+      '& h5': {
         fontWeight: 600,
-        textAlign: "center",
+        textAlign: 'center',
       },
-      "& span": {
-        position: "absolute",
+      '& span': {
+        position: 'absolute',
         bottom: 20,
       },
     },
   },
-});
+})
 
 function Experienses(props) {
-  const { classes } = props;
+  const { classes } = props
   const data = useStaticQuery(graphql`
     query {
       pic1: file(relativePath: { eq: "pages/images/superfm-1.png" }) {
@@ -60,15 +60,15 @@ function Experienses(props) {
         }
       }
     }
-  `);
- const experiencesList = [
-    { id: 1, name: "Trener Personalny", area: "Instruktor" },
-    { id: 2, name: "Trener Personalny", area: "Instruktor" },
-    { id: 3, name: "Trener Personalny", area: "Instruktor" },
-    { id: 4, name: "Trener Personalny", area: "Instruktor" },
-    { id: 5, name: "Trener Personalny", area: "Instruktor" },
-    { id: 7, name: "Trener Personalny", area: "Instruktor" },
-  ];
+  `)
+  const experiencesList = [
+    { id: 1, name: 'Trener Personalny', area: 'Instruktor' },
+    { id: 2, name: 'Trener Personalny', area: 'Instruktor' },
+    { id: 3, name: 'Trener Personalny', area: 'Instruktor' },
+    { id: 4, name: 'Trener Personalny', area: 'Instruktor' },
+    { id: 5, name: 'Trener Personalny', area: 'Instruktor' },
+    { id: 7, name: 'Trener Personalny', area: 'Instruktor' },
+  ]
   const ExperienceMap = (props) => {
     return experiencesList.map((experience) => (
       <Grid key={experience.id} className={classes.expItem} item xs={6} sm={4}>
@@ -79,10 +79,8 @@ function Experienses(props) {
           <Typography key={experience.area}>{experience.area}</Typography>
         </Paper>
       </Grid>
-    ));
-  };
- 
- 
+    ))
+  }
 
   return (
     <section className={classes.root}>
@@ -121,10 +119,7 @@ function Experienses(props) {
       </Container>
       {/* </Box> */}
     </section>
-  );
-  
+  )
 }
 
- 
-
-export default withStyles(useStyles)(Experienses);
+export default withStyles(useStyles)(Experienses)

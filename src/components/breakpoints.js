@@ -1,7 +1,7 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import { green } from '@material-ui/core/colors';
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
+import { green } from '@material-ui/core/colors'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,17 +14,17 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('lg')]: {
       backgroundColor: green[500],
-    },  
+    },
   },
-}));
+}))
 
 export default function MediaQuery() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.root}>
       <Typography variant="subtitle1">{'down(sm): red'}</Typography>
       <Typography variant="subtitle1">{'up(md): blue'}</Typography>
       <Typography variant="subtitle1">{'up(lg): green'}</Typography>
     </div>
-  );
+  )
 }

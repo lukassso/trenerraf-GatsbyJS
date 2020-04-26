@@ -2,10 +2,7 @@ import React from 'react'
 // import styled, { css } from 'styled-components'
 // import FontAwesome from 'react-fontawesome'
 
-const Icon = ({ name, href }) => (
-  <a href={href}>
-  </a>
-)
+const Icon = ({ name, href }) => <a href={href}></a>
 
 // const Base = styled.div`
 //   margin: 20px 0;
@@ -34,7 +31,7 @@ const Icon = ({ name, href }) => (
 
 class SocialIcons extends React.Component {
   render() {
-    const icons = this.props.icons.map(function(icon) {
+    const icons = this.props.icons.map(function (icon) {
       return <div key={icon.name} name={icon.name} href={icon.href} />
     })
     return <div {...this.props}>{icons}</div>

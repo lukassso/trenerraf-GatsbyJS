@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { dataTestimondials } from "./dataTestimondials";
+import React, { Component } from 'react'
+import { dataTestimondials } from './dataTestimondials'
 import {
   withStyles,
   Container,
@@ -12,7 +12,7 @@ import {
   ListItemAvatar,
   ListItemText,
   Button,
-} from "@material-ui/core";
+} from '@material-ui/core'
 
 const useStyles = (theme) => ({
   root: {
@@ -25,10 +25,10 @@ const useStyles = (theme) => ({
     width: theme.spacing(10),
     height: theme.spacing(10),
   },
-});
+})
 class Testimondials extends Component {
   render() {
-    const { classes } = this.props;
+    const { classes } = this.props
 
     const Opinion = (props) => {
       return dataTestimondials.map((testimondial, index) => (
@@ -38,14 +38,14 @@ class Testimondials extends Component {
             <ListItem>
               <ListItemAvatar>
                 <Avatar
-                key={testimondial.name}
+                  key={testimondial.name}
                   alt={testimondial.name}
                   src={require(`${testimondial.picture}`)}
                   className={classes.small}
                 />
               </ListItemAvatar>
               <ListItemText
-              key={testimondial.name}
+                key={testimondial.name}
                 primary={testimondial.name}
                 secondary={
                   <React.Fragment>
@@ -63,27 +63,27 @@ class Testimondials extends Component {
             </ListItem>
           </List>
         </Box>
-      ));
-    };
+      ))
+    }
 
     return (
       <Container component="section" className={classes.root} maxWidth="lg">
-        <Box  display='flex' alignItems="center" flexDirection="column">
-        <Typography variant="h3" align="center">
-          Opinie Klientów
-        </Typography>
         <Box display="flex" alignItems="center" flexDirection="column">
-          <Opinion />
-        </Box>
-        <Box textAlign="center">
-          <Button variant="contained" color="primary">
-            Wyświetl więcej
-          </Button>
-        </Box>
+          <Typography variant="h3" align="center">
+            Opinie Klientów
+          </Typography>
+          <Box display="flex" alignItems="center" flexDirection="column">
+            <Opinion />
+          </Box>
+          <Box textAlign="center">
+            <Button variant="contained" color="primary">
+              Wyświetl więcej
+            </Button>
+          </Box>
         </Box>
       </Container>
-    );
+    )
   }
 }
 
-export default withStyles(useStyles)(Testimondials);
+export default withStyles(useStyles)(Testimondials)

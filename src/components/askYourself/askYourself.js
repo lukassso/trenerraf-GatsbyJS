@@ -1,6 +1,6 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import {
   withStyles,
   Container,
@@ -10,7 +10,7 @@ import {
   ListItemText,
   Button,
   Box,
-} from "@material-ui/core";
+} from '@material-ui/core'
 
 const useStyles = (theme) => ({
   root: {
@@ -19,13 +19,13 @@ const useStyles = (theme) => ({
     color: theme.palette.text.secondary,
   },
   pictureHeader: {
-    position: "absolute",
+    position: 'absolute',
     top: 50,
   },
-});
+})
 
 function AskYourself(props) {
-  const { classes } = props;
+  const { classes } = props
   const data = useStaticQuery(graphql`
     query {
       pic4: file(relativePath: { eq: "pages/images/trener-rafal-bcg4.png" }) {
@@ -36,10 +36,10 @@ function AskYourself(props) {
         }
       }
     }
-  `);
+  `)
   return (
     <Box className={classes.root} component="section">
-      <Container maxWidth={"sm"}>
+      <Container maxWidth={'sm'}>
         <Typography variant="h3" align="center">
           Zapytaj siebie
         </Typography>
@@ -64,7 +64,7 @@ function AskYourself(props) {
           </Button>
         </Box>
       </Container>
-      <Container style={{ position: "relative" }} maxWidth="sm">
+      <Container style={{ position: 'relative' }} maxWidth="sm">
         <Img
           className={classes.pictureHeader}
           fluid={data.pic4.childImageSharp.fluid}
@@ -72,7 +72,7 @@ function AskYourself(props) {
         />
       </Container>
     </Box>
-  );
+  )
 }
 
-export default withStyles(useStyles)(AskYourself);
+export default withStyles(useStyles)(AskYourself)

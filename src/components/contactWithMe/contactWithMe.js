@@ -1,33 +1,55 @@
-import React from "react";
-import { withStyles, Container, Typography } from "@material-ui/core";
+import React from 'react'
+import clsx from 'clsx'
+import { withStyles, Container, Typography, Box, Grid } from '@material-ui/core'
+import ContactPhoneIcon from '@material-ui/icons/ContactPhone'
+import ContactMailIcon from '@material-ui/icons/ContactMail'
+import PlaceIcon from '@material-ui/icons/Place'
+import FacebookIcon from '@material-ui/icons/Facebook'
 
-const useStyles = theme => ({
+const useStyles = (theme) => ({
   root: {
-    display: "flex",
+    width: '100%',
     backgroundColor: theme.palette.primary.light,
-    overflow: "hidden"
+    overflow: 'hidden',
   },
-  container: {
-    marginTop: theme.spacing(10),
-    marginBottom: theme.spacing(15),
-    position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  }
-});
+  yellowWrapper: {
+    backgroundColor: theme.palette.background.yellow,
+    padding: 20,
+  },
+  blackWrapper: {
+    backgroundColor: theme.palette.background.dark,
+    color: theme.palette.text.secondary,
+  },
+})
 
 function ContactWithMe(props) {
-  const { classes } = props;
+  const { classes } = props
   return (
-    <section className={classes.root}>
-      <Container className={classes.container}>
-        <Typography variant="h5" align="center">
-          Skontaktuj się ze mną
+    <React.Fragment>
+      <section className={classes.root}>
+        <Box className={classes.yellowWrapper}>
+          <Typography variant="h5" align="center">
+            Skontaktuj się ze mną
+          </Typography>
+        </Box>
+      </section>
+      <section className={clsx(classes.root, classes.blackWrapper)}>
+        <Grid container spacing={1}>
+          <Grid item xs={12}>
+            <Box display="flex">
+              <ContactPhoneIcon />
+              <Typography variant="body1" color="initial">
+                + 48 893 323 323
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+        <Typography variant="body1" color="initial">
+          telefon
         </Typography>
-      </Container>
-    </section>
-  );
+      </section>
+    </React.Fragment>
+  )
 }
 
-export default withStyles(useStyles)(ContactWithMe);
+export default withStyles(useStyles)(ContactWithMe)

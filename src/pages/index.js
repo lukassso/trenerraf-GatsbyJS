@@ -1,16 +1,15 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../layout";
-import NavBar from "../components/navBar";
-import { Container, Button } from "@material-ui/core";
-import About from "../components/about";
-import Hero from "../components/hero";
-import Experiences from "../components/experiences";
-import Testimondials from "../components/testimondials";
-import SuccessStory from "../components/successStory";
-import ContactWithMe from "../components/contactWithMe";
-import AskYourself from "../components/askYourself";
-
+import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../layout'
+import NavBar from '../components/navBar'
+import { Container, Button } from '@material-ui/core'
+import About from '../components/about'
+import Hero from '../components/hero'
+import Experiences from '../components/experiences'
+import Testimondials from '../components/testimondials'
+import SuccessStory from '../components/successStory'
+// import ContactWithMe from "../components/contactWithMe";
+import AskYourself from '../components/askYourself'
 
 // const useStyles = (theme) => ({
 //   root: {
@@ -39,18 +38,16 @@ function Index(props) {
       <a id="success-story">Metamorfozy</a>
       <SuccessStory />
       <a id="kontakt">Kontakt</a>
-      <ContactWithMe />
+      {/* <ContactWithMe /> */}
     </React.Fragment>
-  );
+  )
   return (
-   
     <Layout>
       <NavBar />
       {content}
     </Layout>
-
-  );
+  )
 }
 
 // export default withStyles(useStyles)(Index);
-export default Index;
+export default Index

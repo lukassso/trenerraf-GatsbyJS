@@ -1,9 +1,9 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-const LogoImage = () =>  {
-   const data = useStaticQuery(graphql`
+const LogoImage = () => {
+  const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "logo-trenerrafal1.png" }) {
         childImageSharp {

@@ -1,7 +1,7 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { withStyles, Container, Typography, Box } from "@material-ui/core";
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import { withStyles, Container, Typography, Box } from '@material-ui/core'
 
 const useStyles = (theme) => ({
   root: {
@@ -10,13 +10,13 @@ const useStyles = (theme) => ({
     color: theme.palette.text.secondary,
   },
   pictureHeader: {
-    position: "absolute",
+    position: 'absolute',
     top: 50,
   },
-});
+})
 
 function About(props) {
-  const { classes } = props;
+  const { classes } = props
   const data = useStaticQuery(graphql`
     query {
       pic3: file(relativePath: { eq: "pages/images/trener-rafal-bcg3.png" }) {
@@ -27,7 +27,7 @@ function About(props) {
         }
       }
     }
-  `);
+  `)
   return (
     <section className={classes.root}>
       <Container maxWidth="sm">
@@ -57,7 +57,7 @@ function About(props) {
           był atrakcyjny dla Ciebie. Zapraszam do współpracy!
         </Typography>
       </Container>
-      <Container style={{ position: "relative" }} maxWidth="sm">
+      <Container style={{ position: 'relative' }} maxWidth="sm">
         <Img
           className={classes.pictureHeader}
           fluid={data.pic3.childImageSharp.fluid}
@@ -65,7 +65,7 @@ function About(props) {
         />
       </Container>
     </section>
-  );
+  )
 }
 
-export default withStyles(useStyles)(About);
+export default withStyles(useStyles)(About)

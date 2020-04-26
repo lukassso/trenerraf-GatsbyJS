@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import clsx from "clsx";
-import { dataStories } from "./dataStories";
+import React, { Component } from 'react'
+import Slider from 'react-slick'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import clsx from 'clsx'
+import { dataStories } from './dataStories'
 import {
   withStyles,
   Container,
@@ -17,28 +17,41 @@ import {
   Avatar,
   IconButton,
   Collapse,
-} from "@material-ui/core";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { MoreVert as MoreVertIcon } from "@material-ui/icons";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-// import MoreVertIcon from '@material-ui/icons/MoreVert';
+} from '@material-ui/core'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+// import { MoreVert as MoreVertIcon } from '@material-ui/icons'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+// import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline'
 
 const useStyles = (theme) => ({
   root: {
+    '& .slick-next': {
+      // backgroundColor: theme.palette.background.dark,
+      // backgroundImage: PlayCircleOutlineIcon,
+    },
     // display: "flex",
     // flexDirection: "column",
-    backgroundColor: theme.palette.background.white,
+    // backgroundColor: theme.palette.background.white,
 
-    overflow: "hidden",
-    "& h3": {
+    overflow: 'hidden',
+    '& h3': {
       paddingBottom: 10,
     },
-    "& h4": {
-      padding: "5px 0 20px",
+    '& h4': {
+      padding: '5px 0 20px',
     },
+  },
+  expand: {
+    display: 'block',
+    margin: '0 auto',
+    transform: 'rotate(0deg)',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
   },
   cardWrapper: {
     marginTop: 20,
@@ -57,38 +70,53 @@ const useStyles = (theme) => ({
   //   alignItems: "center",
   // },
   test: {
-    position: "relative",
-    color: "#5d5d5d",
-    "& div": {
-      // display: 'flex',
-      // backgroundColor: theme.palette.primary.light,
+    position: 'relative',
+    // color: '#5d5d5d',
+    // '& div': {
+    //     // display: 'flex',
+    //     // backgroundColor: theme.palette.primary.light,
+    // },
+    // '& h3': {
+    //     color: '#5d5d5d',
+    // },
+    '& .slick-next': {
+      right: -10,
+      top: 230,
     },
-    "& h3": {
-      color: "#5d5d5d",
+    '& .slick-prev': {
+      left: -10,
+      top: 230,
     },
-    "& button": {
-      backgroundColor: "#5d5d",
+    '& .slick-next:before, .slick-prev:before': {
+      color: theme.palette.gray[300],
     },
   },
-});
+})
 
 function SuccessStory(props) {
-  const { classes } = props;
-  const [expanded, setExpanded] = React.useState(false);
+  const { classes } = props
+  const [expanded, setExpanded] = React.useState(false)
 
   const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+    setExpanded(!expanded)
+  }
   const data = useStaticQuery(graphql`
     query {
-      pic5: file(relativePath: { eq: "components/successStory/images/1.png" }) {
+      pic4: file(relativePath: { eq: "components/successStory/images/1.png" }) {
         childImageSharp {
           fluid(maxWidth: 743, maxHeight: 533) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      pic6: file(relativePath: { eq: "components/successStory/images/2.png" }) {
+      pic5: file(relativePath: { eq: "components/successStory/images/2.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 743, maxHeight: 533) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      pic6: file(relativePath: { eq: "components/successStory/images/3.png" }) {
         childImageSharp {
           fluid(maxWidth: 743, maxHeight: 533) {
             ...GatsbyImageSharpFluid
@@ -96,7 +124,7 @@ function SuccessStory(props) {
         }
       }
     }
-  `);
+  `)
   const Test = () => {
     return (
       <Img
@@ -104,19 +132,48 @@ function SuccessStory(props) {
         fluid={data.pic5.childImageSharp.fluid}
         alt=""
       />
-    );
-  };
+    )
+  }
 
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-  };
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    responsive: [
+      // {
+      //   breakpoint: 1024,
+      //   settings: {
+      //     slidesToShow: 2,
+      //     slidesToScroll: 1,
+      //     infinite: true,
+      //     dots: true,
+      //   },
+      // },
+      {
+        breakpoint: 2000,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  }
+
   return (
     <Box component="section" className={classes.root}>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <Typography variant="h3" align="center">
           Metamorfozy
         </Typography>
@@ -142,26 +199,41 @@ function SuccessStory(props) {
                     />
                   </CardMedia>
                   <CardContent key={story.id} className={classes.cardTeaser}>
-                    <Typography key={story.id} variant="h2" color="initial">
+                    <Typography
+                      align="center"
+                      key={story.id}
+                      variant="h2"
+                      component="p"
+                      color="initial"
+                    >
                       {story.weight}
                     </Typography>
                     <Typography
+                      align="center"
                       key={story.name}
-                      variant="body1"
+                      variant="h5"
+                      component="p"
                       color="initial"
                     >
                       {story.name}
                     </Typography>
-                    {story.cardTeaser}
+                    <Typography
+                      style={{ marginTop: 10 }}
+                      variant="body1"
+                      color="initial"
+                    >
+                      {story.cardTeaser}
+                    </Typography>
                   </CardContent>
                   <CardActions key={story.id} disableSpacing>
-                    <IconButton key={story.id} aria-label="add to favorites">
+                    {/* <IconButton key={story.id} aria-label="add to favorites">
                       <FavoriteIcon key={story.id} />
                     </IconButton>
                     <IconButton key={story.id} aria-label="share">
                       <ShareIcon />
-                    </IconButton>
+                    </IconButton> */}
                     <IconButton
+                      // style={{ display: 'flex', justifyContent: 'center' }}
                       key={story.id}
                       className={clsx(classes.expand, {
                         [classes.expandOpen]: expanded,
@@ -192,7 +264,7 @@ function SuccessStory(props) {
         </div>
       </Container>
     </Box>
-  );
+  )
 }
 
-export default withStyles(useStyles)(SuccessStory);
+export default withStyles(useStyles)(SuccessStory)

@@ -1,1 +1,1 @@
-export {default} from './contactWithMe';
+export { default } from './contactWithMe'

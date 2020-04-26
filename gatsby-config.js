@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Trener Personalny Rafał Kiszło`
+    title: `Trener Personalny Rafał Kiszło`,
   },
   plugins: [
     {
@@ -16,8 +16,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src/`
-      }
+        path: `${__dirname}/src/`,
+      },
     },
     `gatsby-plugin-react-helmet`,
 
@@ -49,28 +49,28 @@ module.exports = {
               // will be rendered at 50px.
               //
               // Defaults to false.
-              sizeByPixelDensity: false
-            }
-          }
-        ]
-      }
+              sizeByPixelDensity: false,
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: ``
-      }
+        trackingId: ``,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Rafał Kiszło - trener personalny Mokotów",
-        short_name: "Rafał Kiszło",
-        start_url: "/",
-        background_color: "#292929",
-        theme_color: "#405375",
-        display: "minimal-ui"
-      }
-    }
-  ]
-};
+        name: 'Rafał Kiszło - trener personalny Mokotów',
+        short_name: 'Rafał Kiszło',
+        start_url: '/',
+        background_color: '#292929',
+        theme_color: '#405375',
+        display: 'minimal-ui',
+      },
+    },
+  ],
+}
