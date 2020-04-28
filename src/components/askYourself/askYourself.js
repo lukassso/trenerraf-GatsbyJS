@@ -17,6 +17,9 @@ const useStyles = (theme) => ({
     backgroundColor: theme.palette.background.dark,
     // overflow: "hidden",
     color: theme.palette.text.secondary,
+    paddingTop: 80,
+    paddingBottom: 80,
+    maxHeight: 600,
   },
   pictureHeader: {
     position: 'absolute',
@@ -40,25 +43,31 @@ function AskYourself(props) {
   return (
     <Box className={classes.root} component="section">
       <Container maxWidth={'sm'}>
-        <Typography variant="h3" align="center">
-          Zapytaj siebie
-        </Typography>
-        <List>
-          <ListItem>
-            <ListItemText>
-              Zastanawiasz się jak zmienić proporcje swojego ciała?
-            </ListItemText>
-            <ListItemText>
-              Masz problem z nadmiarem tkanki tłuszczowej?
-            </ListItemText>
-            <ListItemText>Chcesz zbudować masę mięśniową?</ListItemText>
-          </ListItem>
-        </List>
-        <Typography variant="h5" color="initial">
-          Skontaktuj się, a pomogę Ci wyznaczyć mierzalne cele oraz w pełni je
-          zrealizować.
-        </Typography>
-        <Box textAlign="center">
+        <Box mb={5}>
+          <Typography variant="h3" align="center">
+            Zapytaj siebie
+          </Typography>
+        </Box>
+        <Box pt={5} pb={5}>
+          <List>
+            <ListItem>
+              <ListItemText>
+                Zastanawiasz się jak zmienić proporcje swojego ciała?
+              </ListItemText>
+              <ListItemText>
+                Masz problem z nadmiarem tkanki tłuszczowej?
+              </ListItemText>
+              <ListItemText>Chcesz zbudować masę mięśniową?</ListItemText>
+            </ListItem>
+          </List>
+        </Box>
+        <Box mt={4} mb={4}>
+          <Typography variant="h5" color="initial">
+            Skontaktuj się, a pomogę Ci wyznaczyć mierzalne cele oraz w pełni je
+            zrealizować.
+          </Typography>
+        </Box>
+        <Box mt={15} mb={4} textAlign="center">
           <Button variant="contained" color="secondary">
             Przejdź do kontaktu
           </Button>

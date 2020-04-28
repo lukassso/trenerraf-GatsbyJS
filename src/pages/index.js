@@ -29,15 +29,15 @@ function Index(props) {
   const content = (
     <React.Fragment>
       <Hero />
-      <a id="experience">Doświadczenie</a>
+      {/* <a id="experience">Doświadczenie</a> */}
       <Experiences />
       <About />
-      <a id="testimondial">Opinie</a>
+      {/* <a id="testimondial">Opinie</a> */}
       <Testimondials />
       <AskYourself />
-      <a id="success-story">Metamorfozy</a>
+      {/* <a id="success-story">Metamorfozy</a> */}
       <SuccessStory />
-      <a id="kontakt">Kontakt</a>
+      {/* <a id="kontakt">Kontakt</a> */}
       {/* <ContactWithMe /> */}
     </React.Fragment>
   )

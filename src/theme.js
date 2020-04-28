@@ -92,24 +92,24 @@ const theme = createMuiTheme({
     fontSize: 13,
     h1: {
       fontSize: '2.5rem',
-      lineHeight: 1.5,
+      lineHeight: 1.2,
     },
     h2: {
       fontSize: '2rem',
-      lineHeight: 1.5,
+      lineHeight: 1.1,
     },
     h3: {
       fontSize: '1.6rem',
-      lineHeight: 1.5,
-      padding: '50px 10px 70px',
+      lineHeight: 1,
+      // padding: '50px 10px 70px',
     },
     h4: {
       fontSize: '1.4rem',
-      lineHeight: 1.4,
+      lineHeight: 0.9,
     },
     h5: {
       fontSize: '0.8rem',
-      lineHeight: 1.3,
+      lineHeight: 0.8,
       fontWeight: 'bold',
     },
     h6: {},

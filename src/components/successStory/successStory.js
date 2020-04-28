@@ -26,6 +26,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 const useStyles = (theme) => ({
   root: {
+    paddingTop: 300,
+    marginBottom: 100,
     '& .slick-next': {
       // backgroundColor: theme.palette.background.dark,
       // backgroundImage: PlayCircleOutlineIcon,

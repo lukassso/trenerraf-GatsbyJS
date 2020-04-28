@@ -17,6 +17,8 @@ import {
 const useStyles = (theme) => ({
   root: {
     backgroundColor: theme.palette.background.default,
+    paddingTop: 250,
+    paddingBottom: 100,
   },
   testimondialWrapper: {
     padding: 10,
@@ -67,21 +69,23 @@ class Testimondials extends Component {
     }
 
     return (
-      <Container component="section" className={classes.root} maxWidth="lg">
-        <Box display="flex" alignItems="center" flexDirection="column">
-          <Typography variant="h3" align="center">
-            Opinie Klientów
-          </Typography>
+      <section className={classes.root}>
+        <Container maxWidth="md">
           <Box display="flex" alignItems="center" flexDirection="column">
-            <Opinion />
+            <Typography variant="h3" align="center">
+              Opinie Klientów
+            </Typography>
+            <Box display="flex" alignItems="center" flexDirection="column">
+              <Opinion />
+            </Box>
+            <Box textAlign="center">
+              <Button variant="contained" color="primary">
+                Wyświetl więcej
+              </Button>
+            </Box>
           </Box>
-          <Box textAlign="center">
-            <Button variant="contained" color="primary">
-              Wyświetl więcej
-            </Button>
-          </Box>
-        </Box>
-      </Container>
+        </Container>
+      </section>
     )
   }
 }

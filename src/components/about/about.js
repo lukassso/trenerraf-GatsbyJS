@@ -8,6 +8,8 @@ const useStyles = (theme) => ({
     backgroundColor: theme.palette.background.dark,
     // overflow: "hidden",
     color: theme.palette.text.secondary,
+    maxHeight: 800,
+     overflow: 'hidden',
   },
   pictureHeader: {
     position: 'absolute',
@@ -30,10 +32,13 @@ function About(props) {
   `)
   return (
     <section className={classes.root}>
-      <Container maxWidth="sm">
-        <Typography variant="h3" align="center">
-          O mnie
-        </Typography>
+      <Container maxWidth="md">
+        <Box pt={60} pb={10} align="center">
+          <Typography variant="h3" >
+            O mnie
+          </Typography>
+        </Box>
+        <Box  >
         <Typography>
           Witam nazywam się Rafał Kiszło i jestem wykfalifikowanym trenerem
           personalnym. Od wielu lat pomagam swoim podopiecznym w uzyskaniu
@@ -56,6 +61,7 @@ function About(props) {
           cel. Podczas treningów używam różnych metod treningu tak, aby trening
           był atrakcyjny dla Ciebie. Zapraszam do współpracy!
         </Typography>
+        </Box>
       </Container>
       <Container style={{ position: 'relative' }} maxWidth="sm">
         <Img

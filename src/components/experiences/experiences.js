@@ -12,19 +12,25 @@ import {
 
 const useStyles = (theme) => ({
   root: {
+    position: 'relative',
     backgroundColor: theme.palette.background.gray,
+    paddingTop: 50,
     overflow: 'hidden',
+    maxHeight: 700,
   },
   expHeader: {
     textAlign: 'center',
   },
 
   expPaper: {
+    position: 'relative',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     borderColor: theme.palette.primary.main,
-    position: 'relative',
+    minHeight: 120,
+    margin: 10,
+    padding: 25,
     [theme.breakpoints.down('sm')]: {
       minHeight: 120,
       margin: 10,
@@ -38,6 +44,13 @@ const useStyles = (theme) => ({
         bottom: 20,
       },
     },
+  },
+  expWrapper: {
+    // paddingBottom: 120,
+  },
+  expFooterImage: {
+    position: 'absolute',
+    top: 50,
   },
 })
 
@@ -84,40 +97,35 @@ function Experienses(props) {
 
   return (
     <section className={classes.root}>
-      <Grid container>
-        <Grid item xs={12}>
+      <Container maxWidth="sm">
+        <Box pt={4} pb={4} display="flex" alignItems="center">
+          <Box style={{ width: '20%' }}>
+            <Img fluid={data.pic1.childImageSharp.fluid} alt="" />
+          </Box>
+          <Box>
+            <Typography className={classes.prizesText} variant="h4">
+              Zwycięzca w konkursie Motywatory Fitness 2017
+            </Typography>
+          </Box>
+        </Box>
+        <Box pt={12} pb={8}>
           <Typography className={classes.expHeader} variant="h3">
             Przebyte kursy i szkolenia
           </Typography>
-        </Grid>
-      </Grid>
-      <Container maxWidth="sm">
+        </Box>
+      </Container>
+      <Container className={classes.expWrapper} maxWidth="md">
         <Grid container direction="row" justify="center" alignItems="center">
           <ExperienceMap />
         </Grid>
       </Container>
-      <Grid container>
-        <Grid item xs={12}>
-          <Typography className={classes.expHeader} variant="h3">
-            Nagrody i wyróżnienia
-          </Typography>
-        </Grid>
-      </Grid>
-      <Grid container>
-        <Grid item xs={4}>
-          <Img fluid={data.pic1.childImageSharp.fluid} alt="" />
-        </Grid>
-        <Grid item xs={8}>
-          <Typography className={classes.prizesText} variant="h4">
-            Zwycięzca w konkursie Motywatory Fitness 2017
-          </Typography>
-        </Grid>
-      </Grid>
-      {/* <Box display="flex" alignItems="center"> */}
-      <Container maxWidth="sm">
-        <Img fluid={data.pic2.childImageSharp.fluid} alt="" />
-      </Container>
-      {/* </Box> */}
+        <Container style={{ position: 'relative' }} maxWidth="sm">
+          <Img
+          className={classes.expFooterImage} 
+            fluid={data.pic2.childImageSharp.fluid}
+            alt=""
+          />
+        </Container>
     </section>
   )
 }
