@@ -10,7 +10,11 @@ import {
   ListItemText,
   Button,
   Box,
+  ListItemIcon,
 } from '@material-ui/core'
+import InboxIcon from '@material-ui/icons/Inbox'
+import DialpadIcon from '@material-ui/icons/Dialpad'
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
 
 const useStyles = (theme) => ({
   root: {
@@ -25,6 +29,11 @@ const useStyles = (theme) => ({
     position: 'absolute',
     top: 50,
   },
+  callToAction: {
+    border: '1px solid #FDC100',
+    borderRadius: 4,
+    margin: 8,
+  },
 })
 
 function AskYourself(props) {
@@ -33,7 +42,7 @@ function AskYourself(props) {
     query {
       pic4: file(relativePath: { eq: "pages/images/trener-rafal-bcg4.png" }) {
         childImageSharp {
-          fluid(maxWidth: 570, maxHeight: 398) {
+          fluid(maxWidth: 588, maxHeight: 398) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -48,29 +57,56 @@ function AskYourself(props) {
             Zapytaj siebie
           </Typography>
         </Box>
-        <Box pt={5} pb={5}>
-          <List>
-            <ListItem>
-              <ListItemText>
+        <Box p={5}>
+         
+          <Box display="flex" align="center">
+            <Box>
+              <FiberManualRecordIcon />
+            </Box>
+            <Box>
+              <Typography variant="body1" color="initial">
                 Zastanawiasz się jak zmienić proporcje swojego ciała?
-              </ListItemText>
-              <ListItemText>
-                Masz problem z nadmiarem tkanki tłuszczowej?
-              </ListItemText>
-              <ListItemText>Chcesz zbudować masę mięśniową?</ListItemText>
-            </ListItem>
-          </List>
+              </Typography>
+            </Box>
+          </Box>
+           <Box display="flex" align="center">
+            <Box>
+              <FiberManualRecordIcon />
+            </Box>
+            <Box>
+              <Typography variant="body1" color="initial">
+                 Masz problem z nadmiarem tkanki tłuszczowej?
+              </Typography>
+            </Box>
+          </Box>
+           <Box display="flex" align="center">
+            <Box>
+              <FiberManualRecordIcon />
+            </Box>
+            <Box>
+              <Typography variant="body1" color="initial">
+                Chcesz zbudować masę mięśniową?
+              </Typography>
+            </Box>
+          </Box>
         </Box>
-        <Box mt={4} mb={4}>
-          <Typography variant="h5" color="initial">
-            Skontaktuj się, a pomogę Ci wyznaczyć mierzalne cele oraz w pełni je
-            zrealizować.
-          </Typography>
-        </Box>
-        <Box mt={15} mb={4} textAlign="center">
-          <Button variant="contained" color="secondary">
-            Przejdź do kontaktu
-          </Button>
+        <Box className={classes.callToAction}>
+          <Box p={5} mt={4} mb={4}>
+            <Typography variant="body2" align="center" color="initial">
+              Skontaktuj się, a pomogę Ci wyznaczyć mierzalne cele oraz w pełni
+              je zrealizować.
+            </Typography>
+          </Box>
+          <Box mt={4} mb={4} textAlign="center">
+            <Button
+              size="large"
+              startIcon={<DialpadIcon />}
+              variant="contained"
+              color="secondary"
+            >
+              Przejdź do kontaktu
+            </Button>
+          </Box>
         </Box>
       </Container>
       <Container style={{ position: 'relative' }} maxWidth="sm">

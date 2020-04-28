@@ -10,12 +10,13 @@ import {
 import PhoneIcon from '@material-ui/icons/Phone'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import {getCorrectEventName} from '@material/animation';
 
 const useStyles = (theme) => ({
+  
   root: {
     backgroundColor: theme.palette.background.white,
     overflow: 'hidden',
-  
   },
 
   heroClaim: {
@@ -61,22 +62,20 @@ const useStyles = (theme) => ({
   heroPictures1: {
     position: 'relative',
     padding: 0,
-
   },
   heroPictures2: {
-
     position: 'absolute !important',
     width: '40%',
     top: 200,
     zIndex: -1,
-     [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('sm')]: {
       width: '80%',
       top: 550,
-      left: 30
+      left: 30,
     },
     // '& .gatsby-image-wrapper': {
     //   postion: 'absolute',
-     
+
     // },
   },
   phonePulse: {
@@ -84,11 +83,23 @@ const useStyles = (theme) => ({
     height: 80,
     boxShadow: '0 0 0 rgba(204,169,44, 0.4)',
     animation: 'pulse 2s infinite',
-    '&:hover':{
-      animation: 'none',
-    }
-  }
-})
+    // '&:hover': {
+    //   animation: 'none',
+    // },
+
+    // '@keyframes pulse': {
+    //   '0%': {
+    //     boxShadow: '0 0 0 0 rgba(204,169,44, 0.4)',
+    //   },
+    //   '70%': {
+    //     boxShadow: '0 0 0 10px rgba(204,169,44, 0)',
+    //   },
+    //   '100%': {
+    //     boxShadow: '0 0 0 0 rgba(204,169,44, 0)',
+    //   },
+    // },
+  },
+});
 
 function Hero(props) {
   const { classes } = props
@@ -118,13 +129,17 @@ function Hero(props) {
         <Grid item xs={12} md={7}>
           <Box className={classes.heroClaim}>
             <Typography variant="h1">Stań się lepszą wersją siebie!</Typography>
-            <Typography variant="h3" component="h2" style={{width:'80%'}}>
+            <Typography variant="h3" component="h2" style={{ width: '80%' }}>
               Rafał Kiszło - Trener Personalny i najlepszy motywator w mieście!
               Zapraszam na wspólne treningi
             </Typography>
             <Box mt={8}>
-              <Fab  className={classes.phonePulse} color="primary" aria-label="call">
-                <PhoneIcon style={{ fontSize: 60 }}  />
+              <Fab
+                className={classes.phonePulse}
+                color="primary"
+                aria-label="call"
+              >
+                <PhoneIcon style={{ fontSize: 60 }} />
               </Fab>
             </Box>
           </Box>
@@ -137,15 +152,13 @@ function Hero(props) {
                 fluid={data.picHero1.childImageSharp.fluid}
                 alt=""
               />
-               <Img
+              <Img
                 className={classes.heroPictures2}
                 fluid={data.picHero2.childImageSharp.fluid}
                 alt=""
               />
             </Box>
-            <Box>
-             
-            </Box>
+            <Box></Box>
           </Box>
         </Grid>
       </Grid>

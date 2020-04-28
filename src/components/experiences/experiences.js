@@ -14,9 +14,12 @@ const useStyles = (theme) => ({
   root: {
     position: 'relative',
     backgroundColor: theme.palette.background.gray,
-    paddingTop: 50,
-    overflow: 'hidden',
+    // paddingTop: 50,
     maxHeight: 700,
+    [theme.breakpoints.down('sm')]: {
+    maxHeight: 850,
+
+    }
   },
   expHeader: {
     textAlign: 'center',
@@ -49,9 +52,24 @@ const useStyles = (theme) => ({
     // paddingBottom: 120,
   },
   expFooterImage: {
+    zIndex: 1,
     position: 'absolute',
     top: 50,
   },
+  prizesText:{
+    paddingLeft: 20,
+  },
+  priceWrapper: {
+    padding: '0 20px',
+  },
+  priceHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    paddingTop: 60,
+    paddingBottom: 16,
+    borderBottom: '1px solid black',
+
+  }
 })
 
 function Experienses(props) {
@@ -97,8 +115,8 @@ function Experienses(props) {
 
   return (
     <section className={classes.root}>
-      <Container maxWidth="sm">
-        <Box pt={4} pb={4} display="flex" alignItems="center">
+      <Container className={classes.priceWrapper} maxWidth="sm">
+        <Box className={classes.priceHeader} >
           <Box style={{ width: '20%' }}>
             <Img fluid={data.pic1.childImageSharp.fluid} alt="" />
           </Box>
@@ -108,7 +126,7 @@ function Experienses(props) {
             </Typography>
           </Box>
         </Box>
-        <Box pt={12} pb={8}>
+        <Box pt={12} pb={10}>
           <Typography className={classes.expHeader} variant="h3">
             Przebyte kursy i szkolenia
           </Typography>

@@ -7,6 +7,7 @@
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "latest",
+    "@material/animation": "^6.0.0",
     "clsx": "^1.1.0",
     "gatsby": "latest",
     "gatsby-image": "latest",

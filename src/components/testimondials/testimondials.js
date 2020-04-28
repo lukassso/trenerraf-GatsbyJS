@@ -13,11 +13,12 @@ import {
   ListItemText,
   Button,
 } from '@material-ui/core'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 const useStyles = (theme) => ({
   root: {
     backgroundColor: theme.palette.background.default,
-    paddingTop: 250,
+    paddingTop: 200,
     paddingBottom: 100,
   },
   testimondialWrapper: {
@@ -72,14 +73,21 @@ class Testimondials extends Component {
       <section className={classes.root}>
         <Container maxWidth="md">
           <Box display="flex" alignItems="center" flexDirection="column">
-            <Typography variant="h3" align="center">
-              Opinie Klientów
-            </Typography>
+            <Box pb={10}>
+              <Typography variant="h3" align="center">
+                Opinie Klientów
+              </Typography>
+            </Box>
             <Box display="flex" alignItems="center" flexDirection="column">
               <Opinion />
             </Box>
-            <Box textAlign="center">
-              <Button variant="contained" color="primary">
+            <Box mt={7} textAlign="center">
+              <Button
+                size="large"
+                startIcon={<ExpandMoreIcon />}
+                variant="contained"
+                color="primary"
+              >
                 Wyświetl więcej
               </Button>
             </Box>
