@@ -9,7 +9,7 @@ const useStyles = (theme) => ({
     color: theme.palette.text.secondary,
     position: 'relative',
     paddingBottom: -180,
-    minHeight:'100%',
+    minHeight: '100%',
     // maxHeight: 800,
     [theme.breakpoints.down('sm')]: {
       // maxHeight: 1000,
@@ -54,7 +54,7 @@ function About(props) {
             <Typography variant="h3">O mnie</Typography>
           </Box>
           <Box p={10} pb={0} pt={0}>
-            <Typography >
+            <Typography>
               Witam. Nazywam się Rafał Kiszło i jestem wykfalifikowanym trenerem
               personalnym. Od wielu lat pomagam swoim podopiecznym w uzyskaniu
               wymarzonej sylwetki, poprawie sprawności, przygotowaniu się do
@@ -79,14 +79,10 @@ function About(props) {
             </Typography>
           </Box>
         </Container>
-         <Container className={classes.pictureHeader} maxWidth="sm">
-        <Img
-          fluid={data.pic3.childImageSharp.fluid}
-          alt=""
-        />
-      </Container>
+        <Container className={classes.pictureHeader} maxWidth="sm">
+          <Img fluid={data.pic3.childImageSharp.fluid} alt="" />
+        </Container>
       </Box>
-     
     </Box>
   )
 }

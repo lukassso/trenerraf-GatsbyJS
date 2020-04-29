@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core'
 import InboxIcon from '@material-ui/icons/Inbox'
 import DialpadIcon from '@material-ui/icons/Dialpad'
-import DoneAllIcon from '@material-ui/icons/DoneAll';
+import DoneAllIcon from '@material-ui/icons/DoneAll'
 
 const useStyles = (theme) => ({
   root: {
@@ -59,7 +59,6 @@ function AskYourself(props) {
           </Typography>
         </Box>
         <Box p={5}>
-         
           <Box display="flex" align="center">
             <Box pr={3}>
               <DoneAllIcon />
@@ -70,22 +69,22 @@ function AskYourself(props) {
               </Typography>
             </Box>
           </Box>
-           <Box display="flex" align="center">
+          <Box display="flex" align="center">
             <Box pr={3}>
               <DoneAllIcon />
             </Box>
             <Box>
-              <Typography  align="left"  variant="body1" color="initial">
-                 Masz problem z nadmiarem tkanki tłuszczowej?
+              <Typography align="left" variant="body1" color="initial">
+                Masz problem z nadmiarem tkanki tłuszczowej?
               </Typography>
             </Box>
           </Box>
-           <Box display="flex" align="center">
+          <Box display="flex" align="center">
             <Box pr={3}>
               <DoneAllIcon />
             </Box>
             <Box>
-              <Typography  align="left"  variant="body1" color="initial">
+              <Typography align="left" variant="body1" color="initial">
                 Chcesz zbudować masę mięśniową?
               </Typography>
             </Box>

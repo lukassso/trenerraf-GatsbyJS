@@ -24,7 +24,7 @@ const useStyles = (theme) => ({
     display: 'flex',
     flexDirection: 'column',
     lineHeight: theme.spacing(1),
-     [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('md')]: {
       margin: 40,
       paddingTop: 30,
     },
@@ -36,7 +36,7 @@ const useStyles = (theme) => ({
       alignItems: 'center',
       lineHeight: theme.spacing(1),
     },
-   
+
     '& h1': {
       fontSize: '3rem',
       textAlign: 'left',
@@ -44,8 +44,7 @@ const useStyles = (theme) => ({
       marginTop: 20,
       [theme.breakpoints.down('sm')]: {
         textAlign: 'center',
-      fontSize: '2rem',
-
+        fontSize: '2rem',
       },
     },
     '& h2': {
@@ -98,8 +97,8 @@ const useStyles = (theme) => ({
     boxShadow: '0 0 0 rgba(204,169,44, 0.4)',
     animation: 'pulse 2s infinite',
     [theme.breakpoints.down('sm')]: {
-     width: 90,
-    height: 90,
+      width: 90,
+      height: 90,
     },
     // '&:hover': {
     //   animation: 'none',
@@ -123,10 +122,9 @@ const useStyles = (theme) => ({
     [theme.breakpoints.down('sm')]: {
       paddingTop: 30,
     },
-     [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('md')]: {
       paddingTop: 20,
     },
-
   },
 })
 
@@ -157,9 +155,8 @@ function Hero(props) {
       <Grid container className={classes.container}>
         <Grid item xs={12} md={7}>
           <Box className={classes.heroClaim}>
-
             <Typography variant="h1">Stań się lepszą wersją siebie!</Typography>
-            <Typography variant="h3" component="h2" >
+            <Typography variant="h3" component="h2">
               Rafał Kiszło - Trener Personalny i najlepszy motywator w mieście!
               Zapraszam na wspólne treningi.
             </Typography>

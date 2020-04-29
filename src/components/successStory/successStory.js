@@ -43,7 +43,7 @@ const useStyles = (theme) => ({
     },
   },
   name: {
-    padding: 10
+    padding: 10,
   },
   weight: {},
   expand: {

@@ -39,22 +39,22 @@ const useStyles = (theme) => ({
       padding: 25,
     },
     '& h5': {
-        fontSize: '1.2rem',
-        fontWeight: 600,
-        lineHeight: 1.2,
-        textAlign: 'center',
-        [theme.breakpoints.down('sm')]: {
-          fontSize: '1rem',
-          lineHeight: 1.1,
-        },
+      fontSize: '1.2rem',
+      fontWeight: 600,
+      lineHeight: 1.2,
+      textAlign: 'center',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '1rem',
+        lineHeight: 1.1,
       },
-      '& p': {
-        position: 'absolute',
-        bottom: 20,
-        [theme.breakpoints.down('sm')]: {
-          fontSize: '0.8rem'
-        },
+    },
+    '& p': {
+      position: 'absolute',
+      bottom: 20,
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '0.8rem',
       },
+    },
   },
 
   expWrapper: {
@@ -64,9 +64,7 @@ const useStyles = (theme) => ({
     zIndex: 1,
     position: 'absolute',
     top: 20,
-    [theme.breakpoints.down('sm')]: {
-      
-    }
+    [theme.breakpoints.down('sm')]: {},
   },
   prizesText: {
     paddingLeft: 20,

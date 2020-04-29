@@ -30,12 +30,12 @@ const useStyles = (theme) => ({
     width: theme.spacing(10),
     height: theme.spacing(10),
   },
-  avatarAndName:{
-    '& li':{
+  avatarAndName: {
+    '& li': {
       paddingLeft: 0,
       paddingRight: 0,
-    }
-  }
+    },
+  },
 })
 class Testimondials extends Component {
   render() {
@@ -48,36 +48,35 @@ class Testimondials extends Component {
             <ChatBubbleOutlineIcon />
           </Box>
           <Box pl={8} pr={8}>
-
-          <Typography key={testimondial.text}>{testimondial.text}</Typography>
-          <List className={classes.avatarAndName}>
-            <ListItem >
-              <ListItemAvatar>
-                <Avatar
+            <Typography key={testimondial.text}>{testimondial.text}</Typography>
+            <List className={classes.avatarAndName}>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar
+                    key={testimondial.name}
+                    alt={testimondial.name}
+                    src={require(`${testimondial.picture}`)}
+                    className={classes.small}
+                  />
+                </ListItemAvatar>
+                <ListItemText
                   key={testimondial.name}
-                  alt={testimondial.name}
-                  src={require(`${testimondial.picture}`)}
-                  className={classes.small}
+                  primary={testimondial.name}
+                  secondary={
+                    <React.Fragment>
+                      <Typography
+                        key={testimondial.date}
+                        component="span"
+                        variant="body2"
+                        color="primary"
+                      >
+                        {testimondial.date}
+                      </Typography>
+                    </React.Fragment>
+                  }
                 />
-              </ListItemAvatar>
-              <ListItemText
-                key={testimondial.name}
-                primary={testimondial.name}
-                secondary={
-                  <React.Fragment>
-                    <Typography
-                      key={testimondial.date}
-                      component="span"
-                      variant="body2"
-                      color="primary"
-                    >
-                      {testimondial.date}
-                    </Typography>
-                  </React.Fragment>
-                }
-              />
-            </ListItem>
-          </List>
+              </ListItem>
+            </List>
           </Box>
           <Divider />
         </Box>
