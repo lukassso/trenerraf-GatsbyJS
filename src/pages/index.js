@@ -8,7 +8,6 @@ import Hero from '../components/hero'
 import Experiences from '../components/experiences'
 import Testimondials from '../components/testimondials'
 import SuccessStory from '../components/successStory'
-// import ContactWithMe from "../components/contactWithMe";
 import AskYourself from '../components/askYourself'
 
 // const useStyles = (theme) => ({

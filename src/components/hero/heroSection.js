@@ -19,7 +19,7 @@ const useStyles = (theme) => ({
   },
 
   heroClaim: {
-    margin: 80,
+    margin: '20px 160px',
     paddingTop: 50,
     display: 'flex',
     flexDirection: 'column',
@@ -161,7 +161,7 @@ function Hero(props) {
             <Typography variant="h1">Stań się lepszą wersją siebie!</Typography>
             <Typography variant="h3" component="h2" >
               Rafał Kiszło - Trener Personalny i najlepszy motywator w mieście!
-              Zapraszam na wspólne treningi.abs
+              Zapraszam na wspólne treningi.
             </Typography>
             <Box className={classes.iconPhoneWrapper}>
               <Fab
