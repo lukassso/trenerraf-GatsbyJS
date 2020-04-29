@@ -1,24 +1,26 @@
 module.exports = {
   siteMetadata: {
-    title: `Trener Personalny Rafał Kiszło`
+    title: `Trener Personalny Rafał Kiszło`,
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-material-ui`,
       options: {
-        fonts: [`pacifico:400`, `montserrat:200,400,600,700`, "lato: 300,400,500"]
-      }
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
     },
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src/`
-      }
+        path: `${__dirname}/src/`,
+      },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-   
+
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -47,34 +49,28 @@ module.exports = {
               // will be rendered at 50px.
               //
               // Defaults to false.
-              sizeByPixelDensity: false
-            }
-          }
-        ]
-      }
+              sizeByPixelDensity: false,
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: ``
-      }
+        trackingId: ``,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Rafał Kiszło - trener personalny Mokotów",
-        short_name: "Rafał Kiszło",
-        start_url: "/",
-        background_color: "#292929",
-        theme_color: "#405375",
-        display: "minimal-ui"
-      }
+        name: 'Rafał Kiszło - trener personalny Mokotów',
+        short_name: 'Rafał Kiszło',
+        start_url: '/',
+        background_color: '#292929',
+        theme_color: '#405375',
+        display: 'minimal-ui',
+      },
     },
-    // {
-    //   resolve: "gatsby-plugin-sentry",
-    //   options: {
-    //     dsn: "https://23d8e0b792d442d29d0b4344a79ef87d@sentry.io/170806"
-    //   }
-    // }
-  ]
-};
+  ],
+}

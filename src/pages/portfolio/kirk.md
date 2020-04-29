@@ -1,7 +1,7 @@
 ---
-title: "KIRK"
-date: "2018-01-08"
-tags: ["C#", "bot"]
+title: 'KIRK'
+date: '2018-01-08'
+tags: ['C#', 'bot']
 image: './images/dani.jpg'
 ---
 

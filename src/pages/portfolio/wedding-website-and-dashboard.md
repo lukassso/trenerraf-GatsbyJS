@@ -1,7 +1,7 @@
 ---
-title: "Wedding website and dashboard"
-date: "2018-01-08"
-tags: ["web app", "javascript", "css", "html"]
+title: 'Wedding website and dashboard'
+date: '2018-01-08'
+tags: ['web app', 'javascript', 'css', 'html']
 image: './images/wedding.jpg'
 ---
 
