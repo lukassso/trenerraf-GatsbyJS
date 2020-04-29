@@ -10,44 +10,58 @@ import {
 import PhoneIcon from '@material-ui/icons/Phone'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import {getCorrectEventName} from '@material/animation';
+import { getCorrectEventName } from '@material/animation'
 
 const useStyles = (theme) => ({
-  
   root: {
     backgroundColor: theme.palette.background.white,
     overflow: 'hidden',
   },
 
   heroClaim: {
-    marginTop: 80,
-    padding: 50,
+    margin: 80,
+    paddingTop: 50,
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
     lineHeight: theme.spacing(1),
-    textAlign: 'center',
+     [theme.breakpoints.down('md')]: {
+      margin: 40,
+      paddingTop: 30,
+    },
     [theme.breakpoints.down('sm')]: {
-      marginTop: 0,
-      padding: 50,
+      margin: 20,
+      paddingTop: 20,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       lineHeight: theme.spacing(1),
     },
+   
     '& h1': {
-      fontSize: '2rem',
-      textAlign: 'center',
+      fontSize: '3rem',
+      textAlign: 'left',
       marginBottom: 30,
       marginTop: 20,
-      [theme.breakpoints.down('sm')]: {},
+      [theme.breakpoints.down('sm')]: {
+        textAlign: 'center',
+      fontSize: '2rem',
+
+      },
     },
     '& h2': {
-      fontSize: '0.9rem',
-      textAlign: 'center',
+      fontSize: '1.3rem',
+      fontWeight: 200,
+      textAlign: 'left',
       marginBottom: 30,
       lineHeight: 2,
       marginTop: 20,
+      [theme.breakpoints.down('md')]: {
+        fontSize: '1.1rem',
+      },
+      [theme.breakpoints.down('sm')]: {
+        textAlign: 'center',
+        fontSize: '1rem',
+      },
     },
   },
   heroPicturesWrapper: {
@@ -79,10 +93,14 @@ const useStyles = (theme) => ({
     // },
   },
   phonePulse: {
-    width: 80,
-    height: 80,
+    width: 120,
+    height: 120,
     boxShadow: '0 0 0 rgba(204,169,44, 0.4)',
     animation: 'pulse 2s infinite',
+    [theme.breakpoints.down('sm')]: {
+     width: 90,
+    height: 90,
+    },
     // '&:hover': {
     //   animation: 'none',
     // },
@@ -99,7 +117,18 @@ const useStyles = (theme) => ({
     //   },
     // },
   },
-});
+  iconPhoneWrapper: {
+    textAlign: 'center',
+    paddingTop: 100,
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: 30,
+    },
+     [theme.breakpoints.down('md')]: {
+      paddingTop: 20,
+    },
+
+  },
+})
 
 function Hero(props) {
   const { classes } = props
@@ -128,12 +157,13 @@ function Hero(props) {
       <Grid container className={classes.container}>
         <Grid item xs={12} md={7}>
           <Box className={classes.heroClaim}>
+
             <Typography variant="h1">Stań się lepszą wersją siebie!</Typography>
-            <Typography variant="h3" component="h2" style={{ width: '80%' }}>
+            <Typography variant="h3" component="h2" >
               Rafał Kiszło - Trener Personalny i najlepszy motywator w mieście!
-              Zapraszam na wspólne treningi
+              Zapraszam na wspólne treningi.abs
             </Typography>
-            <Box mt={8}>
+            <Box className={classes.iconPhoneWrapper}>
               <Fab
                 className={classes.phonePulse}
                 color="primary"

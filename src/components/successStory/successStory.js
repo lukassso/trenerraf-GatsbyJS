@@ -28,22 +28,24 @@ const useStyles = (theme) => ({
   root: {
     paddingTop: 300,
     marginBottom: 100,
+    paddingLeft: 30,
+    paddingRight: 30,
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: 240,
+      marginBottom: 60,
+    },
     '& .slick-next': {
       // backgroundColor: theme.palette.background.dark,
       // backgroundImage: PlayCircleOutlineIcon,
     },
-    // display: "flex",
-    // flexDirection: "column",
-    // backgroundColor: theme.palette.background.white,
-
-    overflow: 'hidden',
-    '& h3': {
-      paddingBottom: 10,
-    },
-    '& h4': {
-      padding: '5px 0 20px',
+    '& .slick-slide': {
+      textAlign: 'center',
     },
   },
+  name: {
+    padding: 10
+  },
+  weight: {},
   expand: {
     display: 'block',
     margin: '0 auto',
@@ -59,38 +61,23 @@ const useStyles = (theme) => ({
     marginTop: 20,
     marginBottom: 40,
   },
+
   sliderWrapper: {
-    // display: "flex",
-    // margin: 0,
-  },
-  // container: {
-  //   marginTop: theme.spacing(130),
-  //   marginBottom: theme.spacing(135),
-  //   position: "relative",
-  //   display: "flex",
-  //   flexDirection: "column",
-  //   alignItems: "center",
-  // },
-  test: {
     position: 'relative',
-    // color: '#5d5d5d',
-    // '& div': {
-    //     // display: 'flex',
-    //     // backgroundColor: theme.palette.primary.light,
-    // },
-    // '& h3': {
-    //     color: '#5d5d5d',
-    // },
+    margin: 10,
     '& .slick-next': {
-      right: -10,
+      // right: -10,
       top: 230,
     },
     '& .slick-prev': {
-      left: -10,
+      // left: -10,
       top: 230,
     },
     '& .slick-next:before, .slick-prev:before': {
       color: theme.palette.gray[300],
+      '&:hover': {
+        color: theme.palette.gray[500],
+      },
     },
   },
 })
@@ -127,15 +114,6 @@ function SuccessStory(props) {
       }
     }
   `)
-  const Test = () => {
-    return (
-      <Img
-        className={classes.pictureHeader}
-        fluid={data.pic5.childImageSharp.fluid}
-        alt=""
-      />
-    )
-  }
 
   const settings = {
     dots: false,
@@ -176,14 +154,16 @@ function SuccessStory(props) {
   return (
     <Box component="section" className={classes.root}>
       <Container maxWidth="md">
-        <Typography variant="h3" align="center">
-          Metamorfozy
-        </Typography>
+        <Box pb={5}>
+          <Typography variant="h3" align="center">
+            Metamorfozy
+          </Typography>
+        </Box>
         <Typography variant="h4" align="center">
           Oni odnieśli sukces
         </Typography>
 
-        <div className={classes.test}>
+        <div className={classes.sliderWrapper}>
           <Slider {...settings}>
             {dataStories.map((story) => (
               <Container maxWidth="xs">
@@ -202,6 +182,7 @@ function SuccessStory(props) {
                   </CardMedia>
                   <CardContent key={story.id} className={classes.cardTeaser}>
                     <Typography
+                      className={classes.weight}
                       align="center"
                       key={story.id}
                       variant="h2"
@@ -211,6 +192,7 @@ function SuccessStory(props) {
                       {story.weight}
                     </Typography>
                     <Typography
+                      className={classes.name}
                       align="center"
                       key={story.name}
                       variant="h5"

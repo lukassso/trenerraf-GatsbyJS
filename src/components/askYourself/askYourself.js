@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core'
 import InboxIcon from '@material-ui/icons/Inbox'
 import DialpadIcon from '@material-ui/icons/Dialpad'
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
+import DoneAllIcon from '@material-ui/icons/DoneAll';
 
 const useStyles = (theme) => ({
   root: {
@@ -30,6 +30,7 @@ const useStyles = (theme) => ({
     top: 50,
   },
   callToAction: {
+    padding: '0 16px',
     border: '1px solid #FDC100',
     borderRadius: 4,
     margin: 8,
@@ -60,31 +61,31 @@ function AskYourself(props) {
         <Box p={5}>
          
           <Box display="flex" align="center">
-            <Box>
-              <FiberManualRecordIcon />
+            <Box pr={3}>
+              <DoneAllIcon />
             </Box>
             <Box>
-              <Typography variant="body1" color="initial">
+              <Typography align="left" variant="body1" color="initial">
                 Zastanawiasz się jak zmienić proporcje swojego ciała?
               </Typography>
             </Box>
           </Box>
            <Box display="flex" align="center">
-            <Box>
-              <FiberManualRecordIcon />
+            <Box pr={3}>
+              <DoneAllIcon />
             </Box>
             <Box>
-              <Typography variant="body1" color="initial">
+              <Typography  align="left"  variant="body1" color="initial">
                  Masz problem z nadmiarem tkanki tłuszczowej?
               </Typography>
             </Box>
           </Box>
            <Box display="flex" align="center">
-            <Box>
-              <FiberManualRecordIcon />
+            <Box pr={3}>
+              <DoneAllIcon />
             </Box>
             <Box>
-              <Typography variant="body1" color="initial">
+              <Typography  align="left"  variant="body1" color="initial">
                 Chcesz zbudować masę mięśniową?
               </Typography>
             </Box>
@@ -99,7 +100,7 @@ function AskYourself(props) {
           </Box>
           <Box mt={4} mb={4} textAlign="center">
             <Button
-              size="large"
+              fullWidth
               startIcon={<DialpadIcon />}
               variant="contained"
               color="secondary"

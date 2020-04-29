@@ -100,6 +100,7 @@ const theme = createMuiTheme({
     },
     h3: {
       fontSize: '1.6rem',
+      fontWeight: 600,
       lineHeight: 1,
       // padding: '50px 10px 70px',
     },

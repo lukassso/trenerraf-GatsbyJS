@@ -12,8 +12,10 @@ import {
   ListItemAvatar,
   ListItemText,
   Button,
+  Divider,
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline'
 
 const useStyles = (theme) => ({
   root: {
@@ -28,6 +30,12 @@ const useStyles = (theme) => ({
     width: theme.spacing(10),
     height: theme.spacing(10),
   },
+  avatarAndName:{
+    '& li':{
+      paddingLeft: 0,
+      paddingRight: 0,
+    }
+  }
 })
 class Testimondials extends Component {
   render() {
@@ -35,10 +43,15 @@ class Testimondials extends Component {
 
     const Opinion = (props) => {
       return dataTestimondials.map((testimondial, index) => (
-        <Box spacing={1} className={classes.testimondialWrapper}>
+        <Box className={classes.testimondialWrapper}>
+          <Box align="center" width="100%" m={2} mt={4}>
+            <ChatBubbleOutlineIcon />
+          </Box>
+          <Box pl={8} pr={8}>
+
           <Typography key={testimondial.text}>{testimondial.text}</Typography>
-          <List>
-            <ListItem>
+          <List className={classes.avatarAndName}>
+            <ListItem >
               <ListItemAvatar>
                 <Avatar
                   key={testimondial.name}
@@ -65,6 +78,8 @@ class Testimondials extends Component {
               />
             </ListItem>
           </List>
+          </Box>
+          <Divider />
         </Box>
       ))
     }
@@ -81,11 +96,11 @@ class Testimondials extends Component {
             <Box display="flex" alignItems="center" flexDirection="column">
               <Opinion />
             </Box>
-            <Box mt={7} textAlign="center">
+            <Box pt={11} textAlign="center">
               <Button
                 size="large"
                 startIcon={<ExpandMoreIcon />}
-                variant="contained"
+                variant="outlined"
                 color="primary"
               >
                 Wyświetl więcej

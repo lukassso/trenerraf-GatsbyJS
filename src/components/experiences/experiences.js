@@ -15,11 +15,10 @@ const useStyles = (theme) => ({
     position: 'relative',
     backgroundColor: theme.palette.background.gray,
     // paddingTop: 50,
-    maxHeight: 700,
+    maxHeight: 750,
     [theme.breakpoints.down('sm')]: {
-    maxHeight: 850,
-
-    }
+      maxHeight: 850,
+    },
   },
   expHeader: {
     textAlign: 'center',
@@ -38,26 +37,44 @@ const useStyles = (theme) => ({
       minHeight: 120,
       margin: 10,
       padding: 25,
-      '& h5': {
+    },
+    '& h5': {
+        fontSize: '1.2rem',
         fontWeight: 600,
+        lineHeight: 1.2,
         textAlign: 'center',
+        [theme.breakpoints.down('sm')]: {
+          fontSize: '1rem',
+          lineHeight: 1.1,
+        },
       },
-      '& span': {
+      '& p': {
         position: 'absolute',
         bottom: 20,
+        [theme.breakpoints.down('sm')]: {
+          fontSize: '0.8rem'
+        },
       },
-    },
   },
+
   expWrapper: {
     // paddingBottom: 120,
   },
   expFooterImage: {
     zIndex: 1,
     position: 'absolute',
-    top: 50,
+    top: 20,
+    [theme.breakpoints.down('sm')]: {
+      
+    }
   },
-  prizesText:{
+  prizesText: {
     paddingLeft: 20,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9rem',
+      lineHeight: '1.4',
+      fontWeight: '600',
+    },
   },
   priceWrapper: {
     padding: '0 20px',
@@ -66,10 +83,9 @@ const useStyles = (theme) => ({
     display: 'flex',
     alignItems: 'center',
     paddingTop: 60,
-    paddingBottom: 16,
+    paddingBottom: 40,
     borderBottom: '1px solid black',
-
-  }
+  },
 })
 
 function Experienses(props) {
@@ -94,11 +110,11 @@ function Experienses(props) {
   `)
   const experiencesList = [
     { id: 1, name: 'Trener Personalny', area: 'Instruktor' },
-    { id: 2, name: 'Trener Personalny', area: 'Instruktor' },
-    { id: 3, name: 'Trener Personalny', area: 'Instruktor' },
-    { id: 4, name: 'Trener Personalny', area: 'Instruktor' },
-    { id: 5, name: 'Trener Personalny', area: 'Instruktor' },
-    { id: 7, name: 'Trener Personalny', area: 'Instruktor' },
+    { id: 2, name: 'Nurek CMASS', area: 'Instruktor' },
+    { id: 3, name: 'Kattleballs', area: 'Instruktor' },
+    { id: 4, name: 'Kulturystyka', area: 'Instruktor' },
+    { id: 5, name: 'Trening Funkcjonalny', area: 'Instruktor' },
+    { id: 7, name: 'Trójbuj siłowy', area: 'Instruktor' },
   ]
   const ExperienceMap = (props) => {
     return experiencesList.map((experience) => (
@@ -107,7 +123,9 @@ function Experienses(props) {
           <Typography key={experience.name} variant="h5">
             {experience.name}
           </Typography>
-          <Typography key={experience.area}>{experience.area}</Typography>
+          <Typography variant="body1" key={experience.area}>
+            {experience.area}
+          </Typography>
         </Paper>
       </Grid>
     ))
@@ -116,8 +134,8 @@ function Experienses(props) {
   return (
     <section className={classes.root}>
       <Container className={classes.priceWrapper} maxWidth="sm">
-        <Box className={classes.priceHeader} >
-          <Box style={{ width: '20%' }}>
+        <Box className={classes.priceHeader}>
+          <Box style={{ width: '30%' }}>
             <Img fluid={data.pic1.childImageSharp.fluid} alt="" />
           </Box>
           <Box>
@@ -137,13 +155,13 @@ function Experienses(props) {
           <ExperienceMap />
         </Grid>
       </Container>
-        <Container style={{ position: 'relative' }} maxWidth="sm">
-          <Img
-          className={classes.expFooterImage} 
-            fluid={data.pic2.childImageSharp.fluid}
-            alt=""
-          />
-        </Container>
+      <Container style={{ position: 'relative' }} maxWidth="sm">
+        <Img
+          className={classes.expFooterImage}
+          fluid={data.pic2.childImageSharp.fluid}
+          alt=""
+        />
+      </Container>
     </section>
   )
 }
