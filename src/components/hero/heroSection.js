@@ -94,28 +94,34 @@ const useStyles = (theme) => ({
   phonePulse: {
     width: 120,
     height: 120,
+    border: '4px solid red',
     boxShadow: '0 0 0 rgba(204,169,44, 0.4)',
+    transition: 'opacity 2s linear',
+    // transform: 'rotate(30deg)',
     animation: 'pulse 2s infinite',
     [theme.breakpoints.down('sm')]: {
       width: 90,
       height: 90,
     },
-    // '&:hover': {
-    //   animation: 'none',
-    // },
+    '&:hover': {
+      animation: 'none',
+      opacity: 0.4,
+    },
 
-    // '@keyframes pulse': {
-    //   '0%': {
-    //     boxShadow: '0 0 0 0 rgba(204,169,44, 0.4)',
-    //   },
-    //   '70%': {
-    //     boxShadow: '0 0 0 10px rgba(204,169,44, 0)',
-    //   },
-    //   '100%': {
-    //     boxShadow: '0 0 0 0 rgba(204,169,44, 0)',
-    //   },
-    // },
   },
+    '@keyframes pulse': {
+      '0%': {
+        
+        boxShadow: '0 0 0 #FDC100',
+      },
+      '50%': {
+        border: '8px solid black',
+        boxShadow: '0 0 200px #FDC100',
+      },
+      '100%': {
+        boxShadow: '0 0 0 #FDC100',
+      },
+    },
   iconPhoneWrapper: {
     textAlign: 'center',
     paddingTop: 100,
