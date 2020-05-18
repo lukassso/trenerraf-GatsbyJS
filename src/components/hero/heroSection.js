@@ -10,7 +10,7 @@ import {
 import PhoneIcon from '@material-ui/icons/Phone'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { getCorrectEventName } from '@material/animation'
+// import { getCorrectEventName } from '@material/animation'
 
 const useStyles = (theme) => ({
   root: {

@@ -3,26 +3,37 @@ module.exports = {
     title: `Trener Personalny Rafał Kiszło`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
-    },
-    `gatsby-plugin-styled-components`,
-    {
+     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
         path: `${__dirname}/src/`,
       },
     },
-    `gatsby-plugin-react-helmet`,
 
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
+    {
+    resolve: `gatsby-plugin-sharp`,
+    options: {
+      useMozJpeg: false,
+      stripMetadata: true,
+      defaultQuality: 75,
+    },
+  },
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        // The option defaults to true
+        checkSupportedExtensions: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+         disableAutoprefixing: false,
+        disableMinification: false,
+      },
+    },    
     {
       resolve: `gatsby-transformer-remark`,
       options: {
