@@ -86,8 +86,7 @@ const useStyles = (theme) => ({
   },
 })
 
-function Experienses(props) {
-  const { classes } = props
+function Experienses({classes, id}) {
   const data = useStaticQuery(graphql`
     query {
       pic1: file(relativePath: { eq: "pages/images/superfm-1.png" }) {
@@ -130,7 +129,7 @@ function Experienses(props) {
   }
 
   return (
-    <section className={classes.root}>
+    <section id={id} className={classes.root}>
       <Container className={classes.priceWrapper} maxWidth="sm">
         <Box className={classes.priceHeader}>
           <Box style={{ width: '30%' }}>

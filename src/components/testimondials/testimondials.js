@@ -39,7 +39,7 @@ const useStyles = (theme) => ({
 })
 class Testimondials extends Component {
   render() {
-    const { classes } = this.props
+    const { classes, id } = this.props
 
     const Opinion = (props) => {
       return dataTestimondials.map((testimondial, index) => (
@@ -84,7 +84,7 @@ class Testimondials extends Component {
     }
 
     return (
-      <section className={classes.root}>
+      <section id={id} className={classes.root}>
         <Container maxWidth="md">
           <Box display="flex" alignItems="center" flexDirection="column">
             <Box pb={10}>

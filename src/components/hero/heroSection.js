@@ -94,7 +94,6 @@ const useStyles = (theme) => ({
   phonePulse: {
     width: 120,
     height: 120,
-    border: '4px solid red',
     boxShadow: '0 0 0 rgba(204,169,44, 0.4)',
     transition: 'opacity 2s linear',
     // transform: 'rotate(30deg)',
@@ -171,6 +170,7 @@ function Hero(props) {
                 className={classes.phonePulse}
                 color="primary"
                 aria-label="call"
+                href="tel:+48608472294"
               >
                 <PhoneIcon style={{ fontSize: 60 }} />
               </Fab>

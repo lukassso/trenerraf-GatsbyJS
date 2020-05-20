@@ -35,7 +35,6 @@ const Layout = ({ location, children }) => {
         <CssBaseline />
         {children}
         {location && location.pathname != '/404'}
-        <Footer />
       </ThemeProvider>
     </React.Fragment>
   )

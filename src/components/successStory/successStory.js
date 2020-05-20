@@ -82,8 +82,7 @@ const useStyles = (theme) => ({
   },
 })
 
-function SuccessStory(props) {
-  const { classes } = props
+function SuccessStory({classes, id}) {
   const [expanded, setExpanded] = React.useState(false)
 
   const handleExpandClick = () => {
@@ -152,7 +151,7 @@ function SuccessStory(props) {
   }
 
   return (
-    <Box component="section" className={classes.root}>
+    <Box component="section" id={id} className={classes.root}>
       <Container maxWidth="md">
         <Box pb={5}>
           <Typography variant="h3" align="center">

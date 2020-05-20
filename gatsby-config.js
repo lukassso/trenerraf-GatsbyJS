@@ -3,6 +3,7 @@ module.exports = {
     title: `Trener Personalny Rafał Kiszło`,
   },
   plugins: [
+    
      {
       resolve: `gatsby-source-filesystem`,
       options: {

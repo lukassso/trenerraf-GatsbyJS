@@ -9,6 +9,8 @@ import Experiences from '../components/experiences'
 import Testimondials from '../components/testimondials'
 import SuccessStory from '../components/successStory'
 import AskYourself from '../components/askYourself'
+import Footer from '../components/footer'
+
 
 // const useStyles = (theme) => ({
 //   root: {
@@ -28,16 +30,15 @@ function Index(props) {
   const content = (
     <React.Fragment>
       <Hero />
-      {/* <a id="experience">Doświadczenie</a> */}
-      <Experiences />
+      {/* <a >Doświadczenie</a> */}
+      <Experiences id="experience" />
       <About />
       {/* <a id="testimondial">Opinie</a> */}
-      <Testimondials />
+      <Testimondials id="testimondials"/>
       <AskYourself />
       {/* <a id="success-story">Metamorfozy</a> */}
-      <SuccessStory />
-      {/* <a id="kontakt">Kontakt</a> */}
-      {/* <ContactWithMe /> */}
+      <SuccessStory id="successStories"/>
+      <Footer id="contact"/>
     </React.Fragment>
   )
   return (

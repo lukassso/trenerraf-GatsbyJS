@@ -61,11 +61,10 @@ const useStyles = (theme) => ({
   },
 })
 
-function Footer(props) {
-  const { classes } = props
+function Footer({classes, id}) {
   return (
     <React.Fragment>
-      <section className={classes.root}>
+      <section id={id} className={classes.root}>
         <Box className={classes.yellowWrapper}>
           <Typography variant="h3" align="center" width="100%">
             Skontaktuj się ze mną
