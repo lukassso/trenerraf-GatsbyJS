@@ -151,7 +151,7 @@ function SuccessStory({classes, id}) {
   }
 
   return (
-    <Box component="section" id={id} className={classes.root}>
+    <Box component="section" name="succesStories" id={id} className={classes.root}>
       <Container maxWidth="md">
         <Box pb={5}>
           <Typography variant="h3" align="center">

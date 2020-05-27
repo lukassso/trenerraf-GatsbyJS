@@ -84,7 +84,7 @@ class Testimondials extends Component {
     }
 
     return (
-      <section id={id} className={classes.root}>
+      <section id={id} name="testimondials" className={classes.root}>
         <Container maxWidth="md">
           <Box display="flex" alignItems="center" flexDirection="column">
             <Box pb={10}>

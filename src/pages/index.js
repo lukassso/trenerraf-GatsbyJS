@@ -11,6 +11,8 @@ import SuccessStory from '../components/successStory'
 import AskYourself from '../components/askYourself'
 import Footer from '../components/footer'
 
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 
 // const useStyles = (theme) => ({
 //   root: {
@@ -26,10 +28,23 @@ import Footer from '../components/footer'
 // });
 
 function Index(props) {
+   function scrollToTop() {
+    scroll.scrollToTop();
+  }
+  function scrollTo() {
+    scroller.scrollTo('scroll-to-element', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart'
+    })
+    }
+
   // const { classes } = props;
   const content = (
     <React.Fragment>
-      <Hero />
+    
+       <Hero />
+      
       {/* <a >Doświadczenie</a> */}
       <Experiences id="experience" />
       <About />
@@ -39,10 +54,12 @@ function Index(props) {
       {/* <a id="success-story">Metamorfozy</a> */}
       <SuccessStory id="successStories"/>
       <Footer id="contact"/>
+      <a onClick={scrollToTop}>To the top!</a>
     </React.Fragment>
   )
   return (
     <Layout>
+      
       <NavBar />
       {content}
     </Layout>

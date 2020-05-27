@@ -1,5 +1,15 @@
 import React from 'react';
 // import { Link } from "gatsby"
+import { render } from 'react-dom';
+import {
+    Link,
+    DirectLink,
+    Element,
+    Events,
+    animateScroll as scroll,
+    scrollSpy,
+    scroller,
+} from 'react-scroll';
 import {
     withStyles,
     Typography,
@@ -10,7 +20,6 @@ import {
     Badge,
     MenuItem,
     Menu,
-    Link,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
@@ -96,6 +105,17 @@ function PrimarySearchAppBar({ classes }) {
         setMobileMoreAnchorEl(event.currentTarget);
     };
 
+    function scrollToTop() {
+        scroll.scrollToTop();
+    }
+    function scrollTo() {
+        scroller.scrollTo('scroll-to-element', {
+            duration: 800,
+            delay: 0,
+            smooth: 'easeInOutQuart',
+        });
+    }
+
     const Logo = () => {
         return (
             <Link
@@ -120,20 +140,16 @@ function PrimarySearchAppBar({ classes }) {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem 
-             onClick={handleMobileMenuClose}
-            component={Link} 
-            href="/"
-            > 
-               Doświadczenie
+            <MenuItem onClick={handleMobileMenuClose} component={Link} activeClass="active" className={classes.menuItemLink} to="experience" spy={true} smooth={true} duration={2000}>
+                Doświadczenie
             </MenuItem>
-            <MenuItem>
+            <MenuItem onClick={handleMobileMenuClose}  component={Link} activeClass="active" className={classes.menuItemLink} to="testimondials" spy={true} smooth={true} duration={2000}>
                 <p>Opinie</p>
             </MenuItem>
-            <MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component={Link} activeClass="active" className={classes.menuItemLink} to="successStories" spy={true} smooth={true} duration={2000}>
                 <p>Metamorfozy</p>
             </MenuItem>
-            <MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component={Link} activeClass="active" className={classes.menuItemLink} to="contact" spy={true} smooth={true} duration={2000}>
                 <p>Kontakt</p>
             </MenuItem>
         </Menu>
@@ -202,3 +218,134 @@ function PrimarySearchAppBar({ classes }) {
     );
 }
 export default withStyles(styles)(PrimarySearchAppBar);
+
+// function PrimarySearchAppBar({ classes }) {
+//     const [anchorEl, setAnchorEl] = React.useState(null);
+//     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+//     const isMenuOpen = Boolean(anchorEl);
+//     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+//     const handleProfileMenuOpen = (event) => {
+//         setAnchorEl(event.currentTarget);
+//     };
+
+//     const handleMobileMenuClose = () => {
+//         setMobileMoreAnchorEl(null);
+//     };
+
+//     const handleMenuClose = () => {
+//         setAnchorEl(null);
+//         handleMobileMenuClose();
+//     };
+
+//     const handleMobileMenuOpen = (event) => {
+//         setMobileMoreAnchorEl(event.currentTarget);
+//     };
+
+//     const Logo = () => {
+//         return (
+//             <Link
+//                 underline="none"
+//                 color="inherit"
+//                 className={classes.titleLink}
+//                 href="/"
+//             >
+//                 <img src={logo} className={classes.logoNavBar} />
+//             </Link>
+//         );
+//     };
+
+//     const mobileMenuId = 'primary-search-account-menu-mobile';
+//     const renderMobileMenu = (
+//         <Menu
+//             anchorEl={mobileMoreAnchorEl}
+//             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+//             id={mobileMenuId}
+//             keepMounted
+//             transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+//             open={isMobileMenuOpen}
+//             onClose={handleMobileMenuClose}
+//         >
+//             <MenuItem
+//              onClick={handleMobileMenuClose}
+//             component={Link}
+//             href="/"
+//             >
+//                Doświadczenie
+//             </MenuItem>
+//             <MenuItem>
+//                 <p>Opinie</p>
+//             </MenuItem>
+//             <MenuItem>
+//                 <p>Metamorfozy</p>
+//             </MenuItem>
+//             <MenuItem>
+//                 <p>Kontakt</p>
+//             </MenuItem>
+//         </Menu>
+//     );
+
+//     return (
+//         <div className={classes.grow}>
+//             <AppBar className={classes.root} position="static">
+//                 <Toolbar>
+//                     <Logo />
+//                     <div className={classes.grow} />
+//                     <div className={classes.sectionDesktop}>
+//                         <Link
+//                             variant="h5"
+//                             underline="none"
+//                             color="inherit"
+//                             className={classes.titleLink}
+//                             href="/#experience"
+//                         >
+//                             Doświadczenie
+//                         </Link>
+//                         <Link
+//                             variant="h5"
+//                             underline="none"
+//                             color="inherit"
+//                             className={classes.titleLink}
+//                             href="/#testimondials"
+//                         >
+//                             Opinie
+//                         </Link>
+//                         <Link
+//                             variant="h5"
+//                             underline="none"
+//                             color="inherit"
+//                             className={classes.titleLink}
+//                             href="/#successStories"
+//                         >
+//                             Metamorfozy
+//                         </Link>
+//                         <Link
+//                             variant="h5"
+//                             underline="none"
+//                             color="inherit"
+//                             className={classes.titleLink}
+//                             href="/#contact"
+//                         >
+//                             Kontakt
+//                         </Link>
+//                     </div>
+//                     <div className={classes.sectionMobile}>
+//                         <IconButton
+//                             aria-label="show more"
+//                             aria-controls={mobileMenuId}
+//                             aria-haspopup="true"
+//                             onClick={handleMobileMenuOpen}
+//                             color="inherit"
+//                         >
+//                             <MenuIcon />
+//                         </IconButton>
+//                     </div>
+//                 </Toolbar>
+//             </AppBar>
+//             {renderMobileMenu}
+//             {/* {renderMenu} */}
+//         </div>
+//     );
+// }
+// export default withStyles(styles)(PrimarySearchAppBar);
