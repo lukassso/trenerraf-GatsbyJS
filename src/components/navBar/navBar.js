@@ -49,6 +49,7 @@ const styles = (theme) => ({
     },
     titleLink: {
         margin: '0 20px',
+        cursor: 'pointer',
     },
     inputRoot: {
         color: 'inherit',
@@ -140,23 +141,62 @@ function PrimarySearchAppBar({ classes }) {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem onClick={handleMobileMenuClose} component={Link} activeClass="active" className={classes.menuItemLink} to="experience" spy={true} smooth={true} duration={2000}>
+            <MenuItem
+                onClick={handleMobileMenuClose}
+                component={Link}
+                activeClass="active"
+                className={classes.menuItemLink}
+                to="experience"
+                spy={true}
+                smooth={true}
+                duration={2000}
+            >
                 Doświadczenie
             </MenuItem>
-            <MenuItem onClick={handleMobileMenuClose}  component={Link} activeClass="active" className={classes.menuItemLink} to="testimondials" spy={true} smooth={true} duration={2000}>
+            <MenuItem
+                onClick={handleMobileMenuClose}
+                component={Link}
+                activeClass="active"
+                className={classes.menuItemLink}
+                to="testimondials"
+                spy={true}
+                smooth={true}
+                duration={2000}
+            >
                 <p>Opinie</p>
             </MenuItem>
-            <MenuItem onClick={handleMobileMenuClose} component={Link} activeClass="active" className={classes.menuItemLink} to="successStories" spy={true} smooth={true} duration={2000}>
+            <MenuItem
+                onClick={handleMobileMenuClose}
+                component={Link}
+                activeClass="active"
+                className={classes.menuItemLink}
+                to="successStories"
+                spy={true}
+                smooth={true}
+                duration={2000}
+            >
                 <p>Metamorfozy</p>
             </MenuItem>
-            <MenuItem onClick={handleMobileMenuClose} component={Link} activeClass="active" className={classes.menuItemLink} to="contact" spy={true} smooth={true} duration={2000}>
+            <MenuItem
+                onClick={handleMobileMenuClose}
+                component={Link}
+                activeClass="active"
+                className={classes.menuItemLink}
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={2000}
+            >
                 <p>Kontakt</p>
             </MenuItem>
         </Menu>
     );
 
     return (
-        <div className={classes.grow}>
+        <div 
+        id="back-to-top-anchor"
+        className={classes.grow}
+        >
             <AppBar className={classes.root} position="static">
                 <Toolbar>
                     <Logo />
@@ -167,7 +207,11 @@ function PrimarySearchAppBar({ classes }) {
                             underline="none"
                             color="inherit"
                             className={classes.titleLink}
-                            href="/#experience"
+                            component={Link}
+                            to="experience"
+                            spy={true}
+                            smooth={true}
+                            duration={1000}
                         >
                             Doświadczenie
                         </Link>
@@ -176,7 +220,11 @@ function PrimarySearchAppBar({ classes }) {
                             underline="none"
                             color="inherit"
                             className={classes.titleLink}
-                            href="/#testimondials"
+                            component={Link}
+                            to="testimondials"
+                            spy={true}
+                            smooth={true}
+                            duration={1300}
                         >
                             Opinie
                         </Link>
@@ -185,7 +233,11 @@ function PrimarySearchAppBar({ classes }) {
                             underline="none"
                             color="inherit"
                             className={classes.titleLink}
-                            href="/#successStories"
+                            component={Link}
+                            to="successStories"
+                            spy={true}
+                            smooth={true}
+                            duration={1600}
                         >
                             Metamorfozy
                         </Link>
@@ -194,7 +246,11 @@ function PrimarySearchAppBar({ classes }) {
                             underline="none"
                             color="inherit"
                             className={classes.titleLink}
-                            href="/#contact"
+                            component={Link}
+                            to="contact"
+                            spy={true}
+                            smooth={true}
+                            duration={1900}
                         >
                             Kontakt
                         </Link>
