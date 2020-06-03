@@ -1,5 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
+import logo from '../../pages/images/logoYellow.svg';
+
 import {
     withStyles,
     Container,
@@ -7,6 +9,7 @@ import {
     Box,
     Grid,
     Link,
+    Divider,
 } from '@material-ui/core';
 import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
@@ -17,12 +20,12 @@ import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 
 const useStyles = (theme) => ({
     root: {
-        backgroundColor: theme.palette.primary.light,
-        overflow: 'hidden',
-        '& p': {
-            fontSize: '1rem',
-            paddingLeft: 15,
-        },
+        // backgroundColor: theme.palette.primary.light,
+        // overflow: 'hidden',
+        // '& p': {
+        //     fontSize: '1rem',
+        //     paddingLeft: 15,
+        // },
     },
     yellowWrapper: {
         backgroundColor: theme.palette.background.yellow,
@@ -33,42 +36,66 @@ const useStyles = (theme) => ({
         backgroundColor: theme.palette.background.dark,
         color: theme.palette.text.yellow,
     },
-    contactPhone: {
-        display: 'block',
-        width: 200,
-        margin: '0 auto',
-        [theme.breakpoints.down('sm')]: {},
-        '& div': {
-            paddingTop: 10,
-            paddingBottom: 5,
-        },
+    // contactPhone: {
+    //     display: 'block',
+    //     width: 200,
+    //     margin: '0 auto',
+    //     [theme.breakpoints.down('sm')]: {},
+    //     '& div': {
+    //         paddingTop: 10,
+    //         paddingBottom: 5,
+    //     },
+    // },
+    // placeBox: {
+    //     display: 'block',
+    //     textAlign: 'left',
+    //     width: 200,
+    //     [theme.breakpoints.down('sm')]: {},
+    // },
+    // adressFooter: {
+    //     [theme.breakpoints.down('sm')]: {
+    //         display: 'block',
+    //         width: 200,
+    //         margin: '0 auto',
+    //         '& p': {
+    //             // fontSize: '0.8rem',
+    //             // paddingBottom:15,
+    //         },
+    //     },
+    // },
+    // mapFooter: {
+    //     '& p': {
+    //         fontSize: '0.8rem',
+    //         paddingLeft: 40,
+    //     },
+    // },
+    logoNavBar: {
+        maxWidth: 180,
     },
-    placeBox: {
-        display: 'block',
-        textAlign: 'left',
-        width: 200,
-        [theme.breakpoints.down('sm')]: {},
-    },
-    adressFooter: {
+    footerDivider: {
+        backgroundColor: theme.palette.secondary.main,
+        marginTop: theme.spacing(7),
+        marginBottom: theme.spacing(4),
         [theme.breakpoints.down('sm')]: {
-            display: 'block',
-            width: 200,
-            margin: '0 auto',
-            '& p': {
-                // fontSize: '0.8rem',
-                // paddingBottom:15,
-            },
-        },
-    },
-    mapFooter: {
-        '& p': {
-            fontSize: '0.8rem',
-            paddingLeft: 40,
-        },
-    },
+            paddingTop: 0
+        }
+
+    }
 });
 
 function Footer({ classes, id }) {
+    const Logo = () => {
+        return (
+            <Link
+                underline="none"
+                color="inherit"
+                className={classes.titleLink}
+                href="/"
+            >
+                <img src={logo} className={classes.logoNavBar} />
+            </Link>
+        );
+    };
     return (
         <React.Fragment>
             <section id={id} name="contact" className={classes.root}>
@@ -79,91 +106,88 @@ function Footer({ classes, id }) {
                 </Box>
             </section>
             <section className={clsx(classes.root, classes.blackWrapper)}>
-                <Container maxWidth="sm">
+                <Container maxWidth="md">
                     <Grid container spacing={1}>
-                        <Grid item xs={12} sm={6}>
-                            <Box className={classes.contactPhone}>
-                                <Box display="flex" alignItems="center">
-                                    <ContactPhoneIcon />
-                                    <Typography color="initial">
-                                        + 48 608 472 294
-                                    </Typography>
-                                </Box>
-                                <Box display="flex" alignItems="center">
-                                    <ContactMailIcon />
-                                    <Typography color="initial">
-                                        anubias19@op.pl
-                                    </Typography>
-                                </Box>
+                        <Grid item xs={12} md={3}>
+                            <Box py={4} display="flex" justifyContent="center">
+                                <Logo />
                             </Box>
                         </Grid>
-
-                        <Grid item xs={12} sm={6}>
-                            <Box className={classes.adressFooter}>
-                                <Box pt={2} display="flex" alignItems="center">
-                                    <Box
-                                        display="flex"
-                                        flexDirection="column"
-                                        alignItems="center"
-                                    >
-                                        <PlaceIcon />
-                                    </Box>
-                                    <Box className={classes.placeBox}>
-                                        <Typography color="initial">
-                                            ul. Dziekońskiego 1
-                                        </Typography>
-                                        <Typography color="initial">
-                                            00-728 Warszawa
-                                        </Typography>
-                                        <Box m={0} component="p" display="flex" alignItems="center">
-                                            <Link
-                                                href="https://goo.gl/maps/RPaUAvrG79pDMm5K9"
-                                                color="secondary"
-                                            >
-                                                <small>Sprawdź na mapie</small>
-                                            </Link>
-                                            <OpenInNewIcon fontSize="small" />
-                                        </Box>
-                                    </Box>
-                                </Box>
-                                {/* <Box
-                                    display="flex"
-                                    alignItems="center"
-                                    className={classes.mapFooter}
-                                    ml={0}
-                                >
-                                    <Box display="flex" alignItems="center">
-                                        <Link
-                                            href="https://goo.gl/maps/RPaUAvrG79pDMm5K9"
-                                            color="secondary"
-                                        >
-                                            Sprawdź na mapie
-                                        </Link>
-                                    </Box>
-                                    <Box pt={1}>
-                                        <OpenInNewIcon />
-                                    </Box>
-                                </Box> */}
-                            </Box>
-                        </Grid>
-                        <Grid xs={12}>
-                            <Box mt={4} display="flex" justifyContent="center">
-                                <Box m={3} component={Link} href="https://www.facebook.com/trenerrafalkiszlo/">
-                                    <FacebookIcon
+                        <Grid item xs={12} md={6}>
+                            <Box
+                                m={2}
+                                display="flex"
+                                flexDirection="column"
+                                alignItems="center"
+                                justifyContent="center"
+                            >
+                                <Typography
+                                    // component="Link"
+                                    href="0048608472294"
+                                    variant="body1"
                                     color="secondary"
+                                >
+                                    + 48 608 472 294
+                                </Typography>
+                            </Box>
+                            <Box m={2} display="flex" justifyContent="center">
+                                <Typography variant="body1" color="initial">
+                                    anubias19@op.pl
+                                </Typography>
+                            </Box>
+                            <Box m={2} display="flex" justifyContent="center">
+                                <Typography variant="body1" color="initial">
+                                    ul. Dziekońskiego 1, 00-728 Warszawa
+                                </Typography>
+                            </Box>
+                            <Box m={2} display="flex" justifyContent="center">
+                                <Link
+                                    href="https://goo.gl/maps/RPaUAvrG79pDMm5K9"
+                                    color="secondary"
+                                    variant="body2"
+                                >
+                                    Sprawdź na mapie
+                                </Link>
+                                <OpenInNewIcon fontSize="small" />
+                            </Box>
+                        </Grid>
+                        <Grid xs={12} md={3}>
+                            <Box py={5} display="flex" justifyContent="center">
+                                <Box
+                                    component={Link}
+                                    href="https://www.facebook.com/trenerrafalkiszlo/"
+                                >
+                                    <FacebookIcon
+                                        color="secondary"
                                         style={{ fontSize: '3.5rem' }}
                                     />
                                 </Box>
-                                <Box m={3} component={Link} href="https://www.instagram.com/trener_rafal_kiszlo">
+                                <Box
+                                    component={Link}
+                                    href="https://www.instagram.com/trener_rafal_kiszlo"
+                                >
                                     <InstagramIcon
-                                    color="secondary"
+                                        color="secondary"
                                         style={{ fontSize: '3.5rem' }}
                                     />
                                 </Box>
                             </Box>
                         </Grid>
                     </Grid>
+                    {/* <Divider color="initial" />
+                    <Box textAlign="center">
+                        <Typography variant="body2" color="initial">
+                            2020 Copyright
+                        </Typography>
+                    </Box> */}
                 </Container>
+            
+                <Divider className={classes.footerDivider} />
+            <Box textAlign="center">
+                <Typography variant="body2" color="initial">
+                    2020 Copyright
+                </Typography>
+            </Box>
             </section>
         </React.Fragment>
     );

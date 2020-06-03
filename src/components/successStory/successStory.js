@@ -163,7 +163,7 @@ function SuccessStory({ classes, id }) {
             name: 'Kasia',
             weight: '-50 kg',
             cardTeaser:
-                'Kasia nigdy wcześniej nie ćwiczyła na siłowni. Kasia chciała poprostu schudnąć i poczuć się lepiej...',
+                'Kasia nigdy wcześniej nie ćwiczyła na siłowni. Kasia chciała poprostu schudnąć i poczuć się lepiej. Musieliśmy zacząć od podstaw..',
             text:
                 'Kasia nigdy wcześniej nie ćwiczyła na siłowni. Kasia chciała poprostu schudnąć i poczuć się lepiej. Musieliśmy zacząć od podstaw treningu przy zwróceniu szczególnej uwagi na przepuchline w odcinku ledzwiowym. Cel był konkretny schudnąć maksymalnie w ciągu 12 miesięcy. Efekt jest bardzo zadowalający redukcja 50kg, poprawa sprawnośći, brak bólu w odcinku ledzwiowym- czas 12 miesięcy',
         },
