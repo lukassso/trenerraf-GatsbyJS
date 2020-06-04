@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Trener Personalny Rafał Kiszło`,
+    description: `Trener personalny Mokotów. Twoja kondycja jest w najlepszych rękach.`,
+    siteUrl: `https://trenerrafal.pl`,
   },
   plugins: [
     
@@ -79,9 +81,11 @@ module.exports = {
         name: 'Rafał Kiszło - trener personalny Mokotów',
         short_name: 'Rafał Kiszło',
         start_url: '/',
-        background_color: '#292929',
-        theme_color: '#405375',
-        display: 'minimal-ui',
+        icon: "src/pages/images/icon/logo.png",
+        background_color: '#ffffff',
+        theme_color: '#000000',
+        display: "standalone",
+        crossOrigin: `use-credentials`,
       },
     },
   ],
