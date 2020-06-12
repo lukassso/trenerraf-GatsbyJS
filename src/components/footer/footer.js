@@ -151,7 +151,7 @@ function Footer({ classes, id }) {
                                 <OpenInNewIcon fontSize="small" />
                             </Box>
                         </Grid>
-                        <Grid xs={12} md={3}>
+                        <Grid item xs={12} md={3}>
                             <Box py={5} display="flex" justifyContent="center">
                                 <Box
                                     component={Link}

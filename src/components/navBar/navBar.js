@@ -124,6 +124,7 @@ function PrimarySearchAppBar({ classes }) {
                 color="inherit"
                 className={classes.titleLink}
                 href="/"
+                to="/"
             >
                 <img src={logo} className={classes.logoNavBar} />
             </Link>
@@ -143,7 +144,6 @@ function PrimarySearchAppBar({ classes }) {
         >
             <MenuItem
                 onClick={handleMobileMenuClose}
-                component={Link}
                 activeClass="active"
                 className={classes.menuItemLink}
                 to="experience"
@@ -155,7 +155,6 @@ function PrimarySearchAppBar({ classes }) {
             </MenuItem>
             <MenuItem
                 onClick={handleMobileMenuClose}
-                component={Link}
                 activeClass="active"
                 className={classes.menuItemLink}
                 to="testimondials"
@@ -167,7 +166,6 @@ function PrimarySearchAppBar({ classes }) {
             </MenuItem>
             <MenuItem
                 onClick={handleMobileMenuClose}
-                component={Link}
                 activeClass="active"
                 className={classes.menuItemLink}
                 to="successStories"
@@ -179,7 +177,6 @@ function PrimarySearchAppBar({ classes }) {
             </MenuItem>
             <MenuItem
                 onClick={handleMobileMenuClose}
-                component={Link}
                 activeClass="active"
                 className={classes.menuItemLink}
                 to="contact"
@@ -207,7 +204,6 @@ function PrimarySearchAppBar({ classes }) {
                             underline="none"
                             color="inherit"
                             className={classes.titleLink}
-                            component={Link}
                             to="experience"
                             spy={true}
                             smooth={true}
@@ -220,7 +216,6 @@ function PrimarySearchAppBar({ classes }) {
                             underline="none"
                             color="inherit"
                             className={classes.titleLink}
-                            component={Link}
                             to="testimondials"
                             spy={true}
                             smooth={true}
@@ -233,7 +228,6 @@ function PrimarySearchAppBar({ classes }) {
                             underline="none"
                             color="inherit"
                             className={classes.titleLink}
-                            component={Link}
                             to="successStories"
                             spy={true}
                             smooth={true}
@@ -246,7 +240,6 @@ function PrimarySearchAppBar({ classes }) {
                             underline="none"
                             color="inherit"
                             className={classes.titleLink}
-                            component={Link}
                             to="contact"
                             spy={true}
                             smooth={true}

@@ -6,6 +6,7 @@ import {
     Container,
     Typography,
     Fab,
+    Fade,
 } from '@material-ui/core';
 import PhoneIcon from '@material-ui/icons/Phone';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -21,18 +22,20 @@ const useStyles = (theme) => ({
     },
 
     heroClaim: {
-        margin: '20px 160px',
-        paddingTop: 50,
+        padding: theme.spacing(40),
+        paddingTop: theme.spacing(25),
+        paddingBottom: theme.spacing(10),
         display: 'flex',
         flexDirection: 'column',
+        height: '100%',
         lineHeight: theme.spacing(1),
         [theme.breakpoints.down('md')]: {
-            margin: 40,
-            paddingTop: 30,
+            padding: theme.spacing(10),
+            paddingTop: theme.spacing(7),
         },
         [theme.breakpoints.down('sm')]: {
-            margin: 20,
-            paddingTop: 20,
+            padding: theme.spacing(5),
+            paddingTop: theme.spacing(7),
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -42,8 +45,8 @@ const useStyles = (theme) => ({
         '& h1': {
             fontSize: '3rem',
             textAlign: 'left',
-            marginBottom: 30,
-            marginTop: 20,
+            paddingBottom: theme.spacing(8),
+            paddingTop: theme.spacing(5),
             [theme.breakpoints.down('sm')]: {
                 textAlign: 'center',
                 fontSize: '2rem',
@@ -53,13 +56,14 @@ const useStyles = (theme) => ({
             fontSize: '1.3rem',
             fontWeight: 200,
             textAlign: 'left',
-            marginBottom: 30,
+            paddingBottom: theme.spacing(20),
             lineHeight: 2,
-            marginTop: 20,
             [theme.breakpoints.down('md')]: {
                 fontSize: '1.1rem',
             },
             [theme.breakpoints.down('sm')]: {
+                paddingTop: theme.spacing(5),
+                paddingBottom: theme.spacing(10),
                 textAlign: 'center',
                 fontSize: '1rem',
             },
@@ -68,10 +72,7 @@ const useStyles = (theme) => ({
     heroPicturesWrapper: {
         padding: 0,
         [theme.breakpoints.down('sm')]: {
-            // order: 0,
-            // display: 'flex',
-            // flexDirection: 'column',
-            // alignItems: 'center',
+        
         },
     },
     heroPictures1: {
@@ -81,54 +82,37 @@ const useStyles = (theme) => ({
     heroPictures2: {
         position: 'absolute !important',
         width: '40%',
-        top: 200,
+        top: theme.spacing(50),
         zIndex: -1,
         [theme.breakpoints.down('sm')]: {
             width: '80%',
-            top: 550,
-            left: 30,
+            top: theme.spacing(138),
+            left: theme.spacing(8),
         },
-        // '& .gatsby-image-wrapper': {
-        //   postion: 'absolute',
-
-        // },
     },
     phonePulse: {
-        width: 120,
-        height: 120,
-        boxShadow: '0 0 0 rgba(204,169,44, 0.4)',
-        transition: 'opacity 2s linear',
-        // transform: 'rotate(30deg)',
-        animation: 'pulse 2s infinite',
-        [theme.breakpoints.down('sm')]: {
-            width: 90,
-            height: 90,
-        },
+        width: theme.spacing(30),
+        height: theme.spacing(30),
+        borderRadius: '50%',
+        background: theme.palette.primary.main,
+        animation: `$pulse 7.5s linear infinite`,
         '&:hover': {
             animation: 'none',
-            opacity: 0.4,
+        },
+        [theme.breakpoints.down('sm')]: {
+            width: theme.spacing(22),
+            height: theme.spacing(22),
         },
     },
     '@keyframes pulse': {
         '0%': {
-            boxShadow: '0 0 0 #FDC100',
+            boxShadow: '0 0 0 0 rgba(204,169,44, 0.8)',
         },
-        '50%': {
-            border: '8px solid black',
-            boxShadow: '0 0 200px #FDC100',
+        '20%': {
+            boxShadow: '0 0 0 15px rgba(204,169,44, 0)',
         },
         '100%': {
-            boxShadow: '0 0 0 #FDC100',
-        },
-    },
-    iconPhoneWrapper: {
-        textAlign: 'center',
-        paddingTop: 100,
-        [theme.breakpoints.down('sm')]: {
-            paddingTop: 30,
-        },
-        [theme.breakpoints.down('md')]: {
-            paddingTop: 20,
+            boxShadow: '0 0 0 0 rgba(204,169,44, 0)',
         },
     },
 });
@@ -161,25 +145,37 @@ function Hero(props) {
             <Grid container className={classes.container}>
                 <Grid item xs={12} md={7}>
                     <Box className={classes.heroClaim}>
-                        <Typography variant="h1">
-                            Stań się lepszą wersją siebie!
-                        </Typography>
+                        <Box>
+                            <Typography variant="h1">
+                                Stań się lepszą wersją siebie!
+                            </Typography>
 
-                        <Typography variant="h3" component="h2">
-                            Rafał Kiszło - Trener Personalny i najlepszy
-                            motywator w mieście! Zapraszam na wspólne treningi.
-                        </Typography>
-                            <Box className={classes.iconPhoneWrapper}>
-                      
+                            <Typography variant="h3" component="h2">
+                                Rafał Kiszło - Trener Personalny i najlepszy
+                                motywator w mieście! Zapraszam na wspólne
+                                treningi.
+                            </Typography>
+                        </Box>
+                        <Box
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            className={classes.iconPhoneWrapper}
+                        >
+                            <Fade in appear={false} timeout={1500}>
                                 <Fab
                                     className={classes.phonePulse}
                                     color="primary"
                                     aria-label="call"
                                     href="tel:+48608472294"
                                 >
-                                    <PhoneIcon style={{ fontSize: 60 }} />
+                                    <PhoneIcon
+                                        color="secondary"
+                                        style={{ fontSize: 57 }}
+                                    />
                                 </Fab>
-                            </Box>
+                            </Fade>
+                        </Box>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={5}>

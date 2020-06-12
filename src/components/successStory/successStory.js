@@ -32,7 +32,7 @@ const useStyles = (theme) => ({
         paddingLeft: 30,
         paddingRight: 30,
         [theme.breakpoints.down('sm')]: {
-            paddingTop: 240,
+            // paddingTop: 240,
             marginBottom: 60,
         },
         '& .slick-next': {

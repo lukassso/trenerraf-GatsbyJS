@@ -69,19 +69,19 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: ``,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: ``,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'Rafał Kiszło - trener personalny Mokotów',
         short_name: 'Rafał Kiszło',
         start_url: '/',
-        icon: "src/pages/images/icon/logo.png",
+        icon: "src/pages/images/logo.png",
         background_color: '#ffffff',
         theme_color: '#000000',
         display: "standalone",
