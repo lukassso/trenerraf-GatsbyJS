@@ -87,27 +87,27 @@ const useStyles = (theme) => ({
     },
 });
 
-function Experienses({ classes, id }) {
-    const data = useStaticQuery(graphql`
-        query {
-            pic1: file(relativePath: { eq: "pages/images/superfm-1.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 216, maxHeight: 120) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic2: file(
-                relativePath: { eq: "pages/images/trener-rafal-bcg2.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 620, maxHeight: 517) {
-                        ...GatsbyImageSharpFluid
-                    }
+const query = graphql`
+    query {
+        pic1: file(relativePath: { eq: "pages/images/superfm-1.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 216, maxHeight: 120) {
+                    ...GatsbyImageSharpFluid
                 }
             }
         }
-    `);
+        pic2: file(relativePath: { eq: "pages/images/trener-rafal-bcg2.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 620, maxHeight: 517) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+`;
+function Experienses({ classes, id }) {
+    const data = useStaticQuery(query);
+
     const experiencesList = [
         { id: 1, name: 'Trener Personalny', area: 'Instruktor' },
         { id: 2, name: 'Nurek CMASS', area: 'Instruktor' },
@@ -131,7 +131,7 @@ function Experienses({ classes, id }) {
                         animate={{ rotate: 360 }}
                         transition={{ duration: 2 }}
                     > */}
-                    <motion.circle cx={500} animate={{ cx: [null, 100] }} >
+                    <motion.circle cx={500} animate={{ cx: [null, 100] }}>
                         <Paper
                             className={classes.expPaper}
                             elevation={0}

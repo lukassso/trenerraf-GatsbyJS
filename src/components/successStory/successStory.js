@@ -82,14 +82,7 @@ const useStyles = (theme) => ({
         },
     },
 });
-
-function SuccessStory({ classes, id }) {
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
-    const data = useStaticQuery(graphql`
+    const query = graphql`
         query {
             pic4: file(
                 relativePath: { eq: "components/successStory/images/1.png" }
@@ -155,7 +148,15 @@ function SuccessStory({ classes, id }) {
                 }
             }
         }
-    `);
+    `;
+
+function SuccessStory({ classes, id }) {
+    const [expanded, setExpanded] = React.useState(false);
+     const data = useStaticQuery(query)
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
     const dataStories = [
         {
             id: '1',

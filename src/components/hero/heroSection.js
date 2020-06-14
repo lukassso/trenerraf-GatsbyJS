@@ -71,9 +71,7 @@ const useStyles = (theme) => ({
     },
     heroPicturesWrapper: {
         padding: 0,
-        [theme.breakpoints.down('sm')]: {
-        
-        },
+        [theme.breakpoints.down('sm')]: {},
     },
     heroPictures1: {
         position: 'relative',
@@ -95,7 +93,7 @@ const useStyles = (theme) => ({
         height: theme.spacing(30),
         borderRadius: '50%',
         background: theme.palette.primary.main,
-        animation: `$pulse 7.5s linear infinite`,
+        animation: `$pulse 4.5s linear infinite`,
         '&:hover': {
             animation: 'none',
         },
@@ -117,28 +115,31 @@ const useStyles = (theme) => ({
     },
 });
 
-function Hero(props) {
-    const { classes } = props;
-    const data = useStaticQuery(graphql`
-        query {
-            picHero1: file(
-                relativePath: { eq: "pages/images/trener-rafal-tlo-hero.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 695, maxHeight: 858) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            picHero2: file(relativePath: { eq: "pages/images/bcg1-hero.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 899, maxHeight: 814) {
-                        ...GatsbyImageSharpFluid
-                    }
+const query = graphql`
+    query {
+        picHero1: file(
+            relativePath: { eq: "pages/images/trener-rafal-tlo-hero.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 695, maxHeight: 858) {
+                    ...GatsbyImageSharpFluid
                 }
             }
         }
-    `);
+        picHero2: file(relativePath: { eq: "pages/images/bcg1-hero.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 899, maxHeight: 814) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+`;
+
+function Hero(props) {
+    const { classes } = props;
+
+     const data = useStaticQuery(query)
 
     return (
         <section className={classes.root}>

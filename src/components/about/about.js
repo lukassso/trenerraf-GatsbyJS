@@ -33,9 +33,7 @@ const useStyles = (theme) => ({
   },
 })
 
-function About(props) {
-  const { classes } = props
-  const data = useStaticQuery(graphql`
+  const query = graphql`
     query {
       pic3: file(relativePath: { eq: "pages/images/trener-rafal-bcg3.png" }) {
         childImageSharp {
@@ -45,7 +43,11 @@ function About(props) {
         }
       }
     }
-  `)
+  `;
+function About(props) {
+  const { classes } = props
+     const data = useStaticQuery(query)
+
   return (
     <Box position="relative" component="section">
       <Box className={classes.root}>
