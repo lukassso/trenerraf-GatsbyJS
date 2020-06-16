@@ -21,42 +21,17 @@ import {
 } from '@material-ui/core';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
-// import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-
-// const useStyles = (theme) => ({
-//   root: {
-//     display: "flex",
-//     flexDirection: "column",
-//     justifyContent: "center",
-//     //  backgroundColor: "#d4d4d4"
-//   },
-//   wrapper: {
-//     height: 300,
-//     display: "block",
-//   },
-// });
 const useStyles = makeStyles((theme) => ({
     root: {
         position: 'fixed',
         bottom: theme.spacing(2),
         right: theme.spacing(2),
+        zIndex: 2,
     },
 }));
 
 function Index(props) {
-    //  function scrollToTop() {
-    //   scroll.scrollToTop();
-    // }
-    // function scrollTo() {
-    //   scroller.scrollTo('scroll-to-element', {
-    //     duration: 800,
-    //     delay: 0,
-    //     smooth: 'easeInOutQuart'
-    //   })
-    //   }
-
-    // const { classes } = props;
-    function ScrollTop(props) {
+     function ScrollTop(props) {
         const { children, window } = props;
         const classes = useStyles();
         // Note that you normally won't need to set the window ref as useScrollTrigger

@@ -57,7 +57,7 @@ function About(props) {
           </Box>
           <Box p={10} pb={0} pt={0}>
             <Typography>
-              Witam. Nazywam się Rafał Kiszło i jestem wykfalifikowanym trenerem
+              Witam. Nazywam się Rafał Kiszło i jestem wykwalifikowanym trenerem
               personalnym. Od wielu lat pomagam swoim podopiecznym w uzyskaniu
               wymarzonej sylwetki, poprawie sprawności, przygotowaniu się do
               różnych dyscyplin sportu, wyjściu z kontuzji czyli byciu lepszą
@@ -67,8 +67,7 @@ function About(props) {
               Od ponad 12 lat pomagam podopiecznym w osiąganiu ich celów. W
               mojej pracy najważniejszy jest klient, a z jego sukcesu czerpie
               paliwo do pracy. Cały czas się szkolę, aby moje kwalifikacje
-              pomogły w osiągnięciu Twojego sukcesu. Zapraszam do sprawdzenia
-              moich kwalifikacji w dziale " kursy i szkolenia". Wiele lat pracy
+              pomogły w osiągnięciu Twojego sukcesu. Wiele lat pracy
               jako trener i tysiące przeprowadzonych treningów spowodują, że
               moje doświadczenie pomoże nam w osiągnięciu zamierzonego celu.
               Najważniejszy jesteś Ty i postaram się sprawić, abyś wracał na

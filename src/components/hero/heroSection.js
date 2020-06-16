@@ -93,7 +93,7 @@ const useStyles = (theme) => ({
         height: theme.spacing(30),
         borderRadius: '50%',
         background: theme.palette.primary.main,
-        animation: `$pulse 4.5s linear infinite`,
+        animation: `$pulse 3.5s linear infinite`,
         '&:hover': {
             animation: 'none',
         },
@@ -154,7 +154,7 @@ function Hero(props) {
                             <Typography variant="h3" component="h2">
                                 Rafał Kiszło - Trener Personalny i najlepszy
                                 motywator w mieście! Zapraszam na wspólne
-                                treningi.
+                                treningi na Mokotowie.
                             </Typography>
                         </Box>
                         <Box

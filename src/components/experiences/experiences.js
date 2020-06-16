@@ -111,7 +111,7 @@ function Experienses({ classes, id }) {
     const experiencesList = [
         { id: 1, name: 'Trener Personalny', area: 'Instruktor' },
         { id: 2, name: 'Nurek CMASS', area: 'Instruktor' },
-        { id: 3, name: 'Kattleballs', area: 'Instruktor' },
+        { id: 3, name: 'Kettlebells', area: 'Instruktor' },
         { id: 4, name: 'Kulturystyka', area: 'Instruktor' },
         { id: 5, name: 'Trening Funkcjonalny', area: 'Instruktor' },
         { id: 7, name: 'Trójbuj siłowy', area: 'Instruktor' },
@@ -128,10 +128,9 @@ function Experienses({ classes, id }) {
                 >
                     {/* <motion.div
                         // className={classes.expPaper}
-                        animate={{ rotate: 360 }}
+                        animate={{ scale: 0.5 }}
                         transition={{ duration: 2 }}
                     > */}
-                    <motion.circle cx={500} animate={{ cx: [null, 100] }}>
                         <Paper
                             className={classes.expPaper}
                             elevation={0}
@@ -144,7 +143,7 @@ function Experienses({ classes, id }) {
                                 {experience.area}
                             </Typography>
                         </Paper>
-                    </motion.circle>
+                    {/* </motion.div> */}
                 </Grid>
             </React.Fragment>
         ));

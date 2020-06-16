@@ -5,6 +5,12 @@ module.exports = {
     siteUrl: `https://trenerrafal.pl`,
   },
   plugins: [
+  {
+  resolve: `gatsby-plugin-offline`,
+  options: {
+    precachePages: [`/`],
+  },
+},
     
      {
       resolve: `gatsby-source-filesystem`,
