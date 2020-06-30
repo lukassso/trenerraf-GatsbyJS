@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import {
     withStyles,
     Container,
@@ -16,15 +16,14 @@ const useStyles = (theme) => ({
         position: 'relative',
         backgroundColor: theme.palette.background.gray,
         // paddingTop: 50,
-        maxHeight: 750,
+        maxHeight: 1550,
         [theme.breakpoints.down('sm')]: {
-            maxHeight: 850,
+            maxHeight: 1850,
         },
     },
     expHeader: {
         textAlign: 'center',
     },
-
     expPaper: {
         position: 'relative',
         display: 'flex',
@@ -115,10 +114,28 @@ function Experienses({ classes, id }) {
         { id: 4, name: 'Kulturystyka', area: 'Instruktor' },
         { id: 5, name: 'Trening Funkcjonalny', area: 'Instruktor' },
         { id: 7, name: 'Trójbuj siłowy', area: 'Instruktor' },
+        { id: 8, name: 'Samoobrona', area: 'Instruktor' },
+        { id: 9, name: 'Indoor Cycling', area: 'Instruktor' },
+        { id: 10, name: 'Speening star', area: 'Instruktor' },
+        { id: 11, name: 'Zdrowy kręgosłup', area: 'Certyfikat IFAA' },
+        { id: 12, name: 'Patologie Kręgosłupa', area: 'Certyfikat IFAA' },
+        { id: 13, name: 'Biodro staw życia', area: 'Biernat' },
+        { id: 14, name: 'Kolano - biodra i stopy', area: 'Biernat' },
+        { id: 15, name: 'Stopa - nasza podpora', area: 'Biernat' },
+        { id: 16, name: 'Bark nie musi być skomplikowany', area: 'Biernat' },
+        { id: 17, name: 'Kształtowanie kobiecej sylwetki ', area: 'CSS' },
+        {
+            id: 18,
+            name: 'Redukacja bez liczenia kalorii',
+            area: 'Tadeusz Sowinski',
+        },
+        { id: 19, name: 'Tułów -baza do ruchu ', area: 'Biernat' },
+        { id: 20, name: 'Tułów -baza do ruchu ', area: 'Biernat' },
     ];
     const ExperienceMap = (props) => {
         return experiencesList.map((experience) => (
             <React.Fragment>
+                {/* <ScrollAnimation animateIn="flipInY" animateOut="flipOutY"> */}
                 <Grid
                     key={experience.id}
                     className={classes.expItem}
@@ -131,18 +148,19 @@ function Experienses({ classes, id }) {
                         animate={{ scale: 0.5 }}
                         transition={{ duration: 2 }}
                     > */}
-                        <Paper
-                            className={classes.expPaper}
-                            elevation={0}
-                            variant="outlined"
-                        >
+                    <Paper
+                        className={classes.expPaper}
+                        elevation={0}
+                        variant="outlined"
+                    >
+                       
                             <Typography key={experience.name} variant="h5">
                                 {experience.name}
                             </Typography>
                             <Typography variant="body1" key={experience.area}>
                                 {experience.area}
                             </Typography>
-                        </Paper>
+                    </Paper>
                     {/* </motion.div> */}
                 </Grid>
             </React.Fragment>
@@ -162,6 +180,7 @@ function Experienses({ classes, id }) {
                         </Typography>
                     </Box>
                 </Box>
+                    
                 <Box pt={12} pb={10}>
                     <Typography className={classes.expHeader} variant="h3">
                         Przebyte kursy i szkolenia
@@ -175,6 +194,7 @@ function Experienses({ classes, id }) {
                     justify="center"
                     alignItems="center"
                 >
+
                     <ExperienceMap />
                 </Grid>
             </Container>

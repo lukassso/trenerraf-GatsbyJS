@@ -147,6 +147,42 @@ const useStyles = (theme) => ({
                     }
                 }
             }
+            pic11: file(
+                relativePath: { eq: "components/successStory/images/8.png" }
+            ) {
+                childImageSharp {
+                    fluid(maxWidth: 743, maxHeight: 533) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            pic12: file(
+                relativePath: { eq: "components/successStory/images/9.png" }
+            ) {
+                childImageSharp {
+                    fluid(maxWidth: 743, maxHeight: 533) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            pic13: file(
+                relativePath: { eq: "components/successStory/images/10.png" }
+            ) {
+                childImageSharp {
+                    fluid(maxWidth: 743, maxHeight: 533) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            pic14: file(
+                relativePath: { eq: "components/successStory/images/11.png" }
+            ) {
+                childImageSharp {
+                    fluid(maxWidth: 743, maxHeight: 533) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
         }
     `;
 
@@ -227,6 +263,46 @@ function SuccessStory({ classes, id }) {
                 'Dominik jest typowym biurkowcem. Praca 8-10 h bez ruchu powrót do domu i kanapa spowodowały nadwagę...',
             text:
                 'Dominik jest typowym biurkowcem. Praca 8-10 h bez ruchu powrót do domu i kanapa spowodowały nadwagę. Cel był jasny redukcja tkanki tłuszczowej, poprawa sprawnośći i nauka techniki wykonywania ćwiczeń.',
+        },
+        {
+            id: '8',
+            image: data.pic11.childImageSharp.fluid,
+            name: 'Igor',
+            weight: '-20kg',
+            cardTeaser:
+                'Igor chciał wyglądać atrakcyjnie. W ciągu 2 lat wspólnej pracy ( 3 razy w tyg ) sylwetka znacznie ...',
+            text:
+                'Igor chciał wyglądać atrakcyjnie. W ciągu 2 lat wspólnej pracy ( 3 razy w tyg ) sylwetka znacznie się poprawiła. Dieta byla trzymana na 70%.',
+        },
+        {
+            id: '9',
+            image: data.pic12.childImageSharp.fluid,
+            name: 'Ania',
+            weight: '-20kg',
+            cardTeaser:
+                'Ania chciała się zmienić w ciągu 12 miesięcy, aby na następne wakacje wyglądać lepiej.',
+            text:
+                '',
+        },
+        {
+            id: '10',
+            image: data.pic13.childImageSharp.fluid,
+            name: 'Joanna',
+            weight: '-20kg',
+            cardTeaser:
+                'Joanna chciała poprawić swoja sylwetkę po ciąży. Poczatkowe treningi były delikatne i z czasem...',
+            text:
+                'Joanna chciała poprawić swoja sylwetkę po ciąży. Poczatkowe treningi były delikatne i z czasem zwiekszalismy poziom trudności.',
+        },
+        {
+            id: '11',
+            image: data.pic14.childImageSharp.fluid,
+            name: 'Ania',
+            weight: '-20kg',
+            cardTeaser:
+                'Ania potrzebowała przemiany, aby być gotowym na następne wakacje.',
+            text:
+                '',
         },
     ];
 

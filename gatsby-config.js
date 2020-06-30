@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: `Trener Personalny Rafał Kiszło`,
-        description: `Trener personalny Mokotów. Twoja kondycja jest w najlepszych rękach.`,
+        description: `Trener personalny Mokotów. Twoja kondycja w najlepszych rękach.`,
         siteUrl: `https://trenerrafal.pl`,
     },
     plugins: [
@@ -10,7 +10,11 @@ module.exports = {
       options: {
         https: true,
         www: false,
-        host: 'trenerrafal.pl', // if 'www' is set to 'false', be sure to also remove it here!
+        host: 'trenerrafal.pl', // if 'www' is set to 'false', be sure to also remove it here!,
+        redirect: [
+          'RewriteRule ^www.trenerrafal.pl /trenerrafal.pl [R=301,L,NE]',
+          
+        ],
       },
     },
         `gatsby-plugin-sitemap`,
@@ -84,12 +88,12 @@ module.exports = {
                 ],
             },
         },
-        // {
-        //   resolve: `gatsby-plugin-google-analytics`,
-        //   options: {
-        //     trackingId: ``,
-        //   },
-        // },
+        {
+          resolve: `gatsby-plugin-google-analytics`,
+          options: {
+            trackingId: `UA-6410659-3`,
+          },
+        },
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
