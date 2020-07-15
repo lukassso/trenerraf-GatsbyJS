@@ -22,12 +22,15 @@ const useStyles = (theme) => ({
     // overflow: "hidden",
     color: theme.palette.text.secondary,
     paddingTop: 80,
-    paddingBottom: 80,
-    maxHeight: 600,
+    paddingBottom: 120,
+    maxHeight: 640,
   },
   pictureHeader: {
     position: 'absolute',
-    top: 50,
+    top: 0,
+    [theme.breakpoints.down('sm')]: {
+     top: 60,
+    },
   },
   callToAction: {
     padding: '0 16px',
@@ -107,7 +110,7 @@ function AskYourself(props) {
               variant="contained"
               color="secondary"
             >
-              Przejdź do kontaktu
+              Zadzwoń teraz i dowiedz się więcej
             </Button>
           </Box>
         </Box>

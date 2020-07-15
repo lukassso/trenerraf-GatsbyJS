@@ -9,6 +9,7 @@ import Testimondials from '../components/testimondials';
 import SuccessStory from '../components/successStory';
 import AskYourself from '../components/askYourself';
 import Footer from '../components/footer';
+import 'animate.css';
 
 import {
     makeStyles,
@@ -69,13 +70,14 @@ function Index(props) {
         <React.Fragment>
             <Hero />
             {/* <a >Doświadczenie</a> */}
+             <SuccessStory id="successStories" />
             <Experiences id="experience" />
             <About />
             {/* <a id="testimondial">Opinie</a> */}
             <Testimondials id="testimondials" />
             <AskYourself />
             {/* <a id="success-story">Metamorfozy</a> */}
-            <SuccessStory id="successStories" />
+           
             <Footer id="contact" />
             <ScrollTop {...props}>
                 <Fab

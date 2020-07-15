@@ -75,14 +75,18 @@ const useStyles = (theme) => ({
         },
     },
     priceWrapper: {
-        padding: '0 20px',
+        padding: '60px 20px 0',
+        [theme.breakpoints.down('sm')]: {
+            padding: '0px 20px ',
+        },
     },
     priceHeader: {
         display: 'flex',
         alignItems: 'center',
-        paddingTop: 60,
+        paddingTop: 40,
         paddingBottom: 40,
         borderBottom: '1px solid black',
+        borderTop: '1px solid black',
     },
 });
 
@@ -153,13 +157,12 @@ function Experienses({ classes, id }) {
                         elevation={0}
                         variant="outlined"
                     >
-                       
-                            <Typography key={experience.name} variant="h5">
-                                {experience.name}
-                            </Typography>
-                            <Typography variant="body1" key={experience.area}>
-                                {experience.area}
-                            </Typography>
+                        <Typography key={experience.name} variant="h5">
+                            {experience.name}
+                        </Typography>
+                        <Typography variant="body1" key={experience.area}>
+                            {experience.area}
+                        </Typography>
                     </Paper>
                     {/* </motion.div> */}
                 </Grid>
@@ -180,7 +183,7 @@ function Experienses({ classes, id }) {
                         </Typography>
                     </Box>
                 </Box>
-                    
+
                 <Box pt={12} pb={10}>
                     <Typography className={classes.expHeader} variant="h3">
                         Przebyte kursy i szkolenia
@@ -194,7 +197,6 @@ function Experienses({ classes, id }) {
                     justify="center"
                     alignItems="center"
                 >
-
                     <ExperienceMap />
                 </Grid>
             </Container>

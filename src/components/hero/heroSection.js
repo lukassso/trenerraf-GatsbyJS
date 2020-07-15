@@ -47,6 +47,9 @@ const useStyles = (theme) => ({
             textAlign: 'left',
             paddingBottom: theme.spacing(8),
             paddingTop: theme.spacing(5),
+            // transform: '',
+            // opacity: 1,
+            // transition: 'opacity 4.75s ease-in-out',
             [theme.breakpoints.down('sm')]: {
                 textAlign: 'center',
                 fontSize: '2rem',
@@ -58,6 +61,8 @@ const useStyles = (theme) => ({
             textAlign: 'left',
             paddingBottom: theme.spacing(20),
             lineHeight: 2,
+            // transform: 'translateX(12.5em)',
+            // transition: 'transform 2s ease-in-out',
             [theme.breakpoints.down('md')]: {
                 fontSize: '1.1rem',
             },
@@ -93,7 +98,7 @@ const useStyles = (theme) => ({
         height: theme.spacing(30),
         borderRadius: '50%',
         background: theme.palette.primary.main,
-        animation: `$pulse 3.5s linear infinite`,
+        animation: `$pulse 2.5s linear infinite`,
         '&:hover': {
             animation: 'none',
         },
@@ -107,7 +112,7 @@ const useStyles = (theme) => ({
             boxShadow: '0 0 0 0 rgba(204,169,44, 0.8)',
         },
         '20%': {
-            boxShadow: '0 0 0 15px rgba(204,169,44, 0)',
+            boxShadow: '0 0 0 18px rgba(204,169,44, 0)',
         },
         '100%': {
             boxShadow: '0 0 0 0 rgba(204,169,44, 0)',
@@ -137,9 +142,10 @@ const query = graphql`
 `;
 
 function Hero(props) {
+
     const { classes } = props;
 
-     const data = useStaticQuery(query)
+    const data = useStaticQuery(query);
 
     return (
         <section className={classes.root}>

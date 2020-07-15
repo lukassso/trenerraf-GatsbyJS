@@ -27,13 +27,15 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = (theme) => ({
     root: {
-        paddingTop: 300,
-        marginBottom: 100,
+        paddingTop: 80,
+        marginBottom: -10,
         paddingLeft: 30,
         paddingRight: 30,
+        backgroundColor: theme.palette.background.gray,
+
         [theme.breakpoints.down('sm')]: {
             // paddingTop: 240,
-            marginBottom: 60,
+            // marginBottom: 60,
         },
         '& .slick-next': {
             // backgroundColor: theme.palette.background.dark,
@@ -66,6 +68,7 @@ const useStyles = (theme) => ({
     sliderWrapper: {
         position: 'relative',
         margin: 10,
+        marginTop: 30,
         '& .slick-next': {
             // right: -10,
             top: 230,

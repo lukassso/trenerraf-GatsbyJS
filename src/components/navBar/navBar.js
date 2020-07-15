@@ -46,6 +46,7 @@ const styles = (theme) => ({
     titleLink: {
         margin: '0 20px',
         cursor: 'pointer',
+        fontWeight: 600
     },
     inputRoot: {
         color: 'inherit',
@@ -78,12 +79,12 @@ const styles = (theme) => ({
     },
     menuItemLink: {
         padding: '20px 30px',
-        fontWeight: '600'
+        fontWeight: '600',
     },
     mobileMenuWrapper: {
         margin: 0,
         padding: 0,
-    }
+    },
 });
 
 function PrimarySearchAppBar({ classes }) {
@@ -138,7 +139,7 @@ function PrimarySearchAppBar({ classes }) {
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
         <Menu
-        className={classes.mobileMenuWrapper}
+            className={classes.mobileMenuWrapper}
             anchorEl={mobileMoreAnchorEl}
             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
             id={mobileMenuId}
@@ -147,31 +148,6 @@ function PrimarySearchAppBar({ classes }) {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <Link
-                onClick={handleMobileMenuClose}
-                activeClass="active"
-                // className={classes.menuItemLink}
-                to="experience"
-                spy={true}
-                smooth={true}
-                duration={2000}
-            >
-                <MenuItem className={classes.menuItemLink}>
-                    Doświadczenie
-                </MenuItem>
-            </Link>
-             <Divider />
-            <Link
-                onClick={handleMobileMenuClose}
-                activeClass="active"
-                to="testimondials"
-                spy={true}
-                smooth={true}
-                duration={2000}
-            >
-                <MenuItem className={classes.menuItemLink}>Opinie</MenuItem>
-            </Link>
-             <Divider />
             <Link
                 onClick={handleMobileMenuClose}
                 activeClass="active"
@@ -185,7 +161,33 @@ function PrimarySearchAppBar({ classes }) {
                     Metamorfozy
                 </MenuItem>
             </Link>
- <Divider />
+            <Divider />
+            <Link
+                onClick={handleMobileMenuClose}
+                activeClass="active"
+                // className={classes.menuItemLink}
+                to="experience"
+                spy={true}
+                smooth={true}
+                duration={2000}
+            >
+                <MenuItem className={classes.menuItemLink}>
+                    Doświadczenie
+                </MenuItem>
+            </Link>
+            <Divider />
+            <Link
+                onClick={handleMobileMenuClose}
+                activeClass="active"
+                to="testimondials"
+                spy={true}
+                smooth={true}
+                duration={2000}
+            >
+                <MenuItem className={classes.menuItemLink}>Opinie</MenuItem>
+            </Link>
+         
+            <Divider />
             <Link
                 onClick={handleMobileMenuClose}
                 activeClass="active"
@@ -206,6 +208,18 @@ function PrimarySearchAppBar({ classes }) {
                     <Logo />
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
+                         <Link
+                            variant="h5"
+                            underline="none"
+                            color="inherit"
+                            className={classes.titleLink}
+                            to="successStories"
+                            spy={true}
+                            smooth={true}
+                            duration={1600}
+                        >
+                            Metamorfozy
+                        </Link>
                         <Link
                             variant="h5"
                             underline="none"
@@ -230,18 +244,7 @@ function PrimarySearchAppBar({ classes }) {
                         >
                             Opinie
                         </Link>
-                        <Link
-                            variant="h5"
-                            underline="none"
-                            color="inherit"
-                            className={classes.titleLink}
-                            to="successStories"
-                            spy={true}
-                            smooth={true}
-                            duration={1600}
-                        >
-                            Metamorfozy
-                        </Link>
+                       
                         <Link
                             variant="h5"
                             underline="none"
@@ -274,4 +277,3 @@ function PrimarySearchAppBar({ classes }) {
     );
 }
 export default withStyles(styles)(PrimarySearchAppBar);
-

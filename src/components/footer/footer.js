@@ -29,7 +29,7 @@ const useStyles = (theme) => ({
     },
     yellowWrapper: {
         backgroundColor: theme.palette.background.yellow,
-        padding: 30,
+       height: 180,
     },
     blackWrapper: {
         padding: '30px 0 20px',
@@ -77,10 +77,9 @@ const useStyles = (theme) => ({
         marginTop: theme.spacing(7),
         marginBottom: theme.spacing(4),
         [theme.breakpoints.down('sm')]: {
-            paddingTop: 0
-        }
-
-    }
+            paddingTop: 0,
+        },
+    },
 });
 
 function Footer({ classes, id }) {
@@ -98,13 +97,9 @@ function Footer({ classes, id }) {
     };
     return (
         <React.Fragment>
-            <section id={id} name="contact" className={classes.root}>
-                <Box className={classes.yellowWrapper}>
-                    <Typography variant="h3" align="center" width="100%">
-                        Skontaktuj się ze mną
-                    </Typography>
-                </Box>
-            </section>
+            {/* <section  className={classes.root}> */}
+            <Box id={id} name="contact" className={classes.yellowWrapper} />
+
             <section className={clsx(classes.root, classes.blackWrapper)}>
                 <Container maxWidth="md">
                     <Grid container spacing={1}>
@@ -181,13 +176,13 @@ function Footer({ classes, id }) {
                         </Typography>
                     </Box> */}
                 </Container>
-            
+
                 <Divider className={classes.footerDivider} />
-            <Box textAlign="center">
-                <Typography variant="body2" color="initial">
-                    2020 Copyright
-                </Typography>
-            </Box>
+                <Box textAlign="center">
+                    <Typography variant="body2" color="initial">
+                        2020 Copyright
+                    </Typography>
+                </Box>
             </section>
         </React.Fragment>
     );
