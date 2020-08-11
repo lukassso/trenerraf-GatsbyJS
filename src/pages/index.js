@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import Layout from '../layout';
 import NavBar from '../components/navBar';
 import About from '../components/about';
@@ -11,15 +10,7 @@ import AskYourself from '../components/askYourself';
 import Footer from '../components/footer';
 import 'animate.css';
 
-import {
-    makeStyles,
-    Box,
-    useScrollTrigger,
-    Container,
-    Fab,
-    Zoom,
-    Button,
-} from '@material-ui/core';
+import {Fab, makeStyles, useScrollTrigger, Zoom,} from '@material-ui/core';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 const useStyles = makeStyles((theme) => ({
@@ -32,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Index(props) {
-     function ScrollTop(props) {
-        const { children, window } = props;
+    function ScrollTop(props) {
+        const {children, window} = props;
         const classes = useStyles();
         // Note that you normally won't need to set the window ref as useScrollTrigger
         // will default to window.
@@ -50,7 +41,7 @@ function Index(props) {
             ).querySelector('#back-to-top-anchor');
 
             if (anchor) {
-                anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                anchor.scrollIntoView({behavior: 'smooth', block: 'center'});
             }
         };
 
@@ -66,26 +57,27 @@ function Index(props) {
             </Zoom>
         );
     }
+
     const content = (
         <React.Fragment>
-            <Hero />
+            <Hero/>
             {/* <a >Doświadczenie</a> */}
-             <SuccessStory id="successStories" />
-            <Experiences id="experience" />
-            <About />
+            <SuccessStory id="successStories"/>
+            <Experiences id="experience"/>
+            <About/>
             {/* <a id="testimondial">Opinie</a> */}
-            <Testimondials id="testimondials" />
-            <AskYourself />
+            <Testimondials id="testimondials"/>
+            <AskYourself/>
             {/* <a id="success-story">Metamorfozy</a> */}
-           
-            <Footer id="contact" />
+
+            <Footer id="contact"/>
             <ScrollTop {...props}>
                 <Fab
                     color="secondary"
                     size="small"
                     aria-label="scroll back to top"
                 >
-                    <KeyboardArrowUpIcon />
+                    <KeyboardArrowUpIcon/>
                 </Fab>
             </ScrollTop>
             {/* <a onClick={scrollToTop}>To the top!</a> */}
@@ -93,7 +85,7 @@ function Index(props) {
     );
     return (
         <Layout>
-            <NavBar />
+            <NavBar/>
             {content}
         </Layout>
     );

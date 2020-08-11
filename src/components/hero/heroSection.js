@@ -1,37 +1,33 @@
-import React from 'react';
-import {
-    withStyles,
-    Grid,
-    Box,
-    Container,
-    Typography,
-    Fab,
-    Fade,
-} from '@material-ui/core';
-import PhoneIcon from '@material-ui/icons/Phone';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 // import { getCorrectEventName } from '@material/animation'
-import { useRef } from 'react';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import {Box, Fab, Fade, Grid, Typography, withStyles,} from '@material-ui/core';
+import PhoneIcon from '@material-ui/icons/Phone';
+import {graphql, useStaticQuery} from 'gatsby';
+import Img from 'gatsby-image';
 
 const useStyles = (theme) => ({
     root: {
-        backgroundColor: theme.palette.background.white,
+        // backgroundColor: theme.palette.background.white,
+        // background: `radial-gradient(ellipse at center, #fff 20%, #aaa 100%)`,
         overflow: 'hidden',
     },
 
     heroClaim: {
         padding: theme.spacing(40),
-        paddingTop: theme.spacing(25),
+        paddingTop: theme.spacing(55),
         paddingBottom: theme.spacing(10),
+        paddingRight: theme.spacing(10),
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
         lineHeight: theme.spacing(1),
+        [theme.breakpoints.down('lg')]: {
+            padding: theme.spacing(28),
+            paddingTop: theme.spacing(35),
+        },
         [theme.breakpoints.down('md')]: {
             padding: theme.spacing(10),
-            paddingTop: theme.spacing(7),
+            paddingTop: theme.spacing(20),
         },
         [theme.breakpoints.down('sm')]: {
             padding: theme.spacing(5),
@@ -43,26 +39,33 @@ const useStyles = (theme) => ({
         },
 
         '& h1': {
-            fontSize: '3rem',
+            fontSize: '3.3rem',
             textAlign: 'left',
             paddingBottom: theme.spacing(8),
             paddingTop: theme.spacing(5),
             // transform: '',
             // opacity: 1,
             // transition: 'opacity 4.75s ease-in-out',
+            [theme.breakpoints.down('lg')]: {
+                fontSize: '3rem',
+
+            },
             [theme.breakpoints.down('sm')]: {
                 textAlign: 'center',
-                fontSize: '2rem',
+                fontSize: '2.2rem',
             },
         },
         '& h2': {
-            fontSize: '1.3rem',
+            fontSize: '1.6rem',
             fontWeight: 200,
             textAlign: 'left',
-            paddingBottom: theme.spacing(20),
-            lineHeight: 2,
+            // paddingBottom: theme.spacing(20),
+            lineHeight: 1.5,
             // transform: 'translateX(12.5em)',
             // transition: 'transform 2s ease-in-out',
+            [theme.breakpoints.down('lg')]: {
+                fontSize: '1.3rem',
+            },
             [theme.breakpoints.down('md')]: {
                 fontSize: '1.1rem',
             },
@@ -81,16 +84,26 @@ const useStyles = (theme) => ({
     heroPictures1: {
         position: 'relative',
         padding: 0,
+        zIndex: 2
     },
     heroPictures2: {
         position: 'absolute !important',
         width: '40%',
         top: theme.spacing(50),
-        zIndex: -1,
+        zIndex: 0,
         [theme.breakpoints.down('sm')]: {
             width: '80%',
             top: theme.spacing(138),
             left: theme.spacing(8),
+        },
+    },
+    iconPhoneWrapper: {
+        paddingBottom: 80,
+        [theme.breakpoints.down('md')]: {
+            paddingBottom: 0,
+        },
+        [theme.breakpoints.down('lg')]: {
+            paddingBottom: 0,
         },
     },
     phonePulse: {
@@ -98,7 +111,7 @@ const useStyles = (theme) => ({
         height: theme.spacing(30),
         borderRadius: '50%',
         background: theme.palette.primary.main,
-        animation: `$pulse 2.5s linear infinite`,
+        animation: `$pulse 5.5s linear infinite`,
         '&:hover': {
             animation: 'none',
         },
@@ -112,7 +125,7 @@ const useStyles = (theme) => ({
             boxShadow: '0 0 0 0 rgba(204,169,44, 0.8)',
         },
         '20%': {
-            boxShadow: '0 0 0 18px rgba(204,169,44, 0)',
+            boxShadow: '0 0 0 48px rgba(204,169,44, 0)',
         },
         '100%': {
             boxShadow: '0 0 0 0 rgba(204,169,44, 0)',
@@ -143,7 +156,7 @@ const query = graphql`
 
 function Hero(props) {
 
-    const { classes } = props;
+    const {classes} = props;
 
     const data = useStaticQuery(query);
 
@@ -167,6 +180,7 @@ function Hero(props) {
                             display="flex"
                             alignItems="center"
                             justifyContent="center"
+                            height="100%"
                             className={classes.iconPhoneWrapper}
                         >
                             <Fade in appear={false} timeout={1500}>
@@ -178,7 +192,7 @@ function Hero(props) {
                                 >
                                     <PhoneIcon
                                         color="secondary"
-                                        style={{ fontSize: 57 }}
+                                        style={{fontSize: 57}}
                                     />
                                 </Fab>
                             </Fade>

@@ -1,27 +1,7 @@
 import React from 'react';
 // import { Link } from "gatsby"
-import { render } from 'react-dom';
-import {
-    Link,
-    DirectLink,
-    Element,
-    Events,
-    animateScroll as scroll,
-    scrollSpy,
-    scroller,
-} from 'react-scroll';
-import {
-    withStyles,
-    Typography,
-    Box,
-    AppBar,
-    IconButton,
-    Toolbar,
-    Badge,
-    MenuItem,
-    Menu,
-    Divider,
-} from '@material-ui/core';
+import {animateScroll as scroll, Link, scroller,} from 'react-scroll';
+import {AppBar, Divider, IconButton, Menu, MenuItem, Toolbar, withStyles,} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import logo from '../../pages/images/logo.svg';
 
@@ -87,7 +67,7 @@ const styles = (theme) => ({
     },
 });
 
-function PrimarySearchAppBar({ classes }) {
+function PrimarySearchAppBar({classes}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -114,6 +94,7 @@ function PrimarySearchAppBar({ classes }) {
     function scrollToTop() {
         scroll.scrollToTop();
     }
+
     function scrollTo() {
         scroller.scrollTo('scroll-to-element', {
             duration: 800,
@@ -131,7 +112,7 @@ function PrimarySearchAppBar({ classes }) {
                 href="/"
                 to="/"
             >
-                <img src={logo} className={classes.logoNavBar} />
+                <img src={logo} className={classes.logoNavBar}/>
             </Link>
         );
     };
@@ -141,10 +122,10 @@ function PrimarySearchAppBar({ classes }) {
         <Menu
             className={classes.mobileMenuWrapper}
             anchorEl={mobileMoreAnchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            anchorOrigin={{vertical: 'top', horizontal: 'right'}}
             id={mobileMenuId}
             keepMounted
-            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+            transformOrigin={{vertical: 'top', horizontal: 'right'}}
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
@@ -161,7 +142,7 @@ function PrimarySearchAppBar({ classes }) {
                     Metamorfozy
                 </MenuItem>
             </Link>
-            <Divider />
+            <Divider/>
             <Link
                 onClick={handleMobileMenuClose}
                 activeClass="active"
@@ -175,7 +156,7 @@ function PrimarySearchAppBar({ classes }) {
                     Doświadczenie
                 </MenuItem>
             </Link>
-            <Divider />
+            <Divider/>
             <Link
                 onClick={handleMobileMenuClose}
                 activeClass="active"
@@ -186,8 +167,8 @@ function PrimarySearchAppBar({ classes }) {
             >
                 <MenuItem className={classes.menuItemLink}>Opinie</MenuItem>
             </Link>
-         
-            <Divider />
+
+            <Divider/>
             <Link
                 onClick={handleMobileMenuClose}
                 activeClass="active"
@@ -205,10 +186,10 @@ function PrimarySearchAppBar({ classes }) {
         <div id="back-to-top-anchor" className={classes.grow}>
             <AppBar className={classes.root} position="static">
                 <Toolbar>
-                    <Logo />
-                    <div className={classes.grow} />
+                    <Logo/>
+                    <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
-                         <Link
+                        <Link
                             variant="h5"
                             underline="none"
                             color="inherit"
@@ -244,7 +225,7 @@ function PrimarySearchAppBar({ classes }) {
                         >
                             Opinie
                         </Link>
-                       
+
                         <Link
                             variant="h5"
                             underline="none"
@@ -266,7 +247,7 @@ function PrimarySearchAppBar({ classes }) {
                             onClick={handleMobileMenuOpen}
                             color="inherit"
                         >
-                            <MenuIcon />
+                            <MenuIcon/>
                         </IconButton>
                     </div>
                 </Toolbar>
@@ -276,4 +257,5 @@ function PrimarySearchAppBar({ classes }) {
         </div>
     );
 }
+
 export default withStyles(styles)(PrimarySearchAppBar);

@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
-import { useStaticQuery, graphql } from 'gatsby';
+import {graphql, useStaticQuery} from 'gatsby';
 import Img from 'gatsby-image';
 import clsx from 'clsx';
 // import { dataStories } from './dataStories'
 import {
-    withStyles,
-    Container,
     Box,
-    Typography,
     Card,
-    CardHeader,
-    CardMedia,
-    CardContent,
     CardActions,
-    Avatar,
-    IconButton,
+    CardContent,
+    CardMedia,
     Collapse,
+    Container,
+    IconButton,
+    Typography,
+    withStyles,
 } from '@material-ui/core';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -85,7 +83,7 @@ const useStyles = (theme) => ({
         },
     },
 });
-    const query = graphql`
+const query = graphql`
         query {
             pic4: file(
                 relativePath: { eq: "components/successStory/images/1.png" }
@@ -189,9 +187,9 @@ const useStyles = (theme) => ({
         }
     `;
 
-function SuccessStory({ classes, id }) {
+function SuccessStory({classes, id}) {
     const [expanded, setExpanded] = React.useState(false);
-     const data = useStaticQuery(query)
+    const data = useStaticQuery(query)
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -406,7 +404,7 @@ function SuccessStory({ classes, id }) {
                                             {story.name}
                                         </Typography>
                                         <Typography
-                                            style={{ marginTop: 10 }}
+                                            style={{marginTop: 10}}
                                             variant="body1"
                                             color="initial"
                                         >
@@ -430,7 +428,7 @@ function SuccessStory({ classes, id }) {
                                             aria-expanded={expanded}
                                             aria-label="show more"
                                         >
-                                            <ExpandMoreIcon key={story.id} />
+                                            <ExpandMoreIcon key={story.id}/>
                                         </IconButton>
                                     </CardActions>
                                     <Collapse

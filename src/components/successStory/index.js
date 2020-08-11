@@ -1,1 +1,1 @@
-export { default } from './successStory.js'
+export {default} from './successStory.js'

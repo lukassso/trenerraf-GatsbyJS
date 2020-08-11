@@ -1,1 +1,1 @@
-export { default } from './heroSection'
+export {default} from './heroSection'

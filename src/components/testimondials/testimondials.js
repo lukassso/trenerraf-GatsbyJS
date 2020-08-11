@@ -1,20 +1,19 @@
 import React from 'react';
-import { dataTestimondials } from './dataTestimondials';
-import { dataTestimondials2 } from './dataTestimondials2';
+import {dataTestimondials} from './dataTestimondials';
+import {dataTestimondials2} from './dataTestimondials2';
 import {
-    withStyles,
-    Container,
-    Typography,
-    Grid,
     Avatar,
     Box,
+    Button,
+    CircularProgress,
+    Container,
+    Divider,
     List,
     ListItem,
     ListItemAvatar,
     ListItemText,
-    Button,
-    Divider,
-    CircularProgress,
+    Typography,
+    withStyles,
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
@@ -43,7 +42,7 @@ const useStyles = (theme) => ({
 const allData = dataTestimondials.map((testimondial) => (
     <Box>
         <Box align="center" width="100%" m={2} mt={4}>
-            <ChatBubbleOutlineIcon />
+            <ChatBubbleOutlineIcon/>
         </Box>
         <Box pl={8} pr={8}>
             <Typography key={testimondial.text}>{testimondial.text}</Typography>
@@ -76,7 +75,7 @@ const allData = dataTestimondials.map((testimondial) => (
                 </ListItem>
             </List>
         </Box>
-        <Divider />
+        <Divider/>
     </Box>
 ));
 const perPage = 4;
@@ -88,7 +87,7 @@ const types = {
 const reducer = (state, action) => {
     switch (action.type) {
         case types.start:
-            return { ...state, loading: true };
+            return {...state, loading: true};
         case types.loaded:
             return {
                 ...state,
@@ -109,14 +108,14 @@ function App2(classes) {
         data: [],
         after: 0,
     });
-    const { loading, data, after, more } = state;
+    const {loading, data, after, more} = state;
 
     return (
         <div>
             {data.map((testimondial) => (
                 <Box className={classes.testimondialWrapper}>
                     <Box align="center" width="100%" m={2} mt={4}>
-                        <ChatBubbleOutlineIcon />
+                        <ChatBubbleOutlineIcon/>
                     </Box>
                     <Box pl={8} pr={8}>
                         <Typography key={testimondial.text}>
@@ -151,30 +150,30 @@ function App2(classes) {
                             </ListItem>
                         </List>
                     </Box>
-                    <Divider />
+                    <Divider/>
                 </Box>
             ))}
 
             {loading && (
                 <Box pt={11} display="flex" alignItems="center" justifyContent="center">
-                    <CircularProgress color="secondary" />
+                    <CircularProgress color="secondary"/>
                 </Box>
             )}
             {!loading && more && (
                 <Box pt={11} textAlign="center">
                     <Button
                         onClick={() => {
-                            dispatch({ type: types.start });
+                            dispatch({type: types.start});
                             setTimeout(() => {
                                 const newData = dataTestimondials.slice(
                                     after,
                                     after + perPage,
                                 );
-                                dispatch({ type: types.loaded, newData });
+                                dispatch({type: types.loaded, newData});
                             }, 1500);
                         }}
                         size="large"
-                        startIcon={<ExpandMoreIcon />}
+                        startIcon={<ExpandMoreIcon/>}
                         variant="outlined"
                         color="primary"
                     >
@@ -185,11 +184,12 @@ function App2(classes) {
         </div>
     );
 }
+
 const Opinion = (classes) => {
     return dataTestimondials2.map((testimondial2, index) => (
         <Box className={classes.testimondialWrapper}>
             <Box align="center" width="100%" m={2} mt={4}>
-                <ChatBubbleOutlineIcon />
+                <ChatBubbleOutlineIcon/>
             </Box>
             <Box pl={8} pr={8}>
                 <Typography key={testimondial2.text}>
@@ -224,11 +224,12 @@ const Opinion = (classes) => {
                     </ListItem>
                 </List>
             </Box>
-            <Divider />
+            <Divider/>
         </Box>
     ));
 };
-function Testimondials({ classes, id }) {
+
+function Testimondials({classes, id}) {
     return (
         <React.Fragment>
             <section id={id} name="testimondials" className={classes.root}>
@@ -248,8 +249,8 @@ function Testimondials({ classes, id }) {
                             alignItems="center"
                             flexDirection="column"
                         >
-                            <Opinion />
-                            <App2 />
+                            <Opinion/>
+                            <App2/>
 
                             {/* <Opinion /> */}
                         </Box>

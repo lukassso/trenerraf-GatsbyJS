@@ -1,1 +1,1 @@
-export { default } from './askYourself'
+export {default} from './askYourself'
