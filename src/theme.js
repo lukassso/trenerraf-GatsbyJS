@@ -121,7 +121,9 @@ const theme = createMuiTheme({
             color: '#359cd6',
         },
         subtitle2: {},
-        body1: {},
+        body1: {
+            lineHeight: 1.8,
+        },
         body2: {
             fontSize: '0.8rem',
         },

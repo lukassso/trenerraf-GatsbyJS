@@ -1,7 +1,7 @@
-import React from 'react'
-import {graphql, useStaticQuery} from 'gatsby'
-import Img from 'gatsby-image'
-import {Box, Container, Typography, withStyles} from '@material-ui/core'
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+import { Box, Container, Typography, withStyles } from '@material-ui/core';
 
 const useStyles = (theme) => ({
     root: {
@@ -31,23 +31,30 @@ const useStyles = (theme) => ({
             paddingTop: 150,
         },
     },
-})
+    aboutPragraph: {
+        paddingTop: 20,
+    },
+     aboutPragraphLast: {
+        paddingTop: 30,
+        fontSize: '1.2rem'
+    }
+});
 
 const query = graphql`
     query {
-      pic3: file(relativePath: { eq: "pages/images/trener-rafal-bcg3.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 570, maxHeight: 360) {
-            ...GatsbyImageSharpFluid
-          }
+        pic3: file(relativePath: { eq: "pages/images/trener-rafal-bcg3.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 570, maxHeight: 360) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
         }
-      }
     }
-  `;
+`;
 
 function About(props) {
-    const {classes} = props
-    const data = useStaticQuery(query)
+    const { classes } = props;
+    const data = useStaticQuery(query);
 
     return (
         <Box position="relative" component="section">
@@ -56,37 +63,53 @@ function About(props) {
                     <Box className={classes.headerName} align="center">
                         <Typography variant="h3">O mnie</Typography>
                     </Box>
-                    <Box p={10} pb={0} pt={0}>
-                        <Typography>
-                            Witam. Nazywam się Rafał Kiszło i jestem wykwalifikowanym trenerem
-                            personalnym. Od wielu lat pomagam swoim podopiecznym w uzyskaniu
-                            wymarzonej sylwetki, poprawie sprawności, przygotowaniu się do
-                            różnych dyscyplin sportu, wyjściu z kontuzji czyli byciu lepszą
-                            wersją siebie. Fundamentem mojej wiedzy jest wykształcenie zdobyte
-                            Wyższej Szkole Wychowania Fizycznego i Turystyki w Białymstoku (
-                            wychowanie fizyczne ) czy wieloletnie treningi w klubie sportowym.
-                            Od ponad 12 lat pomagam podopiecznym w osiąganiu ich celów. W
-                            mojej pracy najważniejszy jest klient, a z jego sukcesu czerpie
-                            paliwo do pracy. Cały czas się szkolę, aby moje kwalifikacje
-                            pomogły w osiągnięciu Twojego sukcesu. Wiele lat pracy
-                            jako trener i tysiące przeprowadzonych treningów spowodują, że
-                            moje doświadczenie pomoże nam w osiągnięciu zamierzonego celu.
-                            Najważniejszy jesteś Ty i postaram się sprawić, abyś wracał na
-                            treningi z uśmiechem! W 2017 roku wygrałem konkurs Fitness
-                            Motywatory w kat. Trener personalny. Mogę pomóc również ułożyć ci
-                            zbilansowaną dietę, która również będzie pomocna w osiągnięciu
-                            celu sportowego. Każdy trening jest indywidualny i dostosowany pod
-                            twój cel. Podczas treningów używam różnych metod treningu tak, aby
-                            trening był atrakcyjny dla Ciebie. Zapraszam do współpracy!
+                    <Box p={8} pb={0} pt={0}>
+                        <Typography >
+                            Nazywam się Rafał Kiszło i jestem wykwalifikowanym
+                            trenerem personalnym. Pracuje wiele lat nad formą
+                            swoich podopiecznych. Pomagam w uzyskaniu wymarzonej
+                            sylwetki, poprawie sprawności, motoryki,
+                            przygotowaniu się do różnych dyscyplin sportu,
+                            wyjściu z kontuzji, czyli byciu lepszą wersją
+                            siebie. Swoją wiedzy zdobywałem między innymi w
+                            Wyższej Szkole Wychowania Fizycznego i Turystyki w
+                            Białymstoku ( wychowanie fizyczne ) czy podczas
+                            wieloletnich treningi w klubie sportowym. Od ponad
+                            14 lat pomagam podopiecznym w osiąganiu ich
+                            zamierzonych celów.
+                        </Typography>
+                        <Typography className={classes.aboutPragraph}>
+                            W mojej pracy najważniejszy jest Ty i z Twojego
+                            sukcesu czerpie energię do pracy. Cały czas się
+                            rozwijam, aby moje szkolenia i kwalifikacje pomogły
+                            w osiągnięciu Twojego sukcesu. Wiele lat pracy w zawodzie trenera i tysiące
+                            przeprowadzonych treningów sprawiają, że moje
+                            doświadczenie przyczyni się w osiągnięciu
+                            zamierzonego celu.
+                        </Typography>
+                        <Typography className={classes.aboutPragraph}>
+                            Najważniejszy jesteś Ty i podczas wspólnej pracy
+                            sprawimy, abyś wracał na treningi z radością i
+                            uśmiechem! W 2017 roku wygrałem konkurs Fitness
+                            Motywatory w kat. Trener personalny. Postaram się
+                            również ułożyć ci zbilansowaną dietę, która również
+                            przyczyni się do osiągnięcia celu sportowego. Każdy
+                            trening jest indywidualny, personalny i dostosowany
+                            pod twoich celów. Podczas treningów używam
+                            zróżnicowanych metod treningu, aby trening był
+                            atrakcyjny dla Ciebie.
+                        </Typography>
+                        <Typography variant="body1" component="h2" className={classes.aboutPragraphLast} align="center">
+                            Bądź lepszą wersją siebie! Zapraszam do współpracy! 
                         </Typography>
                     </Box>
                 </Container>
                 <Container className={classes.pictureHeader} maxWidth="sm">
-                    <Img fluid={data.pic3.childImageSharp.fluid} alt=""/>
+                    <Img fluid={data.pic3.childImageSharp.fluid} alt="" />
                 </Container>
             </Box>
         </Box>
-    )
+    );
 }
 
-export default withStyles(useStyles)(About)
+export default withStyles(useStyles)(About);

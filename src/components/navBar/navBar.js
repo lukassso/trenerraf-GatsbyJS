@@ -1,7 +1,16 @@
 import React from 'react';
 // import { Link } from "gatsby"
-import {animateScroll as scroll, Link, scroller,} from 'react-scroll';
-import {AppBar, Divider, IconButton, Menu, MenuItem, Toolbar, withStyles,} from '@material-ui/core';
+import { animateScroll as scroll, Link, scroller } from 'react-scroll';
+import {
+    AppBar,
+    Box,
+    Divider,
+    IconButton,
+    Menu,
+    MenuItem,
+    Toolbar,
+    withStyles,
+} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import logo from '../../pages/images/logo.svg';
 
@@ -26,7 +35,11 @@ const styles = (theme) => ({
     titleLink: {
         margin: '0 20px',
         cursor: 'pointer',
-        fontWeight: 600
+        fontWeight: 600,
+        [theme.breakpoints.down('sm')]: {
+            margin: 0,
+            paddingTop: 6,
+        },
     },
     inputRoot: {
         color: 'inherit',
@@ -56,6 +69,10 @@ const styles = (theme) => ({
     logoNavBar: {
         maxWidth: 140,
         height: 'auto',
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: 120,
+            height: 'auto',
+        },
     },
     menuItemLink: {
         padding: '20px 30px',
@@ -67,7 +84,7 @@ const styles = (theme) => ({
     },
 });
 
-function PrimarySearchAppBar({classes}) {
+function PrimarySearchAppBar({ classes }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -103,29 +120,29 @@ function PrimarySearchAppBar({classes}) {
         });
     }
 
-    const Logo = () => {
-        return (
-            <Link
-                underline="none"
-                color="inherit"
-                className={classes.titleLink}
-                href="/"
-                to="/"
-            >
-                <img src={logo} className={classes.logoNavBar}/>
-            </Link>
-        );
-    };
+    // const Logo = () => {
+    //     return (
+    //         <Link
+    //             underline="none"
+    //             color="inherit"
+    //             className={classes.titleLink}
+    //             href="/"
+    //             to="/"
+    //         >
+    //             <img src={logo} className={classes.logoNavBar}/>
+    //         </Link>
+    //     );
+    // };
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
         <Menu
             className={classes.mobileMenuWrapper}
             anchorEl={mobileMoreAnchorEl}
-            anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
             id={mobileMenuId}
             keepMounted
-            transformOrigin={{vertical: 'top', horizontal: 'right'}}
+            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
@@ -142,7 +159,7 @@ function PrimarySearchAppBar({classes}) {
                     Metamorfozy
                 </MenuItem>
             </Link>
-            <Divider/>
+            <Divider />
             <Link
                 onClick={handleMobileMenuClose}
                 activeClass="active"
@@ -156,7 +173,7 @@ function PrimarySearchAppBar({classes}) {
                     Doświadczenie
                 </MenuItem>
             </Link>
-            <Divider/>
+            <Divider />
             <Link
                 onClick={handleMobileMenuClose}
                 activeClass="active"
@@ -168,7 +185,7 @@ function PrimarySearchAppBar({classes}) {
                 <MenuItem className={classes.menuItemLink}>Opinie</MenuItem>
             </Link>
 
-            <Divider/>
+            <Divider />
             <Link
                 onClick={handleMobileMenuClose}
                 activeClass="active"
@@ -186,70 +203,90 @@ function PrimarySearchAppBar({classes}) {
         <div id="back-to-top-anchor" className={classes.grow}>
             <AppBar className={classes.root} position="static">
                 <Toolbar>
-                    <Logo/>
-                    <div className={classes.grow}/>
-                    <div className={classes.sectionDesktop}>
-                        <Link
-                            variant="h5"
-                            underline="none"
-                            color="inherit"
-                            className={classes.titleLink}
-                            to="successStories"
-                            spy={true}
-                            smooth={true}
-                            duration={1600}
-                        >
-                            Metamorfozy
-                        </Link>
-                        <Link
-                            variant="h5"
-                            underline="none"
-                            color="inherit"
-                            className={classes.titleLink}
-                            to="experience"
-                            spy={true}
-                            smooth={true}
-                            duration={1000}
-                        >
-                            Doświadczenie
-                        </Link>
-                        <Link
-                            variant="h5"
-                            underline="none"
-                            color="inherit"
-                            className={classes.titleLink}
-                            to="testimondials"
-                            spy={true}
-                            smooth={true}
-                            duration={1300}
-                        >
-                            Opinie
-                        </Link>
+                    <Box
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="space-between"
+                        flexGrow="1"
+                    >
+                        <Box>
+                            <Link
+                                underline="none"
+                                color="inherit"
+                                className={classes.titleLink}
+                                href="/"
+                                to="/"
+                            >
+                                <img
+                                    src={logo}
+                                    className={classes.logoNavBar}
+                                />
+                            </Link>
+                        </Box>
+                        {/* <div className={classes.grow}/> */}
+                        <div className={classes.sectionDesktop}>
+                            <Link
+                                variant="h5"
+                                underline="none"
+                                color="inherit"
+                                className={classes.titleLink}
+                                to="successStories"
+                                spy={true}
+                                smooth={true}
+                                duration={1600}
+                            >
+                                Metamorfozy
+                            </Link>
+                            <Link
+                                variant="h5"
+                                underline="none"
+                                color="inherit"
+                                className={classes.titleLink}
+                                to="experience"
+                                spy={true}
+                                smooth={true}
+                                duration={1000}
+                            >
+                                Doświadczenie
+                            </Link>
+                            <Link
+                                variant="h5"
+                                underline="none"
+                                color="inherit"
+                                className={classes.titleLink}
+                                to="testimondials"
+                                spy={true}
+                                smooth={true}
+                                duration={1300}
+                            >
+                                Opinie
+                            </Link>
 
-                        <Link
-                            variant="h5"
-                            underline="none"
-                            color="inherit"
-                            className={classes.titleLink}
-                            to="contact"
-                            spy={true}
-                            smooth={true}
-                            duration={1900}
-                        >
-                            Kontakt
-                        </Link>
-                    </div>
-                    <div className={classes.sectionMobile}>
-                        <IconButton
-                            aria-label="show more"
-                            aria-controls={mobileMenuId}
-                            aria-haspopup="true"
-                            onClick={handleMobileMenuOpen}
-                            color="inherit"
-                        >
-                            <MenuIcon/>
-                        </IconButton>
-                    </div>
+                            <Link
+                                variant="h5"
+                                underline="none"
+                                color="inherit"
+                                className={classes.titleLink}
+                                to="contact"
+                                spy={true}
+                                smooth={true}
+                                duration={1900}
+                            >
+                                Kontakt
+                            </Link>
+                        </div>
+                        <div className={classes.sectionMobile}>
+                            <IconButton
+                                aria-label="show more"
+                                aria-controls={mobileMenuId}
+                                aria-haspopup="true"
+                                onClick={handleMobileMenuOpen}
+                                color="inherit"
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                        </div>
+                    </Box>
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}

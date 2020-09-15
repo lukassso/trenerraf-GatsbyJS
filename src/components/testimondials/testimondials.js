@@ -31,12 +31,11 @@ const useStyles = (theme) => ({
         width: theme.spacing(10),
         height: theme.spacing(10),
     },
-    avatarAndName: {
-        '& li': {
-            paddingLeft: 0,
-            paddingRight: 0,
-        },
-    },
+    // avatarAndName: {
+    //         paddingLeft: 0,
+    //         paddingRight: 0,
+        
+    // },
 });
 
 const allData = dataTestimondials.map((testimondial) => (
@@ -47,7 +46,7 @@ const allData = dataTestimondials.map((testimondial) => (
         <Box pl={8} pr={8}>
             <Typography key={testimondial.text}>{testimondial.text}</Typography>
             <List>
-                <ListItem>
+                <ListItem disableGutters={true}>
                     <ListItemAvatar>
                         <Avatar
                             key={testimondial.name}
@@ -101,7 +100,7 @@ const reducer = (state, action) => {
     }
 };
 
-function App2(classes) {
+function App2({classes}) {
     const [state, dispatch] = React.useReducer(reducer, {
         loading: false,
         more: true,
@@ -117,12 +116,12 @@ function App2(classes) {
                     <Box align="center" width="100%" m={2} mt={4}>
                         <ChatBubbleOutlineIcon/>
                     </Box>
-                    <Box pl={8} pr={8}>
+                    <Box pl={8} pr={8}> 
                         <Typography key={testimondial.text}>
                             {testimondial.text}
                         </Typography>
                         <List className={classes.avatarAndName}>
-                            <ListItem>
+                            <ListItem disableGutters={true}>
                                 <ListItemAvatar>
                                     <Avatar
                                         key={testimondial.name}
@@ -185,7 +184,7 @@ function App2(classes) {
     );
 }
 
-const Opinion = (classes) => {
+const Opinion = ({classes}) => {
     return dataTestimondials2.map((testimondial2, index) => (
         <Box className={classes.testimondialWrapper}>
             <Box align="center" width="100%" m={2} mt={4}>
@@ -196,7 +195,7 @@ const Opinion = (classes) => {
                     {testimondial2.text}
                 </Typography>
                 <List className={classes.avatarAndName}>
-                    <ListItem>
+                    <ListItem disableGutters={true}>
                         <ListItemAvatar>
                             <Avatar
                                 key={testimondial2.name}
@@ -249,8 +248,8 @@ function Testimondials({classes, id}) {
                             alignItems="center"
                             flexDirection="column"
                         >
-                            <Opinion/>
-                            <App2/>
+                            <Opinion classes={classes}/>
+                            <App2 classes={classes}/>
 
                             {/* <Opinion /> */}
                         </Box>
