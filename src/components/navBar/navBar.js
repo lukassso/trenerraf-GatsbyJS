@@ -154,6 +154,7 @@ function PrimarySearchAppBar({ classes }) {
                 spy={true}
                 smooth={true}
                 duration={2000}
+                
             >
                 <MenuItem className={classes.menuItemLink}>
                     Metamorfozy
@@ -219,12 +220,13 @@ function PrimarySearchAppBar({ classes }) {
                             >
                                 <img
                                     src={logo}
+                                    alt="logo Trenerpersonalny.pl"
                                     className={classes.logoNavBar}
                                 />
                             </Link>
                         </Box>
                         {/* <div className={classes.grow}/> */}
-                        <div className={classes.sectionDesktop}>
+                        <Box component="nav" className={classes.sectionDesktop}>
                             <Link
                                 variant="h5"
                                 underline="none"
@@ -274,8 +276,8 @@ function PrimarySearchAppBar({ classes }) {
                             >
                                 Kontakt
                             </Link>
-                        </div>
-                        <div className={classes.sectionMobile}>
+                        </Box>
+                        <Box className={classes.sectionMobile}>
                             <IconButton
                                 aria-label="show more"
                                 aria-controls={mobileMenuId}
@@ -285,12 +287,11 @@ function PrimarySearchAppBar({ classes }) {
                             >
                                 <MenuIcon />
                             </IconButton>
-                        </div>
+                        </Box>
                     </Box>
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}
-            {/* {renderMenu} */}
         </div>
     );
 }

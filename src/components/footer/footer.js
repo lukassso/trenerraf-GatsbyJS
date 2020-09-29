@@ -2,7 +2,16 @@ import React from 'react';
 import clsx from 'clsx';
 import logo from '../../pages/images/logoYellow.svg';
 
-import {Box, Container, Divider, Grid, Link, Typography, withStyles,} from '@material-ui/core';
+import {
+    Box,
+    Container,
+    Divider,
+    Grid,
+    Link,
+    Typography,
+    withStyles,
+    IconButton 
+} from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
@@ -71,7 +80,7 @@ const useStyles = (theme) => ({
     },
 });
 
-function Footer({classes, id}) {
+function Footer({ classes, id }) {
     const Logo = () => {
         return (
             <Link
@@ -79,22 +88,26 @@ function Footer({classes, id}) {
                 color="inherit"
                 className={classes.titleLink}
                 href="/"
+                
             >
-                <img src={logo} className={classes.logoNavBar}/>
+                <img alt='logo' src={logo} className={classes.logoNavBar} />
             </Link>
         );
     };
     return (
         <React.Fragment>
             {/* <section  className={classes.root}> */}
-            <Box id={id} name="contact" className={classes.yellowWrapper}/>
+            <Box id={id} name="contact" className={classes.yellowWrapper} />
 
-            <section className={clsx(classes.root, classes.blackWrapper)}>
+            <Box
+                component="footer"
+                className={clsx(classes.root, classes.blackWrapper)}
+            >
                 <Container maxWidth="md">
                     <Grid container spacing={1}>
                         <Grid item xs={12} md={3}>
                             <Box py={4} display="flex" justifyContent="center">
-                                <Logo/>
+                                <Logo />
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={6}>
@@ -132,29 +145,31 @@ function Footer({classes, id}) {
                                 >
                                     Sprawdź na mapie
                                 </Link>
-                                <OpenInNewIcon fontSize="small"/>
+                                <OpenInNewIcon fontSize="small" />
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={3}>
                             <Box py={5} display="flex" justifyContent="center">
-                                <Box
-                                    component={Link}
-                                    href="https://www.facebook.com/trenerrafalkiszlo/"
-                                >
+                                <IconButton href="https://www.facebook.com/trenerrafalkiszlo/" aria-label="facebook" color="secondary">
+
                                     <FacebookIcon
-                                        color="secondary"
-                                        style={{fontSize: '3.5rem'}}
+                                    
+                                        
+                                        style={{ fontSize: '3.5rem' }}
+                                        title='facebook logo'
                                     />
-                                </Box>
-                                <Box
-                                    component={Link}
-                                    href="https://www.instagram.com/trener_rafal_kiszlo"
-                                >
+                                </IconButton>
+                                
+                                <IconButton 
+                                href="https://www.instagram.com/trener_rafal_kiszlo" aria-label="Instagram" color="secondary">
+
                                     <InstagramIcon
-                                        color="secondary"
-                                        style={{fontSize: '3.5rem'}}
+                                    
+
+                                        style={{ fontSize: '3.5rem' }}
+                                        title="Instagram logo"
                                     />
-                                </Box>
+                                </IconButton>
                             </Box>
                         </Grid>
                     </Grid>
@@ -166,13 +181,13 @@ function Footer({classes, id}) {
                     </Box> */}
                 </Container>
 
-                <Divider className={classes.footerDivider}/>
+                <Divider className={classes.footerDivider} />
                 <Box textAlign="center">
                     <Typography variant="body2" color="initial">
                         2020 Copyright
                     </Typography>
                 </Box>
-            </section>
+            </Box>
         </React.Fragment>
     );
 }
