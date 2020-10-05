@@ -1,8 +1,15 @@
 // import { getCorrectEventName } from '@material/animation'
 import React from 'react';
-import {Box, Fab, Fade, Grid, Typography, withStyles,} from '@material-ui/core';
+import {
+    Box,
+    Fab,
+    Fade,
+    Grid,
+    Typography,
+    withStyles,
+} from '@material-ui/core';
 import PhoneIcon from '@material-ui/icons/Phone';
-import {graphql, useStaticQuery} from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
 const useStyles = (theme) => ({
@@ -10,18 +17,16 @@ const useStyles = (theme) => ({
         // backgroundColor: theme.palette.background.white,
         // background: `radial-gradient(ellipse at center, #fff 20%, #aaa 100%)`,
         overflow: 'hidden',
+        backgroundImage: 'linear-gradient(120deg, #fff 0%, #ebedee 100%)',
     },
 
     heroClaim: {
-        padding: theme.spacing(40),
-        paddingTop: theme.spacing(55),
-        paddingBottom: theme.spacing(10),
-        paddingRight: theme.spacing(10),
+        padding: theme.spacing(55, 10, 10, 40),
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
         lineHeight: theme.spacing(1),
-        [theme.breakpoints.down('lg')]: {
+            [theme.breakpoints.down('lg')]: {
             padding: theme.spacing(28),
             paddingTop: theme.spacing(35),
         },
@@ -48,7 +53,6 @@ const useStyles = (theme) => ({
             // transition: 'opacity 4.75s ease-in-out',
             [theme.breakpoints.down('lg')]: {
                 fontSize: '3rem',
-
             },
             [theme.breakpoints.down('sm')]: {
                 textAlign: 'center',
@@ -84,7 +88,7 @@ const useStyles = (theme) => ({
     heroPictures1: {
         position: 'relative',
         padding: 0,
-        zIndex: 2
+        zIndex: 2,
     },
     heroPictures2: {
         position: 'absolute !important',
@@ -131,6 +135,7 @@ const useStyles = (theme) => ({
             boxShadow: '0 0 0 0 rgba(204,169,44, 0)',
         },
     },
+  
 });
 
 const query = graphql`
@@ -155,8 +160,7 @@ const query = graphql`
 `;
 
 function Hero(props) {
-
-    const {classes} = props;
+    const { classes } = props;
 
     const data = useStaticQuery(query);
 
@@ -192,7 +196,7 @@ function Hero(props) {
                                 >
                                     <PhoneIcon
                                         color="secondary"
-                                        style={{fontSize: 57}}
+                                        style={{ fontSize: 57 }}
                                     />
                                 </Fab>
                             </Fade>
