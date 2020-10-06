@@ -9,38 +9,38 @@ const values = {
     xl: 1920,
 }
 
-const montserrat = {
-    fontFamily: 'Montserrat',
-    fontStyle: 'normal',
-    fontDisplay: 'swap',
-    fontWeight: 400,
-    src: `
-    local('Montserrat'),
-    local('Montserrat-Regular'),
-    url(${Montserrat}) format('woff2')
-  `,
-    unicodeRange:
-        'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD',
-}
+// const montserrat = {
+//     fontFamily: 'Montserrat',
+//     fontStyle: 'normal',
+//     fontDisplay: 'swap',
+//     fontWeight: 400,
+//     src: `
+//     local('Montserrat'),
+//     local('Montserrat-Regular'),
+//     url(${Montserrat}) format('woff2')
+//   `,
+//     unicodeRange:
+//         'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD',
+// }
 
 const theme = createMuiTheme({
     palette: {
         common: {
-            black: '#000000',
+            black: '#101010',
             white: '#ffffff',
             type: 'light',
         },
         primary: {
             light: '#213b87',
-            main: '#000000',
-            dark: '#000000',
+            main: '#101010',
+            dark: '#101010',
         },
         secondary: {
             main: '#FDC100',
         },
         background: {
             default: '#ffffff',
-            dark: '#000000',
+            dark: '#101010',
             yellow: '#FDC100',
             gray: '#f6f6f6',
         },
@@ -73,7 +73,7 @@ const theme = createMuiTheme({
             A700: '#616161',
         },
         text: {
-            primary: '#000000',
+            primary: '#101010',
             secondary: '#ffffff',
             yellow: '#FDC100',
             disabled: 'rgba(0, 0, 0, 0.38)',
@@ -114,7 +114,7 @@ const theme = createMuiTheme({
         },
         h6: {},
         button: {
-            color: '#000000',
+            color: '#101010',
             bgColor: '#FDC100',
         },
         subtitle1: {
@@ -134,9 +134,9 @@ const theme = createMuiTheme({
     },
     overrides: {
         MuiCssBaseline: {
-            '@global': {
-                '@font-face': [montserrat],
-            },
+            // '@global': {
+            //     '@font-face': [montserrat],
+            // },
         },
     },
     props: {

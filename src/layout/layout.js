@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../theme';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import 'animate.css'
 
 const Layout = ({ location, children }) => {
     return (
@@ -28,6 +29,7 @@ const Layout = ({ location, children }) => {
                 <html lang="pl" />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
                     rel="stylesheet"
                 ></link>
             </Helmet>

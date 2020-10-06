@@ -4,10 +4,10 @@ import Layout from '../layout'
 
 const PageNotFound = () => (
     <Layout>
-        <div opaque light onClick={() => navigate('/')}>
-            Return To Home Page
+        <div onClick={() => navigate('/')}>
+            Powróć do strony głównej
         </div>
-        <div text="404 Page Not Found"/>
+        {/* <div text="404 Page Not Found"/> */}
     </Layout>
 )
 

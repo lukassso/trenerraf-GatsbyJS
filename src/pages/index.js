@@ -20,16 +20,35 @@ const useStyles = makeStyles((theme) => ({
         bottom: theme.spacing(2),
         right: theme.spacing(2),
         zIndex: 2,
+        '& button':{
+            width: 60,
+            height:60
+        },
+        '& svg':{
+            width: '1.5em',
+            height: '1.5em',
+        },
+        [theme.breakpoints.down('sm')]: {
+             '& button':{
+            width: 40,
+            height:40
+        },
+        '& svg':{
+            width: '1em',
+            height: '1em',
+        },
+        },
     },
 }));
 
 function Index(props) {
+
     const classes = useStyles();
+
     function ScrollTop(props) {
+
         const { children, window } = props;
-        // Note that you normally won't need to set the window ref as useScrollTrigger
-        // will default to window.
-        // This is only being set here because the demo is in an iframe.
+        
         const trigger = useScrollTrigger({
             target: window ? window() : undefined,
             disableHysteresis: true,
@@ -66,12 +85,7 @@ function Index(props) {
 
     const content = (
         <React.Fragment>
-            <TransitionGroup component="div" className={classes.app}>
-                {/* <CSSTransition
-                    timeout={timeout}
-                    mountOnEnter={false}
-                    unmountOnExit={true}
-                > */}
+           
                     <Hero />
                     {/* <a >Doświadczenie</a> */}
                     <SuccessStory id="successStories" />
@@ -94,7 +108,6 @@ function Index(props) {
                     </Fab>
                 </ScrollTop>
                 {/* <a onClick={scrollToTop}>To the top!</a> */}
-            </TransitionGroup>
         </React.Fragment>
     );
     return (

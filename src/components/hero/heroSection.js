@@ -11,6 +11,8 @@ import {
 import PhoneIcon from '@material-ui/icons/Phone';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import { Animated } from 'react-animated-css';
+import { animations } from 'react-animation';
 
 const useStyles = (theme) => ({
     root: {
@@ -26,7 +28,7 @@ const useStyles = (theme) => ({
         flexDirection: 'column',
         height: '100%',
         lineHeight: theme.spacing(1),
-            [theme.breakpoints.down('lg')]: {
+        [theme.breakpoints.down('lg')]: {
             padding: theme.spacing(28),
             paddingTop: theme.spacing(35),
         },
@@ -135,7 +137,9 @@ const useStyles = (theme) => ({
             boxShadow: '0 0 0 0 rgba(204,169,44, 0)',
         },
     },
-  
+    testAnimate: {
+        opacity: 1,
+    },
 });
 
 const query = graphql`
@@ -164,16 +168,29 @@ function Hero(props) {
 
     const data = useStaticQuery(query);
 
+    const style = {
+        animation: animations.popIn,
+    };
+
     return (
         <section className={classes.root}>
             <Grid container className={classes.container}>
                 <Grid item xs={12} md={7}>
                     <Box className={classes.heroClaim}>
                         <Box>
-                            <Typography variant="h1">
+                            {/* <Animated
+                                animationIn="zoomIn"
+                                isVisible={true}
+                                animationInDuration="3000"
+                            > */}
+                            <Typography
+                                style={style}
+                                className={classes.testAnimate}
+                                variant="h1"
+                            >
                                 Stań się lepszą wersją siebie!
                             </Typography>
-
+                            {/* </Animated> */}
                             <Typography variant="h3" component="h2">
                                 Rafał Kiszło - Trener Personalny i najlepszy
                                 motywator w mieście! Zapraszam na wspólne

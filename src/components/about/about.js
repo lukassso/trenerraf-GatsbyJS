@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { Box, Container, Typography, withStyles } from '@material-ui/core';
+import ScrollReveal from 'scrollreveal';
 
 const useStyles = (theme) => ({
     root: {
@@ -34,10 +35,10 @@ const useStyles = (theme) => ({
     aboutPragraph: {
         paddingTop: 20,
     },
-     aboutPragraphLast: {
+    aboutPragraphLast: {
         paddingTop: 30,
-        fontSize: '1.2rem'
-    }
+        fontSize: '1.2rem',
+    },
 });
 
 const query = graphql`
@@ -56,6 +57,8 @@ function About(props) {
     const { classes } = props;
     const data = useStaticQuery(query);
 
+    ScrollReveal().reveal('.headerName');
+
     return (
         <Box position="relative" component="section">
             <Box className={classes.root}>
@@ -64,7 +67,7 @@ function About(props) {
                         <Typography variant="h3">O mnie</Typography>
                     </Box>
                     <Box p={8} pb={0} pt={0}>
-                        <Typography >
+                        <Typography>
                             Nazywam się Rafał Kiszło i jestem wykwalifikowanym
                             trenerem personalnym. Pracuje wiele lat nad formą
                             swoich podopiecznych. Pomagam w uzyskaniu wymarzonej
@@ -82,10 +85,10 @@ function About(props) {
                             W mojej pracy najważniejszy jest Ty i z Twojego
                             sukcesu czerpie energię do pracy. Cały czas się
                             rozwijam, aby moje szkolenia i kwalifikacje pomogły
-                            w osiągnięciu Twojego sukcesu. Wiele lat pracy w zawodzie trenera i tysiące
-                            przeprowadzonych treningów sprawiają, że moje
-                            doświadczenie przyczyni się w osiągnięciu
-                            zamierzonego celu.
+                            w osiągnięciu Twojego sukcesu. Wiele lat pracy w
+                            zawodzie trenera i tysiące przeprowadzonych
+                            treningów sprawiają, że moje doświadczenie przyczyni
+                            się w osiągnięciu zamierzonego celu.
                         </Typography>
                         <Typography className={classes.aboutPragraph}>
                             Najważniejszy jesteś Ty i podczas wspólnej pracy
@@ -99,8 +102,13 @@ function About(props) {
                             zróżnicowanych metod treningu, aby trening był
                             atrakcyjny dla Ciebie.
                         </Typography>
-                        <Typography variant="body1" component="h2" className={classes.aboutPragraphLast} align="center">
-                            Bądź lepszą wersją siebie! Zapraszam do współpracy! 
+                        <Typography
+                            variant="body1"
+                            component="h2"
+                            className={classes.aboutPragraphLast}
+                            align="center"
+                        >
+                            Bądź lepszą wersją siebie! Zapraszam do współpracy!
                         </Typography>
                     </Box>
                 </Container>
