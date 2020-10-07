@@ -202,7 +202,7 @@ function PrimarySearchAppBar({ classes }) {
 
     return (
         <div id="back-to-top-anchor" className={classes.grow}>
-            <AppBar className={classes.root} position="static">
+            <AppBar elevation={2} className={classes.root} position="static">
                 <Toolbar>
                     <Box
                         display="flex"

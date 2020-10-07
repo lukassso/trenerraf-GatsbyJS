@@ -11,13 +11,12 @@ import {
 import PhoneIcon from '@material-ui/icons/Phone';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import { Animated } from 'react-animated-css';
-import { animations } from 'react-animation';
+import { easings, AnimateOnChange, HideUntilLoaded } from 'react-animation';
 
 const useStyles = (theme) => ({
     root: {
-        // backgroundColor: theme.palette.background.white,
-        // background: `radial-gradient(ellipse at center, #fff 20%, #aaa 100%)`,
+        position: 'relative',
+        zIndex: -1,
         overflow: 'hidden',
         backgroundImage: 'linear-gradient(120deg, #fff 0%, #ebedee 100%)',
     },
@@ -169,8 +168,28 @@ function Hero(props) {
     const data = useStaticQuery(query);
 
     const style = {
-        animation: animations.popIn,
+        animation: `pop-in ${easings.easeOutExpo} 4500ms forwards`,
     };
+
+    const words = [
+        'Rafał Kiszło - Trener Personalny i najlepszy motywator w mieście! Zapraszam na wspólne treningi na Mokotowie.',
+        'Wiele lat pracy jako trener i tysiące przeprowadzonych treningów. Sprawię, że wrócisz na trening z uśmiechem.',
+    ];
+
+    const [current, setCurrent] = React.useState(0);
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            if (current === words.length - 1) {
+                setCurrent(0);
+            } else {
+                setCurrent(current + 1);
+            }
+        }, 8000);
+        return () => {
+            clearInterval(interval);
+        };
+    });
 
     return (
         <section className={classes.root}>
@@ -192,9 +211,9 @@ function Hero(props) {
                             </Typography>
                             {/* </Animated> */}
                             <Typography variant="h3" component="h2">
-                                Rafał Kiszło - Trener Personalny i najlepszy
-                                motywator w mieście! Zapraszam na wspólne
-                                treningi na Mokotowie.
+                                <AnimateOnChange>
+                                    {words[current]}
+                                </AnimateOnChange>
                             </Typography>
                         </Box>
                         <Box

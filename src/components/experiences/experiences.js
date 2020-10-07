@@ -1,8 +1,16 @@
 import React from 'react';
-import {graphql, useStaticQuery} from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 // import { motion } from 'framer-motion';
-import {Box, Container, Grid, Paper, Typography, withStyles,} from '@material-ui/core';
+import {
+    Box,
+    Container,
+    Grid,
+    Paper,
+    Typography,
+    withStyles,
+} from '@material-ui/core';
+import { animations } from 'react-animation';
 
 const useStyles = (theme) => ({
     root: {
@@ -103,33 +111,44 @@ const query = graphql`
     }
 `;
 
-function Experienses({classes, id}) {
+function Experienses({ classes, id }) {
     const data = useStaticQuery(query);
 
     const experiencesList = [
-        {id: 1, name: 'Trener personalny', area: 'Instruktor'},
-        {id: 2, name: 'Nurek CMASS', area: 'Instruktor'},
-        {id: 3, name: 'Kettlebells', area: 'Instruktor'},
-        {id: 4, name: 'Kulturystyka', area: 'Instruktor'},
-        {id: 5, name: 'Trening funkcjonalny', area: 'Instruktor'},
-        {id: 7, name: 'Trójbój siłowy', area: 'Instruktor'},
-        {id: 8, name: 'Samoobrona', area: 'Instruktor'},
-        {id: 9, name: 'Indoor cycling', area: 'Instruktor'},
-        {id: 10, name: 'Speening star', area: 'Instruktor'},
-        {id: 11, name: 'Zdrowy kręgosłup', area: 'Certyfikat IFAA'},
-        {id: 12, name: 'Patologie kręgosłupa', area: 'Certyfikat IFAA'},
-        {id: 13, name: 'Biodro staw życia', area: 'Biernat'},
-        {id: 14, name: 'Kolano - biodra i stopy', area: 'Biernat'},
-        {id: 15, name: 'Stopa - nasza podpora', area: 'Biernat'},
-        {id: 16, name: 'Bark nie musi być skomplikowany', area: 'Biernat'},
-        {id: 17, name: 'Kształtowanie kobiecej sylwetki ', area: 'CSS'},
-        {id: 18, name: 'Redukacja bez liczenia kalorii', area: 'Tadeusz Sowinski'},
-        {id: 19, name: 'Tułów - baza do ruchu ', area: 'Biernat'},
-        {id: 20, name: 'Kończyna dolna', area: 'Movement strategy'},
-        {id: 21, name: 'Trening TRX ', area: 'Certyfikat'},
-        {id: 22, name: 'Functional and core work shop ', area: 'Certyfikat IFAA'},
+        { id: 1, name: 'Trener personalny', area: 'Instruktor' },
+        { id: 2, name: 'Nurek CMASS', area: 'Instruktor' },
+        { id: 3, name: 'Kettlebells', area: 'Instruktor' },
+        { id: 4, name: 'Kulturystyka', area: 'Instruktor' },
+        { id: 5, name: 'Trening funkcjonalny', area: 'Instruktor' },
+        { id: 7, name: 'Trójbój siłowy', area: 'Instruktor' },
+        { id: 8, name: 'Samoobrona', area: 'Instruktor' },
+        { id: 9, name: 'Indoor cycling', area: 'Instruktor' },
+        { id: 10, name: 'Speening star', area: 'Instruktor' },
+        { id: 11, name: 'Zdrowy kręgosłup', area: 'Certyfikat IFAA' },
+        { id: 12, name: 'Patologie kręgosłupa', area: 'Certyfikat IFAA' },
+        { id: 13, name: 'Biodro staw życia', area: 'Biernat' },
+        { id: 14, name: 'Kolano - biodra i stopy', area: 'Biernat' },
+        { id: 15, name: 'Stopa - nasza podpora', area: 'Biernat' },
+        { id: 16, name: 'Bark nie musi być skomplikowany', area: 'Biernat' },
+        { id: 17, name: 'Kształtowanie kobiecej sylwetki ', area: 'CSS' },
+        {
+            id: 18,
+            name: 'Redukacja bez liczenia kalorii',
+            area: 'Tadeusz Sowinski',
+        },
+        { id: 19, name: 'Tułów - baza do ruchu ', area: 'Biernat' },
+        { id: 20, name: 'Kończyna dolna', area: 'Movement strategy' },
+        { id: 21, name: 'Trening TRX ', area: 'Certyfikat' },
+        {
+            id: 22,
+            name: 'Functional and core work shop ',
+            area: 'Certyfikat IFAA',
+        },
     ];
     const ExperienceMap = (props) => {
+        const style = {
+            animation: animations.popIn,
+        };
         return experiencesList.map((experience) => (
             <React.Fragment>
                 {/* <ScrollAnimation animateIn="flipInY" animateOut="flipOutY"> */}
@@ -146,6 +165,7 @@ function Experienses({classes, id}) {
                         transition={{ duration: 2 }}
                     > */}
                     <Paper
+                        style={style}
                         className={classes.expPaper}
                         elevation={0}
                         variant="outlined"
@@ -167,8 +187,8 @@ function Experienses({classes, id}) {
         <section id={id} className={classes.root}>
             <Container className={classes.priceWrapper} maxWidth="sm">
                 <Box className={classes.priceHeader}>
-                    <Box style={{width: '30%'}}>
-                        <Img fluid={data.pic1.childImageSharp.fluid} alt=""/>
+                    <Box style={{ width: '30%' }}>
+                        <Img fluid={data.pic1.childImageSharp.fluid} alt="" />
                     </Box>
                     <Box>
                         <Typography className={classes.prizesText} variant="h4">
@@ -190,10 +210,10 @@ function Experienses({classes, id}) {
                     justify="center"
                     alignItems="center"
                 >
-                    <ExperienceMap/>
+                    <ExperienceMap />
                 </Grid>
             </Container>
-            <Container style={{position: 'relative'}} maxWidth="sm">
+            <Container style={{ position: 'relative' }} maxWidth="sm">
                 <Img
                     className={classes.expFooterImage}
                     fluid={data.pic2.childImageSharp.fluid}
