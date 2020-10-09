@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { Box, Container, Typography, withStyles } from '@material-ui/core';
-import ScrollReveal from 'scrollreveal';
 
 const useStyles = (theme) => ({
     root: {
@@ -56,8 +55,6 @@ const query = graphql`
 function About(props) {
     const { classes } = props;
     const data = useStaticQuery(query);
-
-    ScrollReveal().reveal('.headerName');
 
     return (
         <Box position="relative" component="section">

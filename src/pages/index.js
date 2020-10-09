@@ -50,7 +50,7 @@ function Index(props) {
         const { children, window } = props;
         
         const trigger = useScrollTrigger({
-            target: window ? window() : undefined,
+            // target: window ? undefined : undefined,
             disableHysteresis: true,
             threshold: 100,
         });

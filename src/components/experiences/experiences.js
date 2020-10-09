@@ -79,7 +79,7 @@ const useStyles = (theme) => ({
     priceWrapper: {
         padding: '60px 20px 0',
         [theme.breakpoints.down('sm')]: {
-            padding: '0px 20px ',
+            padding: '30px 20px ',
         },
     },
     priceHeader: {
@@ -197,7 +197,7 @@ function Experienses({ classes, id }) {
                     </Box>
                 </Box>
 
-                <Box pt={12} pb={10}>
+                <Box pt={12} pb={1}>
                     <Typography className={classes.expHeader} variant="h3">
                         Przebyte kursy i szkolenia
                     </Typography>

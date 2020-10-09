@@ -195,7 +195,7 @@ function App2({ classes }) {
 const Opinion = ({ classes }) => {
     return dataTestimondials2.map((testimondial2, index) => (
         <Box className={classes.testimondialWrapper}>
-            <Box align="center" width="100%" m={0} mt={10}>
+            <Box align="center" width="100%" m={0} mt={2}>
                 <ChatBubbleOutlineIcon />
             </Box>
             <Box pl={8} pr={8}>

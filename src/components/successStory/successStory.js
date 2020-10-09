@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import {graphql, useStaticQuery} from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import clsx from 'clsx';
 // import { dataStories } from './dataStories'
@@ -20,6 +20,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 // import { MoreVert as MoreVertIcon } from '@material-ui/icons'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { TramRounded } from '@material-ui/icons';
 // import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline'
 // import Pic1 from './images/3.png';
 
@@ -27,21 +28,9 @@ const useStyles = (theme) => ({
     root: {
         paddingTop: 80,
         marginBottom: -10,
-        paddingLeft: 30,
-        paddingRight: 30,
+        // paddingLeft: 30,
+        // paddingRight: 30,
         backgroundColor: theme.palette.background.gray,
-
-        [theme.breakpoints.down('sm')]: {
-            // paddingTop: 240,
-            // marginBottom: 60,
-        },
-        '& .slick-next': {
-            // backgroundColor: theme.palette.background.dark,
-            // backgroundImage: PlayCircleOutlineIcon,
-        },
-        '& .slick-slide': {
-            textAlign: 'center',
-        },
     },
     name: {
         padding: 10,
@@ -59,137 +48,137 @@ const useStyles = (theme) => ({
         transform: 'rotate(180deg)',
     },
     cardWrapper: {
-        marginTop: 20,
+        marginTop: 40,
         marginBottom: 40,
     },
-
-    sliderWrapper: {
-        position: 'relative',
-        margin: 10,
-        marginTop: 30,
-        '& .slick-next': {
-            // right: -10,
-            top: 230,
-        },
-        '& .slick-prev': {
-            // left: -10,
-            top: 230,
-        },
-        '& .slick-next:before, .slick-prev:before': {
-            color: theme.palette.gray[300],
-            '&:hover': {
-                color: theme.palette.gray[500],
-            },
-        },
-    },
+   
+    // sliderWrapper: {
+    //     position: 'relative',
+    //     margin: 10,
+    //     marginTop: 30,
+    //     '& .slick-next': {
+    //         // right: -10,
+    //         top: 230,
+    //     },
+    //     '& .slick-prev': {
+    //         // left: -10,
+    //         top: 230,
+    //     },
+    //     '& .slick-next:before, .slick-prev:before': {
+    //         color: theme.palette.gray[300],
+    //         '&:hover': {
+    //             color: theme.palette.gray[500],
+    //         },
+    //     },
+    // },
 });
 const query = graphql`
-        query {
-            pic4: file(
-                relativePath: { eq: "components/successStory/images/1.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic5: file(
-                relativePath: { eq: "components/successStory/images/2.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic6: file(
-                relativePath: { eq: "components/successStory/images/3.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic7: file(
-                relativePath: { eq: "components/successStory/images/4.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic8: file(
-                relativePath: { eq: "components/successStory/images/5.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic9: file(
-                relativePath: { eq: "components/successStory/images/6.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic10: file(
-                relativePath: { eq: "components/successStory/images/7.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic11: file(
-                relativePath: { eq: "components/successStory/images/8.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic12: file(
-                relativePath: { eq: "components/successStory/images/9.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic13: file(
-                relativePath: { eq: "components/successStory/images/10.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            pic14: file(
-                relativePath: { eq: "components/successStory/images/11.png" }
-            ) {
-                childImageSharp {
-                    fluid(maxWidth: 743, maxHeight: 533) {
-                        ...GatsbyImageSharpFluid
-                    }
+    query {
+        pic4: file(
+            relativePath: { eq: "components/successStory/images/1.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
                 }
             }
         }
-    `;
+        pic5: file(
+            relativePath: { eq: "components/successStory/images/2.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        pic6: file(
+            relativePath: { eq: "components/successStory/images/3.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        pic7: file(
+            relativePath: { eq: "components/successStory/images/4.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        pic8: file(
+            relativePath: { eq: "components/successStory/images/5.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        pic9: file(
+            relativePath: { eq: "components/successStory/images/6.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        pic10: file(
+            relativePath: { eq: "components/successStory/images/7.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        pic11: file(
+            relativePath: { eq: "components/successStory/images/8.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        pic12: file(
+            relativePath: { eq: "components/successStory/images/9.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        pic13: file(
+            relativePath: { eq: "components/successStory/images/10.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        pic14: file(
+            relativePath: { eq: "components/successStory/images/11.png" }
+        ) {
+            childImageSharp {
+                fluid(maxWidth: 743, maxHeight: 533) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+`;
 
-function SuccessStory({classes, id}) {
+function SuccessStory({ classes, id }) {
     const [expanded, setExpanded] = React.useState(false);
-    const data = useStaticQuery(query)
+    const data = useStaticQuery(query);
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -282,8 +271,7 @@ function SuccessStory({classes, id}) {
             weight: '-20kg',
             cardTeaser:
                 'Ania chciała się zmienić w ciągu 12 miesięcy, aby na następne wakacje wyglądać lepiej.',
-            text:
-                '',
+            text: '',
         },
         {
             id: '10',
@@ -302,34 +290,75 @@ function SuccessStory({classes, id}) {
             weight: '-20kg',
             cardTeaser:
                 'Ania potrzebowała przemiany, aby być gotowym na następne wakacje.',
-            text:
-                '',
+            text: '',
         },
     ];
 
+    // const NextArrowBtn = () => <ExpandMoreIcon/>
+    function NextArrowBtn(props) {
+        const { className, style, onClick } = props;
+        return (
+            <div
+                className={className}
+                style={{
+                    ...style,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    background: '#fdc100',
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '20px',
+                    zIndex: '1',
+                }}
+                onClick={onClick}
+            />
+        );
+    }
     const settings = {
-        className: "center",
-      centerMode: true,
-      infinite: true,
-      centerPadding: "20px",
-    //   slidesToShow: 3,
-        dots: false,
-        infinite: true,
-        speed: 500,
-        // slidesToShow: 1,
-        // slidesToScroll: 1,
+        // className: 'center',
+        // centerMode: false,
+        // infinite: false,
+        arrows: true,
+        // autoplay: true,
+        // centerPadding: '50px',
+        slidesToShow: 2,
+        //   slidesToScroll: 2,
+        // speed: 4500,
+        // fade: true,
+        // lazyLoad: true,
+        nextArrow: <NextArrowBtn />,
+        prevArrow: <NextArrowBtn />,
+        // dots: true,
+        // swipeToSlide: true,
+        // dotsClass: 'slick-dots slick-thumb',
+        //     customPaging: i => (
+        //     <div
+        //       style={{
+        //         width: "30px",
+        //         color: "blue",
+        //         border: "1px blue solid"
+        //       }}
+        //     >
+        //       {i + 1}
+        //     </div>
+        //   ),
         responsive: [
-            {
-                breakpoint: 2000,
-                settings: {
-                    slidesToShow: 2,
-                    // slidesToScroll: 1,
-                },
-            },
+            // {
+            //     breakpoint: 2000,
+            //     settings: {
+            //         slidesToShow: 2,
+            //         // slidesToScroll: 1,
+            //     },
+            // },
             {
                 breakpoint: 900,
                 settings: {
-                    slidesToShow: 1,
+                    infinite: false,
+                    centerMode: true,
+                    centerPadding: '20px',
+                    arrows: false,
+                    slidesToShow: 1,    
                     // slidesToScroll: 1,
                 },
             },
@@ -356,7 +385,7 @@ function SuccessStory({classes, id}) {
                 <div className={classes.sliderWrapper}>
                     <Slider {...settings}>
                         {dataStories.map((story) => (
-                            <Container maxWidth="xs">
+                            <Box px={2}>
                                 <Card className={classes.cardWrapper}>
                                     <CardMedia
                                         key={story.id}
@@ -397,7 +426,7 @@ function SuccessStory({classes, id}) {
                                             {story.name}
                                         </Typography>
                                         <Typography
-                                            style={{marginTop: 10}}
+                                            style={{ marginTop: 10 }}
                                             variant="body1"
                                             color="initial"
                                         >
@@ -421,7 +450,7 @@ function SuccessStory({classes, id}) {
                                             aria-expanded={expanded}
                                             aria-label="show more"
                                         >
-                                            <ExpandMoreIcon key={story.id}/>
+                                            <ExpandMoreIcon key={story.id} />
                                         </IconButton>
                                     </CardActions>
                                     <Collapse
@@ -440,7 +469,7 @@ function SuccessStory({classes, id}) {
                                         </CardContent>
                                     </Collapse>
                                 </Card>
-                            </Container>
+                             </Box>
                         ))}
                     </Slider>
                 </div>
