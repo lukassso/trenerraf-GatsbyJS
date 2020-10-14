@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-// import { motion } from 'framer-motion';
 import {
     Box,
     Container,
@@ -10,7 +9,6 @@ import {
     Typography,
     withStyles,
 } from '@material-ui/core';
-import { animations } from 'react-animation';
 
 const useStyles = (theme) => ({
     root: {
@@ -19,7 +17,7 @@ const useStyles = (theme) => ({
         // paddingTop: 50,
         maxHeight: 1550,
         [theme.breakpoints.down('sm')]: {
-            maxHeight: 1950,
+            maxHeight: 2050,
         },
     },
     expHeader: {
@@ -77,9 +75,9 @@ const useStyles = (theme) => ({
         },
     },
     priceWrapper: {
-        padding: '60px 20px 0',
+        padding: '60px 20px',
         [theme.breakpoints.down('sm')]: {
-            padding: '30px 20px ',
+            padding: '50px 20px ',
         },
     },
     priceHeader: {
@@ -145,27 +143,20 @@ function Experienses({ classes, id }) {
             area: 'Certyfikat IFAA',
         },
     ];
-    const ExperienceMap = (props) => {
-        const style = {
-            animation: animations.popIn,
-        };
+    const experienceMap = () => {
+       
         return experiencesList.map((experience) => (
             <React.Fragment>
                 {/* <ScrollAnimation animateIn="flipInY" animateOut="flipOutY"> */}
                 <Grid
                     key={experience.id}
-                    className={classes.expItem}
+                    // className={classes.expItem}
                     item
                     xs={6}
                     sm={4}
                 >
-                    {/* <motion.div
-                        // className={classes.expPaper}
-                        animate={{ scale: 0.5 }}
-                        transition={{ duration: 2 }}
-                    > */}
+                 
                     <Paper
-                        style={style}
                         className={classes.expPaper}
                         elevation={0}
                         variant="outlined"
@@ -177,7 +168,6 @@ function Experienses({ classes, id }) {
                             {experience.area}
                         </Typography>
                     </Paper>
-                    {/* </motion.div> */}
                 </Grid>
             </React.Fragment>
         ));
@@ -210,14 +200,14 @@ function Experienses({ classes, id }) {
                     justify="center"
                     alignItems="center"
                 >
-                    <ExperienceMap />
+                    {experienceMap()}
                 </Grid>
             </Container>
             <Container style={{ position: 'relative' }} maxWidth="sm">
                 <Img
                     className={classes.expFooterImage}
                     fluid={data.pic2.childImageSharp.fluid}
-                    alt=""
+                    alt="personal image"
                 />
             </Container>
         </section>

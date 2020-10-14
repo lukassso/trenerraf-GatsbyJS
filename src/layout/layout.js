@@ -28,8 +28,8 @@ const Layout = ({ location, children }) => {
             >
                 <html lang="pl" />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;900&display=swap"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+                    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap"
+                    // href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
                     rel="stylesheet"
                 ></link>
             </Helmet>

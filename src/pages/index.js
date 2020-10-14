@@ -50,7 +50,7 @@ function Index(props) {
         const { children, window } = props;
         
         const trigger = useScrollTrigger({
-            // target: window ? undefined : undefined,
+            target: window ? undefined : undefined,
             disableHysteresis: true,
             threshold: 100,
         });
@@ -87,17 +87,12 @@ function Index(props) {
         <React.Fragment>
            
                     <Hero />
-                    {/* <a >Doświadczenie</a> */}
                     <SuccessStory id="successStories" />
                     <Experiences id="experience" />
                     <About />
-                    {/* <a id="testimondial">Opinie</a> */}
                     <Testimondials id="testimondials" />
                     <AskYourself />
-                    {/* <a id="success-story">Metamorfozy</a> */}
-
                     <Footer id="contact" />
-                {/* </CSSTransition> */}
                 <ScrollTop {...props}>
                     <Fab
                         color="secondary"

@@ -51,7 +51,7 @@ const useStyles = (theme) => ({
         marginTop: 40,
         marginBottom: 40,
     },
-   
+
     // sliderWrapper: {
     //     position: 'relative',
     //     margin: 10,
@@ -294,7 +294,6 @@ function SuccessStory({ classes, id }) {
         },
     ];
 
-    // const NextArrowBtn = () => <ExpandMoreIcon/>
     function NextArrowBtn(props) {
         const { className, style, onClick } = props;
         return (
@@ -316,19 +315,17 @@ function SuccessStory({ classes, id }) {
         );
     }
     const settings = {
-        // className: 'center',
+        className: 'center',
         // centerMode: false,
-        // infinite: false,
-        arrows: true,
+        infinite: false,
         // autoplay: true,
         // centerPadding: '50px',
         slidesToShow: 2,
-        //   slidesToScroll: 2,
+        slidesToScroll: 1,
         // speed: 4500,
         // fade: true,
         // lazyLoad: true,
-        nextArrow: <NextArrowBtn />,
-        prevArrow: <NextArrowBtn />,
+
         // dots: true,
         // swipeToSlide: true,
         // dotsClass: 'slick-dots slick-thumb',
@@ -344,22 +341,26 @@ function SuccessStory({ classes, id }) {
         //     </div>
         //   ),
         responsive: [
-            // {
-            //     breakpoint: 2000,
-            //     settings: {
-            //         slidesToShow: 2,
-            //         // slidesToScroll: 1,
-            //     },
-            // },
+            {
+                breakpoint: 2000,
+                settings: {
+                    // infinite: true,
+                    arrows: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    // nextArrow: <NextArrowBtn />,
+                    // prevArrow: <NextArrowBtn />,
+                },
+            },
             {
                 breakpoint: 900,
                 settings: {
-                    infinite: false,
-                    centerMode: true,
-                    centerPadding: '20px',
-                    arrows: false,
-                    slidesToShow: 1,    
-                    // slidesToScroll: 1,
+                    // infinite: false,
+                    // centerMode: true,
+                    // centerPadding: '20px',
+                    arrows: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
                 },
             },
         ],
@@ -384,7 +385,7 @@ function SuccessStory({ classes, id }) {
 
                 <div className={classes.sliderWrapper}>
                     <Slider {...settings}>
-                        {dataStories.map((story) => (
+                        {dataStories.map((story) => 
                             <Box px={2}>
                                 <Card className={classes.cardWrapper}>
                                     <CardMedia
@@ -469,8 +470,8 @@ function SuccessStory({ classes, id }) {
                                         </CardContent>
                                     </Collapse>
                                 </Card>
-                             </Box>
-                        ))}
+                            </Box>
+                        )}
                     </Slider>
                 </div>
             </Container>

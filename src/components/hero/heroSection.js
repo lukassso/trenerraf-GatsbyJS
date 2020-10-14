@@ -11,7 +11,6 @@ import {
 import PhoneIcon from '@material-ui/icons/Phone';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import { easings, AnimateOnChange, HideUntilLoaded } from 'react-animation';
 
 const useStyles = (theme) => ({
     root: {
@@ -167,29 +166,25 @@ function Hero(props) {
 
     const data = useStaticQuery(query);
 
-    const style = {
-        animation: `pop-in ${easings.easeOutExpo} 4500ms forwards`,
-    };
+    // const words = [
+    //     'Rafał Kiszło - Trener Personalny i najlepszy motywator w mieście! Zapraszam na wspólne treningi na Mokotowie.',
+    //     'Wiele lat pracy jako trener i tysiące przeprowadzonych treningów. Sprawię, że wrócisz na trening z uśmiechem.',
+    // ];
 
-    const words = [
-        'Rafał Kiszło - Trener Personalny i najlepszy motywator w mieście! Zapraszam na wspólne treningi na Mokotowie.',
-        'Wiele lat pracy jako trener i tysiące przeprowadzonych treningów. Sprawię, że wrócisz na trening z uśmiechem.',
-    ];
+    // const [current, setCurrent] = React.useState(0);
 
-    const [current, setCurrent] = React.useState(0);
-
-    React.useEffect(() => {
-        const interval = setInterval(() => {
-            if (current === words.length - 1) {
-                setCurrent(0);
-            } else {
-                setCurrent(current + 1);
-            }
-        }, 8000);
-        return () => {
-            clearInterval(interval);
-        };
-    });
+    // React.useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         if (current === words.length - 1) {
+    //             setCurrent(0);
+    //         } else {
+    //             setCurrent(current + 1);
+    //         }
+    //     }, 8000);
+    //     return () => {
+    //         clearInterval(interval);
+    //     };
+    // });
 
     return (
         <section className={classes.root}>
@@ -197,23 +192,14 @@ function Hero(props) {
                 <Grid item xs={12} md={7}>
                     <Box className={classes.heroClaim}>
                         <Box>
-                            {/* <Animated
-                                animationIn="zoomIn"
-                                isVisible={true}
-                                animationInDuration="3000"
-                            > */}
                             <Typography
-                                style={style}
                                 className={classes.testAnimate}
                                 variant="h1"
                             >
                                 Stań się lepszą wersją siebie!
                             </Typography>
-                            {/* </Animated> */}
                             <Typography variant="h3" component="h2">
-                                <AnimateOnChange>
-                                    {words[current]}
-                                </AnimateOnChange>
+                               Rafał Kiszło - Trener Personalny i najlepszy motywator w mieście! Zapraszam na wspólne treningi na Mokotowie.
                             </Typography>
                         </Box>
                         <Box
