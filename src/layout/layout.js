@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../theme';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import 'animate.css'
+// import 'animate.css'
 
 const Layout = ({ location, children }) => {
     return (
