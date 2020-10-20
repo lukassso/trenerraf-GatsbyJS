@@ -300,11 +300,11 @@ function SuccessStory({ classes, id }) {
             <div
                 className={className}
                 style={{
-                    ...style,
+                    // ...style,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    background: '#fdc100',
+                    backgroundColor: '#fdc100',
                     width: '40px',
                     height: '40px',
                     borderRadius: '20px',

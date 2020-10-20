@@ -11,11 +11,13 @@ import {
 import PhoneIcon from '@material-ui/icons/Phone';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import TextLoop from 'react-text-loop';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = (theme) => ({
     root: {
         position: 'relative',
-        zIndex: -1,
+        // zIn  dex: -1,
         overflow: 'hidden',
         backgroundImage: 'linear-gradient(120deg, #fff 0%, #ebedee 100%)',
     },
@@ -81,6 +83,28 @@ const useStyles = (theme) => ({
             },
         },
     },
+    textLoopWrapper: {
+         fontSize: '1.6rem',
+            fontWeight: 200,
+            textAlign: 'left',
+            // paddingBottom: theme.spacing(20),
+            lineHeight: 1.5,
+            // transform: 'translateX(12.5em)',
+            // transition: 'transform 2s ease-in-out',
+            [theme.breakpoints.down('lg')]: {
+                fontSize: '1.3rem',
+            },
+            [theme.breakpoints.down('md')]: {
+                fontSize: '1.1rem',
+            },
+            [theme.breakpoints.down('sm')]: {
+                paddingTop: theme.spacing(5),
+                paddingBottom: theme.spacing(10),
+                textAlign: 'center',
+                fontSize: '1rem',
+            },
+        },
+    
     heroPicturesWrapper: {
         padding: 0,
         [theme.breakpoints.down('sm')]: {},
@@ -129,7 +153,7 @@ const useStyles = (theme) => ({
             boxShadow: '0 0 0 0 rgba(204,169,44, 0.8)',
         },
         '20%': {
-            boxShadow: '0 0 0 48px rgba(204,169,44, 0)',
+            boxShadow: '0 0 0 20px rgba(204,169,44, 0)',
         },
         '100%': {
             boxShadow: '0 0 0 0 rgba(204,169,44, 0)',
@@ -163,6 +187,7 @@ const query = graphql`
 
 function Hero(props) {
     const { classes } = props;
+     const mobile = useMediaQuery(theme => theme.breakpoints.down('md'));
 
     const data = useStaticQuery(query);
 
@@ -198,8 +223,45 @@ function Hero(props) {
                             >
                                 Stań się lepszą wersją siebie!
                             </Typography>
-                            <Typography variant="h3" component="h2">
-                               Rafał Kiszło - Trener Personalny i najlepszy motywator w mieście! Zapraszam na wspólne treningi na Mokotowie.
+                            <Typography
+                                variant="h3"
+                                component="h2"
+                                // className={classes.textLoopWrapper}
+                            >
+                                Rafał Kiszło - Trener Personalny i najlepszy
+                                motywator w mieście! Zapraszam na wspólne treningi {' '}
+                                <TextLoop
+                                    // className={classes.textLoopWrapper}
+                                    springConfig={{
+                                        stiffness: 70,
+                                        damping: 31,
+                                    }}
+                                    interval={5000}
+                                    adjustingSpeed={500}
+                                >
+                                    <Typography
+                                        variant="span"
+                                        component="span"
+                                        className={classes.textLoopWrapper}
+                                    >
+                                        {' '}
+                                        na Mokotowie{' '}
+                                    </Typography>
+                                    <Typography
+                                        variant="span"
+                                        component="span"
+                                        className={classes.textLoopWrapper}
+                                    >
+                                        {' '}
+                                        na Wilanowie{' '}
+                                    </Typography>
+                                    {/* <Typography variant="h3" component="h2"  className={classes.textLoopWrapper}>
+                                    Rafał Kiszło - Trener Personalny i najlepszy
+                                    motywator w mieście! Zapraszam na wspólne
+                                    treningi na Mokotowie.
+                                </Typography> */}
+                                </TextLoop>
+                                {' '}.
                             </Typography>
                         </Box>
                         <Box
