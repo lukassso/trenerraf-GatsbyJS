@@ -14,11 +14,14 @@ import {
     Dialog,
     AppBar,
     Slide,
+    RootRef,
 } from '@material-ui/core';
 import LaunchIcon from '@material-ui/icons/Launch';
 import CloseIcon from '@material-ui/icons/Close';
-    import CallMade from '@material-ui/icons/CallMade';
+import CallMade from '@material-ui/icons/CallMade';
 
+import DialogExpanded from './components/DialogExpanded';
+import { experiencesList } from './components/experiencesList';
 
 const useStyles = (theme) => ({
     root: {
@@ -102,7 +105,7 @@ const useStyles = (theme) => ({
         position: 'absolute',
         top: '0',
         right: '0',
-    }
+    },
 });
 
 const query = graphql`
@@ -124,114 +127,65 @@ const query = graphql`
     }
 `;
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-});
-
 function Experienses({ classes, id }) {
     const data = useStaticQuery(query);
-
-    const experiencesList = [
-        { id: 1, name: 'Trener personalny', area: 'Instruktor' },
-        { id: 2, name: 'Nurek CMASS', area: 'Instruktor' },
-        { id: 3, name: 'Kettlebells', area: 'Instruktor' },
-        { id: 4, name: 'Kulturystyka', area: 'Instruktor' },
-        { id: 5, name: 'Trening funkcjonalny', area: 'Instruktor' },
-        { id: 7, name: 'Trójbój siłowy', area: 'Instruktor' },
-        { id: 8, name: 'Samoobrona', area: 'Instruktor' },
-        { id: 9, name: 'Indoor cycling', area: 'Instruktor' },
-        { id: 10, name: 'Speening star', area: 'Instruktor' },
-        { id: 11, name: 'Zdrowy kręgosłup', area: 'Certyfikat IFAA' },
-        { id: 12, name: 'Patologie kręgosłupa', area: 'Certyfikat IFAA' },
-        { id: 13, name: 'Biodro staw życia', area: 'Biernat' },
-        { id: 14, name: 'Kolano - biodra i stopy', area: 'Biernat' },
-        { id: 15, name: 'Stopa - nasza podpora', area: 'Biernat' },
-        { id: 16, name: 'Bark nie musi być skomplikowany', area: 'Biernat' },
-        { id: 17, name: 'Kształtowanie kobiecej sylwetki ', area: 'CSS' },
-        {
-            id: 18,
-            name: 'Redukacja bez liczenia kalorii',
-            area: 'Tadeusz Sowinski',
-        },
-        { id: 19, name: 'Tułów - baza do ruchu ', area: 'Biernat' },
-        { id: 20, name: 'Kończyna dolna', area: 'Movement strategy' },
-        { id: 21, name: 'Trening TRX ', area: 'Certyfikat' },
-        {
-            id: 22,
-            name: 'Functional and core work shop ',
-            area: 'Certyfikat IFAA',
-        },
-    ];
+    const domRef = React.useRef();
 
     const experienceMap = () => {
         const [open, setOpen] = React.useState(false);
+        const [selectedRow, setSelectedRow] = React.useState(null);
 
-        const handleClickOpen = () => {
+        const handleClickOpen = (event, item) => {
+            event.persist();
+            setSelectedRow(item);
             setOpen(true);
+            // setSelectedRow(selectedRow)
+            // console.log(selectedRow)
         };
 
         const handleClose = () => {
             setOpen(false);
         };
-        return experiencesList.map((experience) => (
-            <React.Fragment>
-                {/* <ScrollAnimation animateIn="flipInY" animateOut="flipOutY"> */}
-                <Grid
-                    key={experience.id}
-                    // className={classes.expItem}
-                    item
-                    xs={6}
-                    sm={4}
-                >
-                    <Paper
-                        className={classes.expPaper}
-                        elevation={0}
-                        variant="outlined"
-                    >
-                        <Typography key={experience.name} variant="h5">
-                            {experience.name}
-                        </Typography>
-                        <Typography variant="body1" key={experience.area}>
-                            {experience.area}
-                        </Typography>
-                        <IconButton className={classes.btnCallMade} onClick={handleClickOpen}>
-                            <CallMade fontSize='small' />
-                        </IconButton>
-                    </Paper>
-                    <Dialog
-                        fullScreen
-                        open={open}
-                        onClose={handleClose}
-                        TransitionComponent={Transition}
-                    >
-                        <AppBar className={classes.appBar}>
-                            <Toolbar>
-                                <IconButton
-                                    edge="start"
-                                    color="inherit"
-                                    onClick={handleClose}
-                                    aria-label="close"
-                                >
-                                    <CloseIcon />
-                                </IconButton>
-                                <Typography
-                                    variant="h6"
-                                    className={classes.title}
-                                >
-                                    
-                                </Typography>
-                            </Toolbar>
-                        </AppBar>
-                        <Box display="flex" justifyContent="center" mt={20}>
+        const rootRef = React.useRef(null);
 
-                        <Typography variant="h4" color="initial">
-                            Content, video, galleries.
-                        </Typography>
-                        </Box>
-                    </Dialog>
-                </Grid>
+        return (
+            <React.Fragment>
+                {experiencesList.map((experience) => (
+                    <Grid
+                        key={experience.id}
+                        // className={classes.expItem}
+                        item
+                        xs={6}
+                        sm={4}
+                    >
+                        <Paper
+                            className={classes.expPaper}
+                            elevation={0}
+                            variant="outlined"
+                        >
+                            <Typography key={experience.name} variant="h5">
+                                {experience.name}
+                            </Typography>
+                            <Typography variant="body1" key={experience.area}>
+                                {experience.area}
+                            </Typography>
+                            <IconButton
+                                className={classes.btnCallMade}
+                                onClick={(event) =>
+                                    handleClickOpen(event, selectedRow)
+                                }
+                            >
+                                <CallMade fontSize="small" />
+                            </IconButton>
+                        </Paper>
+                    </Grid>
+                ))}
+                {open && selectedRow && 
+                    <DialogExpanded handleClose={handleClose} open={open} experienceName={experience.name} />
+
+                }
             </React.Fragment>
-        ));
+        );
     };
 
     return (
