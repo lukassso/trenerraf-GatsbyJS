@@ -21,7 +21,21 @@ import CallMade from '@material-ui/icons/CallMade';
 import { experiencesList } from './experiencesList'
 
 const styles = (theme) => ({
-root:{}
+root:{},
+dialog:{
+    transform: "translateZ(0)"
+},
+appBar: {
+    transform: "translateZ(0)"
+},
+iconButton: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    flexGrow: 1
+},
+containerWrapper: {
+    padding: theme.spacing(4)
+}
 })
 
 
@@ -36,11 +50,13 @@ const DialogExpanded = ({classes, handleClose, open, experienceName  }) => {
                     fullScreen
                     open={open}
                     onClose={handleClose}
+                    className={classes.dialog}
                     TransitionComponent={Transition}
                 >
-                    <AppBar className={classes.appBar}>
+                    <AppBar position="sticky" className={classes.appBar}>
                         <Toolbar>
                             <IconButton
+                                className={classes.iconButton}
                                 edge="start"
                                 color="inherit"
                                 onClick={handleClose}
@@ -50,7 +66,7 @@ const DialogExpanded = ({classes, handleClose, open, experienceName  }) => {
                             </IconButton>
                         </Toolbar>
                     </AppBar>
-                    <Box display="flex" justifyContent="center" mt={20}>
+                    <Box className={classes.containerWrapper} >
                         <Typography variant="p" color="initial">
                             {experienceName}
                         </Typography>

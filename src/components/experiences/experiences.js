@@ -9,12 +9,6 @@ import {
     Typography,
     withStyles,
     IconButton,
-    Toolbar,
-    Button,
-    Dialog,
-    AppBar,
-    Slide,
-    RootRef,
 } from '@material-ui/core';
 import LaunchIcon from '@material-ui/icons/Launch';
 import CloseIcon from '@material-ui/icons/Close';
@@ -129,62 +123,62 @@ const query = graphql`
 
 function Experienses({ classes, id }) {
     const data = useStaticQuery(query);
-    const domRef = React.useRef();
 
     const experienceMap = () => {
         const [open, setOpen] = React.useState(false);
-        const [selectedRow, setSelectedRow] = React.useState(null);
+        const [experience, setExperience] = React.useState(null);
 
-        const handleClickOpen = (event, item) => {
+        function handleClickOpen(event, item) {
             event.persist();
-            setSelectedRow(item);
             setOpen(true);
-            // setSelectedRow(selectedRow)
-            // console.log(selectedRow)
-        };
+            setExperience(item);
+            console.log(item);
+        }
 
         const handleClose = () => {
             setOpen(false);
         };
-        const rootRef = React.useRef(null);
 
         return (
-            <React.Fragment>
-                {experiencesList.map((experience) => (
-                    <Grid
-                        key={experience.id}
-                        // className={classes.expItem}
-                        item
-                        xs={6}
-                        sm={4}
-                    >
-                        <Paper
-                            className={classes.expPaper}
-                            elevation={0}
-                            variant="outlined"
+            <div style={{ margin: 0, padding: 0 }}>
+                <Grid container spacing={1} justify="center">
+                    {experiencesList.map((experience) => (
+                        <Grid
+                            key={experience.id}
+                            // className={classes.expItem}
+                            item
+                            xs={6}
+                            sm={4}
                         >
-                            <Typography key={experience.name} variant="h5">
-                                {experience.name}
-                            </Typography>
-                            <Typography variant="body1" key={experience.area}>
-                                {experience.area}
-                            </Typography>
-                            <IconButton
-                                className={classes.btnCallMade}
-                                onClick={(event) =>
-                                    handleClickOpen(event, selectedRow)
-                                }
+                            <Paper
+                                className={classes.expPaper}
+                                elevation={0}
+                                variant="outlined"
+                                 onClick={(event) =>
+                                        handleClickOpen(event, experience)
+                                    }
                             >
-                                <CallMade fontSize="small" />
-                            </IconButton>
-                        </Paper>
-                    </Grid>
-                ))}
-                {open && selectedRow && 
-                    <DialogExpanded handleClose={handleClose} open={open} experienceName={experience.name} />
-
-                }
-            </React.Fragment>
+                                <Typography key={experience.name} variant="h5">
+                                    {experience.name}
+                                </Typography>
+                                <Typography
+                                    variant="body1"
+                                    key={experience.area}
+                                >
+                                    {experience.area}
+                                </Typography>
+                            </Paper>
+                        </Grid>
+                    ))}
+                </Grid>
+                {open && experience && (
+                    <DialogExpanded
+                        handleClose={handleClose}
+                        open={open}
+                        experienceName={experience.text}
+                    />
+                )}
+            </div>
         );
     };
 
