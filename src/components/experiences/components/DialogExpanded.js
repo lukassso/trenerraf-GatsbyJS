@@ -67,7 +67,7 @@ const DialogExpanded = ({classes, handleClose, open, experienceName  }) => {
                         </Toolbar>
                     </AppBar>
                     <Box className={classes.containerWrapper} >
-                        <Typography variant="p" color="initial">
+                        <Typography variant="body1" color="initial">
                             {experienceName}
                         </Typography>
                     </Box>

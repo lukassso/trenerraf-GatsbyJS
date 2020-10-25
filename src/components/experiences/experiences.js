@@ -22,9 +22,9 @@ const useStyles = (theme) => ({
         position: 'relative',
         backgroundColor: theme.palette.background.gray,
         // paddingTop: 50,
-        maxHeight: 1550,
+        maxHeight: 1750,
         [theme.breakpoints.down('sm')]: {
-            maxHeight: 2050,
+            maxHeight: 2250,
         },
     },
     expHeader: {
@@ -175,7 +175,7 @@ function Experienses({ classes, id }) {
                     <DialogExpanded
                         handleClose={handleClose}
                         open={open}
-                        experienceName={experience.text}
+                        experienceName={experience.content}
                     />
                 )}
             </div>
