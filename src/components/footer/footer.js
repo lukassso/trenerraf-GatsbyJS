@@ -10,11 +10,12 @@ import {
     Link,
     Typography,
     withStyles,
-    IconButton 
+    IconButton,
 } from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 const useStyles = (theme) => ({
     root: {
@@ -88,9 +89,8 @@ function Footer({ classes, id }) {
                 color="inherit"
                 className={classes.titleLink}
                 href="/"
-                
             >
-                <img alt='logo' src={logo} className={classes.logoNavBar} />
+                <img alt="logo" src={logo} className={classes.logoNavBar} />
             </Link>
         );
     };
@@ -150,22 +150,33 @@ function Footer({ classes, id }) {
                         </Grid>
                         <Grid item xs={12} md={3}>
                             <Box py={5} display="flex" justifyContent="center">
-                                <IconButton href="https://www.facebook.com/trenerrafalkiszlo/" aria-label="facebook" color="secondary">
-
-                                    <FacebookIcon
-                                    
-                                        
+                                <IconButton
+                                    href="https://www.youtube.com/channel/UCV70wJdF3cotToSLfV0gO8w"
+                                    aria-label="facebook"
+                                    color="secondary"
+                                >
+                                    <YouTubeIcon
                                         style={{ fontSize: '3.5rem' }}
-                                        title='facebook logo'
+                                        title="YouTube logo"
                                     />
                                 </IconButton>
-                                
-                                <IconButton 
-                                href="https://www.instagram.com/trener_rafal_kiszlo" aria-label="Instagram" color="secondary">
+                                <IconButton
+                                    href="https://www.facebook.com/trenerrafalkiszlo/"
+                                    aria-label="facebook"
+                                    color="secondary"
+                                >
+                                    <FacebookIcon
+                                        style={{ fontSize: '3.5rem' }}
+                                        title="facebook logo"
+                                    />
+                                </IconButton>
 
+                                <IconButton
+                                    href="https://www.instagram.com/trener_rafal_kiszlo"
+                                    aria-label="Instagram"
+                                    color="secondary"
+                                >
                                     <InstagramIcon
-                                    
-
                                         style={{ fontSize: '3.5rem' }}
                                         title="Instagram logo"
                                     />
