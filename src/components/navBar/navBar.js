@@ -220,7 +220,7 @@ function PrimarySearchAppBar({ classes }) {
                             >
                                 <img
                                     src={logo}
-                                    alt="logo Trenerpersonalny.pl"
+                                    alt="Trener personalny Warszawa Mokotów - Rafał Kiszło"
                                     className={classes.logoNavBar}
                                 />
                             </Link>

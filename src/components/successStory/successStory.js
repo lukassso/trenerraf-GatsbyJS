@@ -379,8 +379,8 @@ function SuccessStory({ classes, id }) {
                         Metamorfozy
                     </Typography>
                 </Box>
-                <Typography variant="h4" align="center">
-                    Oni odnieśli sukces
+                <Typography variant="h4" component='h2' align="center">
+                   Sukcesy treningu osobistego
                 </Typography>
 
                 <div className={classes.sliderWrapper}>

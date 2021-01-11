@@ -61,7 +61,7 @@ function About(props) {
             <Box className={classes.root}>
                 <Container maxWidth="md">
                     <Box className={classes.headerName} align="center">
-                        <Typography variant="h3">O mnie</Typography>
+                        <Typography variant="h3" component='h1'>Trener personalny Rafał Kiszło</Typography>
                     </Box>
                     <Box p={8} pb={0} pt={0}>
                         <Typography>

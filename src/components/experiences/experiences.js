@@ -44,7 +44,7 @@ const useStyles = (theme) => ({
             margin: 10,
             padding: 25,
         },
-        '& h5': {
+        '& h2': {
             fontSize: '1.2rem',
             fontWeight: 600,
             lineHeight: 1.2,
@@ -158,7 +158,7 @@ function Experienses({ classes, id }) {
                                         handleClickOpen(event, experience)
                                     }
                             >
-                                <Typography key={experience.name} variant="h5">
+                                <Typography key={experience.name} variant="h5" component='h2'>
                                     {experience.name}
                                 </Typography>
                                 <Typography

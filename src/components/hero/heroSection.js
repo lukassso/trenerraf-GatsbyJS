@@ -45,7 +45,7 @@ const useStyles = (theme) => ({
             lineHeight: theme.spacing(1),
         },
 
-        '& h1': {
+        '& h3': {
             fontSize: '3.3rem',
             textAlign: 'left',
             paddingBottom: theme.spacing(8),
@@ -220,6 +220,7 @@ function Hero(props) {
                             <Typography
                                 className={classes.testAnimate}
                                 variant="h1"
+                                component='h3'
                             >
                                 Stań się lepszą wersją siebie!
                             </Typography>

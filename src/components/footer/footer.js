@@ -90,7 +90,7 @@ function Footer({ classes, id }) {
                 className={classes.titleLink}
                 href="/"
             >
-                <img alt="logo" src={logo} className={classes.logoNavBar} />
+                <img alt="Trener osobisty Warszawa Mokotów" src={logo} className={classes.logoNavBar} />
             </Link>
         );
     };
@@ -134,7 +134,7 @@ function Footer({ classes, id }) {
                             </Box>
                             <Box m={2} display="flex" justifyContent="center">
                                 <Typography variant="body1" color="initial">
-                                    ul. Dziekońskiego 1, 00-728 Warszawa
+                                    ul. Józefa Piusa Dziekońskiego 1, 00-728 Warszawa
                                 </Typography>
                             </Box>
                             <Box m={2} display="flex" justifyContent="center">
