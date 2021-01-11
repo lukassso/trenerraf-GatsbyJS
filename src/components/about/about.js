@@ -110,7 +110,7 @@ function About(props) {
                     </Box>
                 </Container>
                 <Container className={classes.pictureHeader} maxWidth="sm">
-                    <Img fluid={data.pic3.childImageSharp.fluid} alt="" />
+                    <Img fluid={data.pic3.childImageSharp.fluid} alt="Rafał Kiszło - trener osobisty Warszawa" />
                 </Container>
             </Box>
         </Box>

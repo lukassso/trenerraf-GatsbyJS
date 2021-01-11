@@ -109,7 +109,7 @@ function AskYourself(props) {
                 <Img
                     className={classes.pictureHeader}
                     fluid={data.pic4.childImageSharp.fluid}
-                    alt=""
+                    alt="Rafał Kiszło - trener Mokotów"
                 />
             </Container>
         </Box>

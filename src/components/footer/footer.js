@@ -81,6 +81,7 @@ const useStyles = (theme) => ({
     },
 });
 
+
 function Footer({ classes, id }) {
     const Logo = () => {
         return (
@@ -139,7 +140,7 @@ function Footer({ classes, id }) {
                             </Box>
                             <Box m={2} display="flex" justifyContent="center">
                                 <Link
-                                    href="https://goo.gl/maps/RPaUAvrG79pDMm5K9"
+                                    href="https://g.page/trenerrafal?share"
                                     color="secondary"
                                     variant="body2"
                                 >
@@ -199,6 +200,7 @@ function Footer({ classes, id }) {
                     </Typography>
                 </Box>
             </Box>
+           
         </React.Fragment>
     );
 }

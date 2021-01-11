@@ -398,7 +398,7 @@ function SuccessStory({ classes, id }) {
                                             // fluid={data.pic6.childImageSharp.fluid}
                                             fluid={story.image}
                                             component="img"
-                                            alt={story.name}
+                                            alt={`Efekty treningu osobistego ` + story.name}
                                         />
                                         {/* <img className={classes.pictureStories} src={story.image} alt=""/> */}
                                     </CardMedia>

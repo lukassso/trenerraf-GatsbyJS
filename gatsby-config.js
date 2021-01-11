@@ -97,7 +97,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: 'Rafał Kiszło - trener personalny Mokotów',
+                name: 'Trener personalny Warszawa Mokotów - Rafał Kiszło',
                 short_name: 'Rafał Kiszło',
                 start_url: '/',
                 icon: 'src/pages/images/logo.png',

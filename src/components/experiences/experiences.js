@@ -219,7 +219,7 @@ function Experienses({ classes, id }) {
                 <Img
                     className={classes.expFooterImage}
                     fluid={data.pic2.childImageSharp.fluid}
-                    alt="personal image"
+                    alt="trening personalny w Warszawie"
                 />
             </Container>
         </section>

@@ -55,6 +55,7 @@ const DialogExpanded = ({classes, handleClose, open, experienceName  }) => {
                 >
                     <AppBar position="sticky" className={classes.appBar}>
                         <Toolbar>
+                            <Box>
                             <IconButton
                                 className={classes.iconButton}
                                 edge="start"
@@ -64,6 +65,7 @@ const DialogExpanded = ({classes, handleClose, open, experienceName  }) => {
                             >
                                 <CloseIcon />
                             </IconButton>
+                            </Box>
                         </Toolbar>
                     </AppBar>
                     <Box className={classes.containerWrapper} >

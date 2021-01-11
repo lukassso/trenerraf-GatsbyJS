@@ -294,7 +294,7 @@ function Hero(props) {
                             <Img
                                 className={classes.heroPictures1}
                                 fluid={data.picHero1.childImageSharp.fluid}
-                                alt=""
+                                alt="Trener personalny"
                             />
                             <Img
                                 className={classes.heroPictures2}
