@@ -12,12 +12,12 @@ const Layout = ({ location, children }) => {
         <React.Fragment>
             {/* <GlobalStyle/> */}
             <Helmet
-                title="Trener personalny Warszawa Mokotów - Rafał Kiszło"
+                title="Trener personalny Warszawa Mokotów i Wilanów – Rafał Kiszło"
                 meta={[
                     {
                         name: 'description',
                         content:
-                            'Zapraszam na wspólne treningi na Mokotowie - Trener personalny Rafał Kiszło. Trening osobisty w Warszawie dostosowany do Twoich potrzeb. Stań się lepszą wersją siebie!',
+                            'Zapraszam na wspólne treningi na Mokotowie i Wilanowie – Trener personalny Rafał Kiszło. Trening osobisty w Warszawie dostosowany do Twoich potrzeb. Stań się lepszą wersją siebie!',
                     },
                     { name: 'keywords', content: 'Rafał Kiszło, strona www' },
                     {
@@ -33,7 +33,7 @@ const Layout = ({ location, children }) => {
     "@type": "LocalBusiness",
     "@id": "https://trenerrafal.pl/",
     "url": "https://trenerrafal.pl/",
-    "name": "Rafał Kiszło - trener personalny Warszawa Mokotów",
+    "name": "Rafał Kiszło - trener personalny Warszawa Mokotów i Wilanów",
     "image": "https://trenerrafal.pl/static/logo-e924d436df4a9eb6d5cd6c59043a7895.svg",
     "telephone": [
         "+48 608 472 294"
