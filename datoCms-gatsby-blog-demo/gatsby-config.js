@@ -2,8 +2,10 @@ require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Blog Demo",
-  },
+    title: `Trener Personalny Rafał Kiszło`,
+    description: `Trener personalny Mokotów. Twoja kondycja w najlepszych rękach.`,
+    siteUrl: `https://trenerrafal.pl`,
+},
   plugins: [
     "gatsby-plugin-postcss",
     {
@@ -20,3 +22,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
   ],
 };
+
+
+
