@@ -20,6 +20,19 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+          name: 'Trener personalny Warszawa Mokotów - Rafał Kiszło',
+          short_name: 'Rafał Kiszło',
+          start_url: '/',
+          icon: 'src/pages/images/logo.png',
+          background_color: '#ffffff',
+          theme_color: '#000000',
+          display: 'standalone',
+          crossOrigin: `use-credentials`,
+      },
+  },
   ],
 };
 

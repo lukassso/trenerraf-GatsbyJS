@@ -36,5 +36,6 @@ module.exports = {
         icon: "src/favicon.png",
       },
     },
+    
   ],
 }
