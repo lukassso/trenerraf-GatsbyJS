@@ -1,12 +1,8 @@
 {
-    "name": "gatsby-blog-demo",
+    "name": "trenerrafal",
     "version": "1.0.0",
     "private": true,
     "description": "Gatsby Blog Demo",
-    "author": "Stefano Verna",
-    "keywords": [
-        "gatsby"
-    ],
     "scripts": {
         "develop": "gatsby develop",
         "start": "gatsby develop",
@@ -21,10 +17,6 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@tailwindcss/typography": "^0.4.1",
-        "autoprefixer": "^10.3.4",
-        "classnames": "^2.3.1",
-        "dotenv": "^10.0.0",
         "gatsby": "^4.0.0",
         "gatsby-plugin-image": "^2.0.0",
         "gatsby-plugin-manifest": "^4.7.0",
@@ -33,12 +25,17 @@
         "gatsby-plugin-sharp": "^4.0.0",
         "gatsby-source-datocms": "^4.0.4",
         "gatsby-transformer-sharp": "^4.0.0",
-        "postcss": "^8.3.6",
         "react": "^17.0.2",
         "react-datocms": "^1.6.3",
         "react-dom": "^17.0.2",
         "react-helmet": "^6.1.0",
-        "tailwindcss": "^2.0.3"
+        "classnames": "^2.3.1"
+    },
+    "devDependecies": {
+        "prettier": "^2.7.1",
+        "autoprefixer": "^10.3.4",
+        "dotenv": "^10.0.0",
+        "typescript": "^4.6.2"
     },
     "resolutions": {
         "trim": "0.0.3",
@@ -50,8 +47,5 @@
         "object-path": "0.11.8",
         "nth-check": "2.0.1",
         "ansi-regex": "5.0.1"
-    },
-    "devDependencies": {
-        "prettier": "^2.7.1"
     }
 }
